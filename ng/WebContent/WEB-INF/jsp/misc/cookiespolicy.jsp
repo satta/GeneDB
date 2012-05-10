@@ -93,7 +93,7 @@ number of cookies you receive can be found below.</p>
         <td style="width: 150px;">Optional</td>
         <td style="width: 150px;">All</td>
       </tr>
-      <tr class=" odd">
+      <tr>
         <td>__utmb</td>
         <td>Urchin* anonymous user tracking&#182;</td>
         <td>Optional</td>
@@ -105,7 +105,7 @@ number of cookies you receive can be found below.</p>
         <td>Optional</td>
         <td>All</td>
       </tr>
-      <tr class=" odd">
+      <tr>
         <td>__utmz</td>
         <td>Urchin* anonymous user tracking&#182;</td>
         <td>Optional</td>
@@ -117,7 +117,7 @@ number of cookies you receive can be found below.</p>
         <td>Strictly necessary</td>
         <td>All</td>
       </tr>
-      <tr class=" odd">
+      <tr>
         <td>GenomeBrowser-location</td>
         <td>&nbsp;</td>
         <td>Optional</td>
@@ -129,8 +129,8 @@ number of cookies you receive can be found below.</p>
         <td>Optional</td>
         <td>All</td>
       </tr>
-      <tr class=" odd">
-        <td>GenomeBrowser-refseq</td>
+      <tr>
+        <td>GenomeBrowser-tracks</td>
         <td>&nbsp;</td>
         <td>Optional</td>
         <td>All</td>
