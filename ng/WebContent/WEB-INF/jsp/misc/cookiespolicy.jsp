@@ -6,10 +6,12 @@
 <format:page>
 	<br>
 
-      
+ 	<div id="col-1-1">     
         <h1>The Wellcome Trust Sanger Institute Web Cookies Policy</h1>
     <p>Information that the Wellcome Trust Sanger Institute collects from you.</p>
-    <h4>What is a cookie?</h4>
+    <h3>What is a cookie?</h3>
+		<div class="main-light-grey-top"></div>
+		<div class="main-light-grey">
     <p>A cookie (sometimes known as web cookie, browser cookie or html 
 cookie) is a small amount of data (&lt;4Kb) that is sent to your 
 computer or web-enabled device (hereafter referred to as a "device") 
@@ -43,8 +45,14 @@ device. This enables our website publishers to find out whether the
 device (and its user) has visited the website before. This is done on 
 repeat visits by checking to see, and finding, the cookie left there on 
 the last visit.</p>
-
-    <h4>How does the Sanger Institute use cookies?</h4>
+		</div>
+		<div class="main-light-grey-bot"></div>
+		<p>
+			<br />
+		</p>
+    <h3>How does the Sanger Institute use cookies?</h3>
+		<div class="main-light-grey-top"></div>
+		<div class="main-light-grey">
     <p>There are three main uses:-</p>
     <ul>
       <li>Information supplied by cookies helps us to anonymously 
@@ -58,8 +66,12 @@ reports to determine how often websites are visited by both academic and
     </ul>
     <h4>Third Party Cookies and Flash Cookies</h4>
     <p>The Sanger Institute does not use information contained in cookies created by a third party or Flash cookies.</p>
+		</div>
+		<div class="main-light-grey-bot"></div>
 
-    <h4>GeneDB cookies and how to reject cookies?</h4>
+    <h3>GeneDB cookies and how to reject cookies?</h3>
+		<div class="main-light-grey-top"></div>
+		<div class="main-light-grey">
     <p>A list of the cookies that the GeneDB websites 
 set (and what each is used for) together with ways to minimise the 
 number of cookies you receive can be found below.</p>
@@ -172,12 +184,16 @@ visit a page with content embedded as above, you may be presented with
 cookies from these websites. The Sanger Institute does not control the 
 dissemination of these cookies.&nbsp;You should check the relevant third
  party website for more information about these.</p>
-
-    <h4>How to tell us about changes</h4>
+		</div>
+		<div class="main-light-grey-bot"></div>
+    <h3>How to tell us about changes</h3>
+		<div class="main-light-grey-top"></div>
+		<div class="main-light-grey">
     <p>If you have any questions about data protection or require further information, please email <a href="mailto:%64%61%74%61%70%72%6f%74%65%63%74%69%6f%6e%40%73%61%6e%67%65%72%2e%61%63%2e%75%6b">dataprotection@sanger.ac.uk</a>
  or write to the Data Protection Compliance Officer, Sanger Institute, 
 Wellcome Trust Genome Campus, Hinxton, Cambridgeshire, CB10 1SA, UK.</p>
+		</div>
+		<div class="main-light-grey-bot"></div>
 
-
-  
+  </div>
 </format:page>
