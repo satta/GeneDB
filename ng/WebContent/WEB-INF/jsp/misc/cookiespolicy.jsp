@@ -89,25 +89,25 @@ number of cookies you receive can be found below.</p>
     <tbody>
       <tr>
         <td style="width: 200px;">__utma</td>
-        <td style="width: 250px;">Urchin* anonymous user tracking†</td>
+        <td style="width: 250px;">Urchin* anonymous user tracking&#182;</td>
         <td style="width: 150px;">Optional</td>
         <td style="width: 150px;">All</td>
       </tr>
       <tr class=" odd">
         <td>__utmb</td>
-        <td>Urchin* anonymous user tracking†</td>
+        <td>Urchin* anonymous user tracking&#182;</td>
         <td>Optional</td>
         <td>All</td>
       </tr>
       <tr>
         <td>__utmc</td>
-        <td>Urchin* anonymous user tracking†</td>
+        <td>Urchin* anonymous user tracking&#182;</td>
         <td>Optional</td>
         <td>All</td>
       </tr>
       <tr class=" odd">
         <td>__utmz</td>
-        <td>Urchin* anonymous user tracking†</td>
+        <td>Urchin* anonymous user tracking&#182;</td>
         <td>Optional</td>
         <td>All</td>
       </tr>
@@ -144,7 +144,7 @@ number of cookies you receive can be found below.</p>
     </tbody>
   </table>
   <p>* Urchin is a data collection and statistical package to monitor website usage (See section '<em>iii</em>' below)</p>
-  <p>† A full description of these cookies can be found at the following website <a title="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies" href="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies">https://developers.google.com/analytics/resources/concepts/gaConceptsCookies</a></p>
+  <p>&#182; A full description of these cookies can be found at the following website <a title="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies" href="https://developers.google.com/analytics/resources/concepts/gaConceptsCookies">https://developers.google.com/analytics/resources/concepts/gaConceptsCookies</a></p>
   <p>In addition to the cookies set above further "strictly necessary" 
 cookies are set for various web applications on other Sanger Institute 
 hosted websites.  The usage and description of these cookies can be 
