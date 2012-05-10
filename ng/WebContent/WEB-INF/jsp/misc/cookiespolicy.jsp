@@ -77,7 +77,7 @@ set (and what each is used for) together with ways to minimise the
 number of cookies you receive can be found below.</p>
     <p><em>i. List of the main GeneDB cookies</em></p>
     <p>This is a list of the main cookies set by the GeneDB website, and what each is used for.</p>
-  <table class="sorted-table filter narrow-sorted" summary="cookies">
+  <table border="0" cellpadding="15" cellspacing="15" align="center">
     <thead>
       <tr>
         <th>Cookie Name</th>
@@ -117,7 +117,7 @@ number of cookies you receive can be found below.</p>
         <td>Strictly necessary</td>
         <td>All</td>
       </tr>
-      <tr>
+      <tr class=" odd">
         <td>GenomeBrowser-location</td>
         <td>&nbsp;</td>
         <td>Optional</td>
@@ -129,7 +129,7 @@ number of cookies you receive can be found below.</p>
         <td>Optional</td>
         <td>All</td>
       </tr>
-      <tr>
+      <tr class=" odd">
         <td>GenomeBrowser-refseq</td>
         <td>&nbsp;</td>
         <td>Optional</td>
