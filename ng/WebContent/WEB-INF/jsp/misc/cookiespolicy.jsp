@@ -105,7 +105,30 @@ number of cookies you receive can be found below.</p>
         <td>Strictly necessary</td>
         <td>All</td>
       </tr>
-
+      <tr>
+        <td>GenomeBrowser-location</td>
+        <td>&nbsp;</td>
+        <td>Optional</td>
+        <td>All</td>
+      </tr>
+      <tr>
+        <td>GenomeBrowser-refseq</td>
+        <td>&nbsp;</td>
+        <td>Optional</td>
+        <td>All</td>
+      </tr>
+      <tr>
+        <td>GenomeBrowser-refseq</td>
+        <td>&nbsp;</td>
+        <td>Optional</td>
+        <td>All</td>
+      </tr>
+      <tr>
+        <td>JSESSIONID</td>
+        <td>&nbsp;</td>
+        <td>Strictly necessary</td>
+        <td>All</td>
+      </tr>
     </tbody>
   </table>
   <p>* Urchin is a data collection and statistical package to monitor website usage (See section '<em>iii</em>' below)</p>
