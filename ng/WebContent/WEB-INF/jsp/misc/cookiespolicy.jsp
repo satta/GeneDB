@@ -137,7 +137,7 @@ number of cookies you receive can be found below.</p>
       </tr>
       <tr>
         <td>JSESSIONID</td>
-        <td>&nbsp;</td>
+        <td>User session ID</td>
         <td>Strictly necessary</td>
         <td>All</td>
       </tr>
