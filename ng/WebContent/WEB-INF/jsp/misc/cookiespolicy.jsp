@@ -119,19 +119,19 @@ number of cookies you receive can be found below.</p>
       </tr>
       <tr>
         <td>GenomeBrowser-location</td>
-        <td>&nbsp;</td>
+        <td>JBrowse location</td>
         <td>Optional</td>
         <td>All</td>
       </tr>
       <tr>
         <td>GenomeBrowser-refseq</td>
-        <td>&nbsp;</td>
+        <td>JBrowse reference sequence</td>
         <td>Optional</td>
         <td>All</td>
       </tr>
       <tr>
         <td>GenomeBrowser-tracks</td>
-        <td>&nbsp;</td>
+        <td>JBrowse tacks</td>
         <td>Optional</td>
         <td>All</td>
       </tr>
