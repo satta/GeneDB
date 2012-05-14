@@ -112,9 +112,6 @@
 <td valign="top" align="left">
 <p>&copy; 2009-2010 and hosted by the <a href="http://www.sanger.ac.uk/">Sanger Institute</a></p>
 </td>
-<td valign="top" align="center">
-<p><a href="/Page/cookiespolicy"">Cookies Policy</a></p>
-</td>
 <td valign="top" align="right">
 <p>Comments/Questions: <a id="contact" href="znvygb:trarqo-uryc@fnatre.np.hx">Email us</a>
 <%--
