@@ -111,6 +111,8 @@
 <tr>
 <td valign="top" align="left">
 <p>&copy; 2009-2010 and hosted by the <a href="http://www.sanger.ac.uk/">Sanger Institute</a></p>
+</td>
+<td valign="top" align="center">
 <p><a href="<misc:url value="/Page/cookiespolicy"/>">Cookies Policy</a></p>
 </td>
 <td valign="top" align="right">
