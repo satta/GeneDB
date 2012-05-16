@@ -1,5 +1,0 @@
-dbhost=pgsrv3
-dbport=5432
-dbname=bigtest
-dbuser=pathdb
-dbpassword=LongJ!@n

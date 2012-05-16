@@ -245,6 +245,7 @@ div.comment {
 <%-- Controlled Curation Section --%>
 <c:if test="${fn:length(dto.controlledCurations) > 0}">
   <format:genePageSection id="controlCur">
+  <h2>Phenotype</h2>
   <table width="100%" class="go-section">
     <format:featureCvTerm-section featureCvTerms="${dto.controlledCurations}" organism="${dto.organismCommonName}" cvName="ControlledCuration"/>
   </table>
