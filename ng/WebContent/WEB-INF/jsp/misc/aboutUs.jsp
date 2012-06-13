@@ -78,28 +78,10 @@
 		<div class="main-light-grey">
 
 			<p>
-				<br /> <i> Leishmania </i> species:
-			</p>
-			<p>
-				<b> Dr. Matt Rogers </b>
-			</p>
-			<p>University of York, The Wellcome Trust Sanger Institute</p>
-			<p>
-				Matt obtained his Ph.D. in Botany from the University of British
-				Columbia in 2006 in Prof. Patrick Keeling's lab. He then relocated
-				to the UK where he joined Dr. Mark van der Giezen as a Wellcome
-				Trust post-doctoral fellow at Queen Mary, University of London and
-				the University of Exeter. His work at the WTSI has focused on
-				functional annotation of <i> Leishmania </i> genomes and assembly
-				and annotation of the <i> Leishmania mexicana </i> genome. He is
-				also interested in evolutionary protistology, gene family evolution,
-				lateral gene transfer, and strong coffee.
-			</p>
-			<p>
 				<br /> <i> Trypanosoma </i> species:
 			</p>
 			<p>
-				<b> Dr. Flora Logan-Klumpler </b>
+				<b> Dr. Flora Logan-Klumpler </b> <i>currently on maternity leave</i>
 			</p>
 			<p>University of Cambridge, The Wellcome Trust Sanger Institute</p>
 			<p>
@@ -142,40 +124,33 @@
 
 
 			<p>
-				<br /> <b> Dr. Giles Velarde </b>
-			</p>
-			<p>University of Cambridge, University of York, The Wellcome
-				Trust Sanger Institute</p>
-			<p>Giles trained originally as a biochemist at Manchester
-				University, but over the course of his Ph.D. at UMIST, moved into
-				bioinformatics and software engineering. Following his doctoral
-				studies, he worked at the Sequence Analysis Group at Manchester
-				Bioinformatics, followed by six years as part of the Bioanalytical
-				Sciences Group at the Manchester Interdisciplinary Biocentre. As
-				part of the WTSI Pathogen Genomics informatics team, he is focusing
-				on the devlopment of new tools for GeneDB.</p>
-			<p>
 				<br /> <b> Dr. Jacqueline McQuillan </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
+                           <p>Jacqueline McQuillan has PhD is Software Engineering and joined the 
+                              Pathogen Genomics group at the Wellcome Trust Sanger Institute as a 
+                              postdoctoral fellow in 2008. In 2010, she took on the role of managing 
+                              the Pathogen Informatics team whose main responsibilities are to develop 
+                              sequence analysis pipelines and provide informatics support to 
+			      the Pathogen Genomics group.</p>
+
 			<p>
-				<br /> <b> Dr. Tina Eyre </b>
+				<br /> <b> Dr. Andrew Page </b>
+			</p>
+			<p>The Wellcome Trust Sanger Institute</p>
+			<p>Andrew has a PhD in Computer Science in the area of distributed computing. 
+			   He joined the Sequencing Informatics team at the Wellcome Trust Sanger Institute 
+			   in 2009 as a Senior Software Developer and moved to the Pathogen Informatics 
+			   team in June 2011 as a Principal Software Developer.
+			<p>
+				<br /> <b> Dr. Craig Porter </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
-				<br /> <b> Dr. Nishadi De Silva </b>
-			</p>
-			<p>The Wellcome Trust Sanger Institute</p>
-			<p>Nishadi completed her PhD in Computer Science at the
-				University of Southampton. After two years of postdoctoral research
-				in the Dependable Systems and Software Engineering group at the
-				University of Southampton, she joined the Wellcome Trust Sanger
-				Institute in April 2009 where she works in the Pathogen Genomics
-				Informatics team.</p>
+			   Craig has a PhD in Chemistry and an MSc in Information Technology. 
+			   After several postdocs at UCL and the EBI, he joined the Pathogen 
+			   Informatics group in November 2010 where he works as a Senior Bioinformatician.
 			<p>
-				<br /> <b> Dr. Tim Carver </b>
-			</p>
-			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
 				<br /> <b> Martin Aslett </b>
 			</p>
@@ -189,6 +164,24 @@
 				to the WTSI Pathogen Genomics informatics team, where he currently
 				has a role providing informatics support to the wider Pathogen
 				Genomics group.</p>
+				<br /> <b> Dr. Nishadi De Silva </b> <i>currently on maternity leave</i>
+			</p>
+			<p>The Wellcome Trust Sanger Institute</p>
+			<p>Nishadi completed her PhD in Computer Science at the
+				University of Southampton. After two years of postdoctoral research
+				in the Dependable Systems and Software Engineering group at the
+				University of Southampton, she joined the Wellcome Trust Sanger
+				Institute in April 2009 where she works in the Pathogen Genomics
+				Informatics team.</p>
+			<p>
+				<br /> <b> Dr. Tim Carver </b>
+			</p>
+			<p>The Wellcome Trust Sanger Institute</p>
+			<p>
+			   Tim has a PhD in Chemistry. He did a postdoc at the University of Cambridge 
+			   before joining the Medical Research Council in 2000. From 2004 he has been 
+			   the lead developer for Artemis and ACT.
+			<p>   
 
 		</div>
 		<div class="main-light-grey-bot"></div>
@@ -244,6 +237,28 @@
 			<p>
 				<b> Chinmay Patel </b>
 			</p>
+			<p><b>Dr. Matt Rogers</b> <p>
+			<p>University of Pittsburgh</p>
+			<p>Matt obtained his Ph.D. in Botany from the University of British Columbia 
+			in 2006 in Prof. Patrick Keeling's lab. He then relocated to the UK where 
+			he joined Dr. Mark van der Giezen as a Wellcome Trust post-doctoral fellow at 
+			Queen Mary, University of London and the University of Exeter. His work at the 
+			WTSI was focused on functional annotation of Leishmania genomes and assembly 
+			and annotation of the Leishmania mexicana genome. He is also interested in 
+			evolutionary protistology, gene family evolution, lateral gene transfer, 
+			and strong coffee. <p>
+			<p><b>Dr. Tina Eyre</b><p>
+			<p>The Wellcome Trust Sanger Institute<p>
+
+			<p><b>Dr. Giles Velarde </b><p>
+			<p>University of Cambridge, University of York, The Wellcome Trust Sanger Institute<p>
+			<p>Giles trained originally as a biochemist at Manchester University, but over the 
+			course of his Ph.D. at UMIST, moved into bioinformatics and software engineering. 
+			Following his doctoral studies, he worked at the Sequence Analysis Group at 
+			Manchester Bioinformatics, followed by six years as part of the Bioanalytical 
+			Sciences Group at the Manchester Interdisciplinary Biocentre. As part of the 
+			WTSI Pathogen Genomics informatics team, he focused on the development of 
+			new tools for GeneDB and was the main developer of the CRAWL web-services for GeneDB.<p>
 
 
 		</div>
