@@ -77,7 +77,7 @@ Deadline for applications: 29 June 2012
 <div class="light-grey-top"></div>
 <div class="light-grey">
 <p class="block-para">Data <br />
-&raquo; <b>2012-06-27</b>: Automatically generated gene product descriptions of <a href="http://www.genedb.org/Homepage/Smansoni"><i>Schistosoma mansoni</i> have been updated. Manually curated genes have not been altered. If you have any concerns please <a href="mailto:genedb-help@sanger.ac.uk">contact us</a>.<br>
+&raquo; <b>2012-06-27</b>: Automatically generated gene product descriptions of <a href="http://www.genedb.org/Homepage/Smansoni"><i>Schistosoma mansoni</i></a> have been updated. Manually curated genes have not been altered. If you have any concerns please <a href="mailto:genedb-help@sanger.ac.uk">contact us</a>.<br>
 &raquo; Version 1 of the rodent tapeworm <a href="http://www.genedb.org/Homepage/Hmicrostoma"><i>Hymenolepis microstoma</i></a> is now available on GeneDB!<br>
 &raquo; Version 1 of <a href="http://www.genedb.org/Homepage/PyoeliiYM"><i>P. yoelii yoelii</i> YM</a> is now available on GeneDB!<br>
 &raquo; A new sequence version of <a href="http://www.genedb.org/Homepage/Tbruceibrucei927" ><i>T. brucei</i> TREU927</a> Chr 9 is now available on GeneDB!<br>
