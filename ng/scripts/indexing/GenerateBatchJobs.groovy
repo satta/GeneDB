@@ -27,7 +27,7 @@ String sourceHome = this.args[2];
 String baseOutputDir = this.args[3];
 
 def boilerPlate = '''
-export JAVA_HOME=/software/pathogen/external/applications/java/java6
+export JAVA_HOME=/software/pathogen/external/applications/java/jdk1.6.0_33
 export ANT_HOME=/software/pathogen/external/applications/ant/apache-ant
 export PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:$PATH
 unset DISPLAY
