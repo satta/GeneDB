@@ -83,7 +83,6 @@ Deadline for applications: 29 June 2012
 &raquo; Version 1 of <a href="http://www.genedb.org/Homepage/PyoeliiYM"><i>P. yoelii yoelii</i> YM</a> is now available on GeneDB!<br>
 &raquo; A new sequence version of <a href="http://www.genedb.org/Homepage/Tbruceibrucei927" ><i>T. brucei</i> TREU927</a> Chr 9 is now available on GeneDB!<br>
 &raquo; A new <a href="http://nar.oxfordjournals.org/content/early/2011/11/23/nar.gkr1032.abstract">GeneDB publication</a> is now available to access online! <br>
-=
 </p>
 </div>
 <div class="light-grey-bot"></div>
