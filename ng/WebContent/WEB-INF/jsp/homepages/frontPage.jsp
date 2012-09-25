@@ -77,7 +77,8 @@ Deadline for applications: 29 June 2012
 <div class="light-grey-top"></div>
 <div class="light-grey">
 <p class="block-para">Data <br />
-&raquo; Version 3 of  <a href="http://www.genedb.org/Homepage/PfalciparumIT" ><i>P. falciparum</i> IT</a> is now available on GeneDB!
+&raquo; As the locus tag prefix EmW is already in use in the <a href="http://www.insdc.org/">INSDC</a> databases, the prefix used for <a href="http://www.genedb.org/Homepage/Emultilocularis"><i>E. multilocularis</i></a> systematic IDs has been changed to EmuJ. The numbers after the prefix remain the same (e.g. EmW_001166400 has become EmuJ_001166400).<br>
+&raquo; Version 3 of  <a href="http://www.genedb.org/Homepage/PfalciparumIT" ><i>P. falciparum</i> IT</a> is now available on GeneDB!<br>
 &raquo; <b>2012-06-27</b>: Automatically generated gene product descriptions of <a href="http://www.genedb.org/Homepage/Smansoni"><i>Schistosoma mansoni</i></a> have been updated. Manually curated genes have not been altered. If you have any concerns please <a href="mailto:genedb-help@sanger.ac.uk">contact us</a>.<br>
 &raquo; Version 1 of the rodent tapeworm <a href="http://www.genedb.org/Homepage/Hmicrostoma"><i>Hymenolepis microstoma</i></a> is now available on GeneDB!<br>
 &raquo; Version 1 of <a href="http://www.genedb.org/Homepage/PyoeliiYM"><i>P. yoelii yoelii</i> YM</a> is now available on GeneDB!<br>
