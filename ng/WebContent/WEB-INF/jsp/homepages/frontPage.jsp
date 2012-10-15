@@ -59,31 +59,20 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
-
-<h1>Events</h1>
+<h1>Publications</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
 <p>
-<a href="http://www.wellcome.ac.uk/Education-resources/Courses-and-conferences/Advanced-Courses-and-Scientific-Conferences/Workshops/WTVM050772.htm">Working with Parasite Database Resources Workshop</a><br>
-21-26 October 2012<br>
-Wellcome Trust Genome Campus, Hinxton, Cambridge, UK<br>
-Deadline for applications: 29 June 2012
-</p>
+&raquo; A <a href="http://nar.oxfordjournals.org/content/early/2011/11/23/nar.gkr1032.abstract">GeneDB publication</a> is available to access online! <br>
 </div>
-<div class="baby-blue-bot"></div>
-
-
 <h1>News</h1>
 <div class="light-grey-top"></div>
 <div class="light-grey">
 <p class="block-para">Data <br />
+&raquo;<br>The Parasite Genomics team are happy to announce that the <i>Taenia solium</i> genome, assembled and annotated by the <i>Taenia solium</i> sequencing consortium, is now publicly available. The genome can be accessed from <a href="http://www.taeniasolium.unam.mx/taenia">their homepage</a> and downloaded from an <a href="ftp://bioinformatica.biomedicas.unam.mx/TsM1_13.12.11/">FTP-site</a>.<br>
 &raquo; As the locus tag prefix EmW is already in use in the <a href="http://www.insdc.org/">INSDC</a> databases, the prefix used for <a href="http://www.genedb.org/Homepage/Emultilocularis"><i>E. multilocularis</i></a> systematic IDs has been changed to EmuJ. The numbers after the prefix remain the same (e.g. EmW_001166400 has become EmuJ_001166400).<br>
 &raquo; Version 3 of  <a href="http://www.genedb.org/Homepage/PfalciparumIT" ><i>P. falciparum</i> IT</a> is now available on GeneDB!<br>
 &raquo; <b>2012-06-27</b>: Automatically generated gene product descriptions of <a href="http://www.genedb.org/Homepage/Smansoni"><i>Schistosoma mansoni</i></a> have been updated. Manually curated genes have not been altered. If you have any concerns please <a href="mailto:genedb-help@sanger.ac.uk">contact us</a>.<br>
-&raquo; Version 1 of the rodent tapeworm <a href="http://www.genedb.org/Homepage/Hmicrostoma"><i>Hymenolepis microstoma</i></a> is now available on GeneDB!<br>
-&raquo; Version 1 of <a href="http://www.genedb.org/Homepage/PyoeliiYM"><i>P. yoelii yoelii</i> YM</a> is now available on GeneDB!<br>
-&raquo; A new sequence version of <a href="http://www.genedb.org/Homepage/Tbruceibrucei927" ><i>T. brucei</i> TREU927</a> Chr 9 is now available on GeneDB!<br>
-&raquo; A new <a href="http://nar.oxfordjournals.org/content/early/2011/11/23/nar.gkr1032.abstract">GeneDB publication</a> is now available to access online! <br>
 </p>
 </div>
 <div class="light-grey-bot"></div>
