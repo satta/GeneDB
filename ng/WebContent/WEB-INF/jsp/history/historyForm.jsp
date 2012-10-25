@@ -203,15 +203,17 @@ Display in the browser window is the default output destination. Users of some b
 <br>
 
 Additionally, very large datasets can cause the List Download to fail with a time-out error. The exact number of entries for which a time-out will occur depends upon the requested fields and server load but is typically around 7000. Thus, an option to have download results e-mailed directly, is included.
+<br>
+<b>NOTE:</b> We have discovered that the "Save as" option was giving incomplete result sets. Whilst this bug is investigated, we are disabling this option. 
 </P>
 
 <table width="100%">
 <tr>
 <td><input type="radio" name="output_dest" value="TO_BROWSER" checked>&nbsp;Normal page</td>
 </tr>
-<tr>
+<!-- <tr>
 <td><input type="radio" name="output_dest" value="TO_FILE">&nbsp;Save as...</td>
-</tr>
+</tr> -->
 <tr>
 <td><input type="radio" name="output_dest" value="TO_EMAIL">&nbsp;Email to <input type="text" name="email"></td>
 </tr>
