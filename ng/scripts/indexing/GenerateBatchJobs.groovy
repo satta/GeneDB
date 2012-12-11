@@ -167,15 +167,17 @@ while (jobList.size() > 0) {
         File fdone = new File("${baseDir}/scripts/${job}.script.done")
         if (fdone.exists()) {
             File f = new File("${baseDir}/scripts/${job}.script.err")
-            if (f.size() == 0) {
-                finishedJobs.add(job)
-                justFinishedJobs.add("WORKED The script ${baseDir}/scripts/${job}.script has run")
-            } else {
-                worked = false
-                finishedJobs.add(job)
-                failedJobs.add(job)
-                justFinishedJobs.add("FAILED The script ${baseDir}/scripts/${job}.script.err has failed")
-				print f.getText();
+            if (f.exists()) {
+                if (f.size() == 0) {
+                    finishedJobs.add(job)
+                    justFinishedJobs.add("WORKED The script ${baseDir}/scripts/${job}.script has run")
+                } else {
+                    worked = false
+                    finishedJobs.add(job)
+                    failedJobs.add(job)
+                    justFinishedJobs.add("FAILED The script ${baseDir}/scripts/${job}.script.err has failed")
+	    			print f.getText();
+                }
             }
         } else {
             System.err.print(" ${job}")
