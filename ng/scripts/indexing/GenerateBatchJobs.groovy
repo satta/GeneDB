@@ -119,6 +119,7 @@ for (org in orgs) {
     //println "Created? " + script.createNewFile() 
     script.write(boilerPlate)
     script.append(execLine + '\n')
+    script.append('touch '+scriptName+'.done\n')
     "chmod 755 ${scriptName}".execute()
 	
 	def outFileName= "${scriptName}.out"
@@ -163,8 +164,9 @@ while (jobList.size() > 0) {
     List failedJobs = new ArrayList()
     List justFinishedJobs = new ArrayList()
     for (job in jobList) {
-        File f = new File("${baseDir}/scripts/${job}.script.err")
-        if (f.exists()) {
+        File fdone = new File("${baseDir}/scripts/${job}.script.done")
+        if (fdone.exists()) {
+            File f = new File("${baseDir}/scripts/${job}.script.err")
             if (f.size() == 0) {
                 finishedJobs.add(job)
                 justFinishedJobs.add("WORKED The script ${baseDir}/scripts/${job}.script has run")
