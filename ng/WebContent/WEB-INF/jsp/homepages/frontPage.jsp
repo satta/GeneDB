@@ -63,7 +63,7 @@
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
 <p>
-&raquo; Due to essential systems work, the GeneDB blast servers will be unavailable from around 08:30 to around 12:00 on Monday January 14th 2013.<br>
+&raquo; Due to essential systems work, GeneDB may be unavailable from around 08:30 to around 12:00 (UK time) on Monday January 14th 2013.<br>
 </div>
 <h1>Publications</h1>
 <div class="baby-blue-top"></div>
