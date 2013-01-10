@@ -59,6 +59,12 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
+<h1>Service Disruption</h1>
+<div class="baby-blue-top"></div>
+<div class="baby-blue">
+<p>
+&raquo; Due to essential systems work, the GeneDB blast servers will be unavailable from around 08:30 to around 12:00 on Monday January 14th 2013.<br>
+</div>
 <h1>Publications</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
