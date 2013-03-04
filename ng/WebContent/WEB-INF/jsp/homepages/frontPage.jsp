@@ -59,7 +59,7 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
-<h1>March 4th 2013: BLAST problems</i>
+<h1>March 4th 2013: BLAST problems</h1>
 <div class="light-grey-top"></div>
 <div class="light-grey">
 <p>&raquo;We are currently having problems with the GeneDB BLAST server, which we are trying to fix. We do not, as yet, have an estimated time for BLAST services being restored to GeneDB.<br>
