@@ -68,12 +68,14 @@
 Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.<br>
 Deadline for Applications: 21 June 2013<br>
 </div>
+<div class="baby-blue-bot"></div>
 <h1>Publications</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
 <p>
 &raquo; A <a href="http://nar.oxfordjournals.org/content/early/2011/11/23/nar.gkr1032.abstract">GeneDB publication</a> is available to access online! <br>
 </div>
+<div class="baby-blue-bot"></div>
 <h1>News</h1>
 <div class="light-grey-top"></div>
 <div class="light-grey">
