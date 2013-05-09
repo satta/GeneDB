@@ -59,6 +59,15 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
+<h1>Events</h1>
+<div class="baby-blue-top"></div>
+<div class="baby-blue">
+<p>
+&raquo;<a href="http://www.wellcome.ac.uk/Education-resources/Courses-and-conferences/Advanced-Courses-and-Scientific-Conferences/Workshops/WTVM050772.htm">Working with Parasite Database Resources Workshop</a><br>
+20-25 October 2013<br>
+Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.<br>
+Deadline for Applications: 21 June 2013<br>
+</div>
 <h1>Publications</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
