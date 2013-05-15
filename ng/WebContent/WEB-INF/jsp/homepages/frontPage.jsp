@@ -58,6 +58,7 @@
 
 </div><!-- end main content column -left -->
 
+<div id="col-1-2">
 <h1>Previous GeneDB Website</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
@@ -68,7 +69,6 @@
 </div>
 <div class="baby-blue-bot"></div>
 
-<div id="col-1-2">
 <h1>Events</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
