@@ -61,10 +61,10 @@
 <h1>Previous GeneDB Website</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
-&raquo; The old GeneDB website was switched off on May 14th 2013.<br />
-&raquo; Content from the fission yeast <i>Schizosaccharomyces pombe</i> can now be found in <a href="http://www.pombase.org/">Pombase</a>.<br />
-&raquo; Content from the pathogenic fungus <i>Candida dubliniensis</i> can now be found in the <a href="http://www.candidagenome.org/">Candida Genome Database</a>.<br />
-&raquo; All other content is now found on this site.<br />
+&raquo; The old GeneDB website was switched off on May 14th 2013.<br>
+&raquo; Content from the fission yeast <i>Schizosaccharomyces pombe</i> can now be found in <a href="http://www.pombase.org/">Pombase</a>.<br>
+&raquo; Content from the pathogenic fungus <i>Candida dubliniensis</i> can now be found in the <a href="http://www.candidagenome.org/">Candida Genome Database</a>.<br>
+&raquo; All other content is now found on this site.<br>
 </div>
 <div class="baby-blue-bot"></div>
 
