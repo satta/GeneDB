@@ -58,6 +58,16 @@
 
 </div><!-- end main content column -left -->
 
+<h1>Previous GeneDB Website</h1>
+<div class="baby-blue-top"></div>
+<div class="baby-blue">
+&raquo; The old GeneDB website was switched off on May 14th 2013.<br />
+&raquo; Content from the fission yeast <i>Schizosaccharomyces pombe</i> can now be found in <a href="http://www.pombase.org/">Pombase</a>.<br />
+&raquo; Content from the pathogenic fungus <i>Candida dubliniensis</i> can now be found in the <a href="http://www.candidagenome.org/">Candida Genome Database</a>.<br />
+&raquo; All other content is now found on this site.<br />
+</div>
+<div class="baby-blue-bot"></div>
+
 <div id="col-1-2">
 <h1>Events</h1>
 <div class="baby-blue-top"></div>
@@ -134,14 +144,6 @@ website, service interruptions etc. To subscribe please see <br>
 &raquo; <a href="<misc:url value="/web-artemis/"/>">Web Artemis</a><br />
 &raquo; <a href="<misc:url value="/cgi-bin/amigo/go.cgi"/>">AmiGO</a><br />
 &raquo; <a href="<misc:url value="/Page/jbrowse"/>">JBrowse</a><br />
-</div>
-<div class="light-grey-bot"></div>
-
-<h1>Go to</h1>
-<div class="light-grey-top"></div>
-<div class="light-grey">
-&raquo; <a href="http://old.genedb.org/">Previous GeneDB version</a><br />
-&raquo; <a href="http://www.pombase.org/">Pombase</a><br />
 </div>
 <div class="light-grey-bot"></div>
 
