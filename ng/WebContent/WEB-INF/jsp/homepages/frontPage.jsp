@@ -59,12 +59,6 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
-<h1>WARNING: Saturday June 15th 2013</h1>
-<div class="baby-blue-top"></div>
-<div class="baby-blue">
-&raquo;Due to essential systems work, the GeneDB website will be unavailable from 9 a.m. on this day. It is anticipated that service should return by 11 a.m. but the site should be considered to be "at risk" until 5 p.m.<br>
-</div>
-<div class="baby-blue-bot"></div>
 
 <h1>Previous GeneDB Website</h1>
 <div class="baby-blue-top"></div>
