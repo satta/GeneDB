@@ -59,20 +59,43 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
+
+<h1>Previous GeneDB Website</h1>
+<div class="baby-blue-top"></div>
+<div class="baby-blue">
+&raquo; The old GeneDB website was switched off on May 14th 2013.<br>
+&raquo; Content from the fission yeast <i>Schizosaccharomyces pombe</i> can now be found in <a href="http://www.pombase.org/">Pombase</a>.<br>
+&raquo; Content from the pathogenic fungus <i>Candida dubliniensis</i> can now be found in the <a href="http://www.candidagenome.org/">Candida Genome Database</a>.<br>
+&raquo; All other content is now found on this site.<br>
+</div>
+<div class="baby-blue-bot"></div>
+
+<h1>Events</h1>
+<div class="baby-blue-top"></div>
+<div class="baby-blue">
+<p>
+&raquo;<a href="http://www.wellcome.ac.uk/Education-resources/Courses-and-conferences/Advanced-Courses-and-Scientific-Conferences/Workshops/WTVM050772.htm">Working with Parasite Database Resources Workshop</a><br>
+20-25 October 2013<br>
+Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.<br>
+Deadline for Applications: 21 June 2013<br>
+</div>
+<div class="baby-blue-bot"></div>
 <h1>Publications</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
 <p>
 &raquo; A <a href="http://nar.oxfordjournals.org/content/early/2011/11/23/nar.gkr1032.abstract">GeneDB publication</a> is available to access online! <br>
 </div>
+<div class="baby-blue-bot"></div>
 <h1>News</h1>
 <div class="light-grey-top"></div>
 <div class="light-grey">
 <p class="block-para">Data <br />
-&raquo;The Parasite Genomics team are happy to announce that the <i>Taenia solium</i> genome, assembled and annotated by the <i>Taenia solium</i> sequencing consortium, is now publicly available. The genome can be accessed from <a href="http://www.taeniasolium.unam.mx/taenia">their homepage</a> and downloaded from an <a href="ftp://bioinformatica.biomedicas.unam.mx/TsM1_13.12.11/">FTP-site</a>.<br>
+&raquo;<a href="http://tritrypdb.org/tritrypdb/">TrytripDB 5.0</a> is now available with updated versions of the Kinetoplastid protozoan genomes. This new release includes snapshots of the GeneDB database (January 2013) for all the genomes of Trypanosomes and Leishmanias in GeneDB. <a href="http://tritrypdb.org/tritrypdb/showXmlDataContent.do?name=XmlQuestions.News#tryp05_13_news">More details</a>.<br>
+&raquo;Version 2 of <a href="http://www.genedb.org/Homepage/Pyoelii"><i>P. yoelii yoelii</i> 17XNL</a> is now available on GeneDB.<br>
+&raquo;The <i>Taenia solium</i> genome is now also available on <a href="http://www.genedb.org/Homepage/Tsolium">GeneDB</a>. As previously announced, the genome and genes can also be accessed from the <i>Taenia solium</i> <a href="http://www.taeniasolium.unam.mx/taenia">genome consortium homepage</a> and downloaded from an <a href="ftp://bioinformatica.biomedicas.unam.mx/TsM1_13.12.11/">FTP-site</a>.<br>
+<!--&raquo;The Parasite Genomics team are happy to announce that the <i>Taenia solium</i> genome, assembled and annotated by the <i>Taenia solium</i> sequencing consortium, is now publicly available. The genome can be accessed from <a href="http://www.taeniasolium.unam.mx/taenia">their homepage</a> and downloaded from an <a href="ftp://bioinformatica.biomedicas.unam.mx/TsM1_13.12.11/">FTP-site</a>.<br>-->
 &raquo; As the locus tag prefix EmW is already in use in the <a href="http://www.insdc.org/">INSDC</a> databases, the prefix used for <a href="http://www.genedb.org/Homepage/Emultilocularis"><i>E. multilocularis</i></a> systematic IDs has been changed to EmuJ. The numbers after the prefix remain the same (e.g. EmW_001166400 has become EmuJ_001166400).<br>
-&raquo; Version 3 of  <a href="http://www.genedb.org/Homepage/PfalciparumIT" ><i>P. falciparum</i> IT</a> is now available on GeneDB!<br>
-&raquo; <b>2012-06-27</b>: Automatically generated gene product descriptions of <a href="http://www.genedb.org/Homepage/Smansoni"><i>Schistosoma mansoni</i></a> have been updated. Manually curated genes have not been altered. If you have any concerns please <a href="mailto:genedb-help@sanger.ac.uk">contact us</a>.<br>
 </p>
 </div>
 <div class="light-grey-bot"></div>
@@ -121,14 +144,6 @@ website, service interruptions etc. To subscribe please see <br>
 &raquo; <a href="<misc:url value="/web-artemis/"/>">Web Artemis</a><br />
 &raquo; <a href="<misc:url value="/cgi-bin/amigo/go.cgi"/>">AmiGO</a><br />
 &raquo; <a href="<misc:url value="/Page/jbrowse"/>">JBrowse</a><br />
-</div>
-<div class="light-grey-bot"></div>
-
-<h1>Go to</h1>
-<div class="light-grey-top"></div>
-<div class="light-grey">
-&raquo; <a href="http://old.genedb.org/">Previous GeneDB version</a><br />
-&raquo; <a href="http://www.pombase.org/">Pombase</a><br />
 </div>
 <div class="light-grey-bot"></div>
 
