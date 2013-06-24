@@ -77,11 +77,13 @@ public class MotifQuery extends OrganismLuceneQuery {
 		logger.info(search);
 		
 		actualSearch = new String(search);
+		if(actualSearch.indexOf("{") == -1) {
 		for (Entry<Character, String> entry : PROTEIN_GROUP_MAP.entrySet()) {
             logger.info(Character.toString(entry.getKey()) + "  " + entry.getValue());
             actualSearch = actualSearch.replaceAll(Character.toString(entry.getKey()), entry.getValue());
             logger.info(actualSearch);
         }
+		}
 		pattern = Pattern.compile(actualSearch);
 		
 		// let's ignore any motifs smaller than 2 characters
