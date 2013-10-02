@@ -69,7 +69,7 @@
 &raquo; All other content is now found on this site.<br>
 </div>
 <div class="baby-blue-bot"></div>
-
+<!--
 <h1>Events</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
@@ -80,6 +80,7 @@ Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.<br>
 Deadline for Applications: 21 June 2013<br>
 </div>
 <div class="baby-blue-bot"></div>
+-->
 <h1>Publications</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
