@@ -28,6 +28,7 @@ String baseOutputDir = this.args[3];
 
 def boilerPlate = '''
 export JAVA_HOME=/software/pathogen/external/applications/java/jdk1.6.0_33
+export JAVA_HOME=/software/pathogen/external/apps/usr/local/jdk1.6.0_45
 export ANT_HOME=/software/pathogen/external/applications/ant/apache-ant
 export PATH=${ANT_HOME}/bin:${JAVA_HOME}/bin:$PATH
 unset DISPLAY
@@ -142,14 +143,14 @@ for (org in orgs) {
 		}
 	}
 	
-	def processExecLine = "source /software/pathogen/internal/pathdev/bin/setup_pathpipe_environment.sh; bsub -q ${queueName} -R 'select[mem>4000] rusage[mem=4000]' -M 4000000 -o ${outFileName} -e ${errFileName} ${scriptName}"
+	def processExecLine = "source /etc/bashrc; bsub -G team81 -q ${queueName} -R 'select[mem>4000] rusage[mem=4000]' -M 4000 -o ${outFileName} -e ${errFileName} ${scriptName}"
 	println processExecLine 
-    Process p = ["ssh", "pcs4a", processExecLine].execute()
+
+    Process p = ["ssh", "farm3-login", processExecLine].execute()
     def sout = new StringBuffer()
     def serr = new StringBuffer()
     p.consumeProcessOutput(sout, serr)
     p.waitFor()
-	
 }
 
 println "All jobs submitted - waiting for them to finish"
