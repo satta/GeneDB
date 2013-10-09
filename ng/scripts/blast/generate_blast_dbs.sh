@@ -15,7 +15,7 @@ doeval() {
 	fi
 }
 
-BLAST_DB_PATH="/lustre/scratch101/blastdb/Pathogen/website/genedb/"
+BLAST_DB_PATH="/lustre/scratch110/blastdb/Pathogen/website/genedb/"
 
 ORIGINAL_IFS=$IFS
 IFS=$'\n'
