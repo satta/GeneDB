@@ -7,7 +7,7 @@
 	<br/>
 	<h2>Frequently Asked Questions</h2>
 	<h3>I've found my favourite protein, how do I now download the fasta?</h3>
-	<div class="light-grey-top"></div>
+	<div class="full-light-grey-top"></div>
 	<div class="light-grey">
 	<p>
 	<ol>
@@ -19,7 +19,7 @@
 	</ol>
 	</p>
 	</div>
-	<div class="light-grey-bot"></div>
+	<div class="full-light-grey-bot"></div>
 	<h3>Can I download all proteins from my favourite species?</h3>
 	<div class="baby-blue-top"></div>
 	<div class="baby-blue"></div>
