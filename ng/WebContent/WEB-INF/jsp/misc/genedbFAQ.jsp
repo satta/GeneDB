@@ -9,6 +9,15 @@
 	<h3>I've found my favourite protein, how do I now download the fasta?</h3>
 	<div class="light-grey-top"></div>
 	<div class="light-grey"></div>
+	<p>
+	<ol>
+	<li>From the gene page of your protein, click "ADD TO BASKET".</li>
+	<li>Choose the "History" option from the "Tools" menu.</li>
+	<li>Click the "Download" link for your search.</li>
+	<li>Set "Output Format" to "FASTA Sequences", choose the fields required for the fasta header and select "Protein sequence" as Sequence type.</li>
+	<li>Choose "Normal Page" as output destination and click "Submit Query".</li>
+	</ol>
+	</p>
 	<div class="light-grey-bot"></div>
 	<h3>Can I download all proteins from my favourite species?</h3>
 	<div class="baby-blue-top"></div>
