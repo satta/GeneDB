@@ -105,12 +105,11 @@
 
 		</div>
 		<div class="main-light-grey-bot"></div>
-		
+					<br />
 
-		
+		<h3>Primary Contacts</h3>
 		<div class="main-light-grey-top"></div>
 		<div class="main-light-grey">
-		<h3>Primary Contacts</h3>
 		<p><br /> <i> Schistosoma mansoni </i>:</p>
 		<p><b>Dr. Anna Protasio</b></p>
 		<p>The Wellcome Trust Sanger Institute</p>
@@ -123,6 +122,7 @@
 		
 		</div>
 		<div class="main-light-grey-bot"></div>
+			<br />
 		<h3>Developers</h3>
 
 		<div class="main-light-grey-top"></div>
