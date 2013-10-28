@@ -8,7 +8,7 @@
 	<h2>Frequently Asked Questions</h2>
 	<h3>I've found my favourite protein, how do I now download the fasta?</h3>
 	<div class="light-grey-top"></div>
-	<div class="light-grey"></div>
+	<div class="light-grey">
 	<p>
 	<ol>
 	<li>From the gene page of your protein, click "ADD TO BASKET".</li>
@@ -18,6 +18,7 @@
 	<li>Choose "Normal Page" as output destination and click "Submit Query".</li>
 	</ol>
 	</p>
+	</div>
 	<div class="light-grey-bot"></div>
 	<h3>Can I download all proteins from my favourite species?</h3>
 	<div class="baby-blue-top"></div>
