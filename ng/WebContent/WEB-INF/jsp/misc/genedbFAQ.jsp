@@ -6,7 +6,7 @@
 <format:page>
 	<br/>
 	<h2>Frequently Asked Questions</h2>
-	<h3>I’ve found my favourite protein, how do I now download the fasta?</h3>
+	<h3>I've found my favourite protein, how do I now download the fasta?</h3>
 	<div class="main-light-grey-top"></div>
 	<div class="main-light-grey"></div>
 	<div class="main-light-grey-bot"></div>
@@ -18,7 +18,7 @@
 	<div class="main-light-grey-top"></div>
 	<div class="main-light-grey"></div>
 	<div class="main-light-grey-bot"></div>
-	<h3>I’ve searched for my favourite protein, and yesterday it was there, but now I can’t find it. Where is it?</h3>
+	<h3>I've searched for my favourite protein, and yesterday it was there, but now I can't find it. Where is it?</h3>
 	<div class="baby-blue-top"></div>
 	<div class="baby-blue"></div>
 	<div class="baby-blue-bot"></div>
