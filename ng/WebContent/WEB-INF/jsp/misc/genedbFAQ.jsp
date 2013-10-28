@@ -5,6 +5,7 @@
 <format:header title="GeneDB Frequently Asked Questions" />
 <format:page>
 	<br/>
+	<div id="col-1-1">
 	<h2>Frequently Asked Questions</h2>
 	<h3>I've found my favourite protein, how do I now download the fasta?</h3>
 	<div class="full-light-grey-top"></div>
@@ -40,4 +41,5 @@
 	<div class="baby-blue-top"></div>
 	<div class="baby-blue"></div>
 	<div class="baby-blue-bot"></div>
+	</div>
 </format:page>
