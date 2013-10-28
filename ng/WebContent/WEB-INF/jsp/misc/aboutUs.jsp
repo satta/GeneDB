@@ -78,24 +78,13 @@
 		<div class="main-light-grey">
 
 			<p>
-				<br /> <i> Trypanosoma </i> species:
+				<br /> <i> Trypanosoma </i> and <i>Leishmania</i> species:
 			</p>
 			<p>
-				<b> Dr. Flora Logan-Klumpler </b> <i>currently on maternity leave</i>
+				<b> Dr. Fatima Silva-Franco</b>
 			</p>
-			<p>University of Cambridge, The Wellcome Trust Sanger Institute</p>
-			<p>
-				Flora completed her Ph.D. in trypanosome vitamin C biosynthesis in
-				Prof. John Kelly's group at the London School of Hygiene and
-				Tropical Medicine in 2008. She then moved to the University of
-				Georgia, Athens to work on <i> Trypanosoma cruzi </i> fatty acid
-				metabolism, and <i> T. cruzi </i> specific ontology development in
-				the Tarleton Research Group. She is now working on the curation and
-				functional annotation of the <i> Trypanosoma brucei </i> genome and
-				the development of a new phenotype curation tool utilising new and
-				existing ontologies at WTSI. She is also involved in the Trypanocyc
-				community annotation project.
-			</p>
+			<p>University of Liverpool</p>
+			<p>Fatima Silva has a PhD in Molecular Biology and a MRes in Bioinformatics. She joined the Functional and Comparative Genomics group at the University of Liverpool in 2013. She is curating Leishmania and Trypanosoma genomes.</p>
 			<p>
 				<br /> <i> Plasmodium </i> species:
 			</p>
@@ -116,7 +105,24 @@
 
 		</div>
 		<div class="main-light-grey-bot"></div>
+		
 
+		
+		<div class="main-light-grey-top"></div>
+		<div class="main-light-grey">
+		<h3>Primary Contacts</h3>
+		<p><br /> <i> Schistosoma mansoni </i>:</p>
+		<p><b>Dr. Anna Protasio</b></p>
+		<p>The Wellcome Trust Sanger Institute</p>
+		<p><br /> <i> Echinococcus granulosus </i>, <i> Echinococcus multilocularis </i> and <i>Hymenolepis microstoma</i>:</p>
+		<p><b>Dr. Magdalena Zarowiecki</b></p>
+		<p>The Wellcome Trust Sanger Institute</p>
+		<p><br /> <i> Eimeria </i> species:</p>
+		<p><b>Dr. Adam Reid</b></p>
+		<p>The Wellcome Trust Sanger Institute</p>
+		
+		</div>
+		<div class="main-light-grey-bot"></div>
 		<h3>Developers</h3>
 
 		<div class="main-light-grey-top"></div>
@@ -142,14 +148,6 @@
 			   He joined the Sequencing Informatics team at the Wellcome Trust Sanger Institute 
 			   in 2009 as a Senior Software Developer and moved to the Pathogen Informatics 
 			   team in June 2011 as a Principal Software Developer.
-			<p>
-				<br /> <b> Dr. Craig Porter </b>
-			</p>
-			<p>The Wellcome Trust Sanger Institute</p>
-			<p>
-			   Craig has a PhD in Chemistry and an MSc in Information Technology. 
-			   After several postdocs at UCL and the EBI, he joined the Pathogen 
-			   Informatics group in November 2010 where he works as a Senior Bioinformatician.
 			<p>
 			<p>
 				<br /> <b> Martin Aslett </b>
@@ -259,8 +257,16 @@
 			Sciences Group at the Manchester Interdisciplinary Biocentre. As part of the 
 			WTSI Pathogen Genomics informatics team, he focused on the development of 
 			new tools for GeneDB and was the main developer of the CRAWL web-services for GeneDB.<p>
-
-
+			<p><b>Dr. Flora Logan-Klumpler</b></p>
+			<p>University of Cambridge, The Wellcome Trust Sanger Institute</p>
+			<p>.Flora completed her Ph.D. in trypanosome vitamin C biosynthesis in Prof. John Kelly's group at the London School of Hygiene and Tropical Medicine in 2008. She then moved to the University of Georgia, Athens to work on Trypanosoma cruzi fatty acid metabolism, and T. cruzi specific ontology development in the Tarleton Research Group. She is now working on the curation and functional annotation of the Trypanosoma brucei genome and the development of a new phenotype curation tool utilising new and existing ontologies at WTSI. She is also involved in the Trypanocyc community annotation project.</p>
+		<p><b> Dr. Craig Porter </b></p>
+			<p>The Wellcome Trust Sanger Institute</p>
+			<p>
+			   Craig has a PhD in Chemistry and an MSc in Information Technology. 
+			   After several postdocs at UCL and the EBI, he joined the Pathogen 
+			   Informatics group in November 2010 where he works as a Senior Bioinformatician.
+			<p>
 		</div>
 		<div class="main-light-grey-bot"></div>
 
