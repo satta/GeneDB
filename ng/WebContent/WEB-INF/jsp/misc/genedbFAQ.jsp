@@ -11,7 +11,7 @@
 	<div class="main-light-grey-top"></div>
 	<div class="main-light-grey">
 	<p>
-	<ol>
+	<ol style="padding-left:20px">
 	<li>From the gene page of your protein, click "ADD TO BASKET".</li>
 	<li>Choose the "History" option from the "Tools" menu.</li>
 	<li>Click the "Download" link for your search.</li>
