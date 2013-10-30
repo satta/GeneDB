@@ -22,8 +22,8 @@
 	</div>
 	<div class="main-light-grey-bot"></div>
 	<h3>Can I download all proteins from my favourite species?</h3>
-	<div class="main-baby-blue-top"></div>
-	<div class="main-baby-blue">
+	<div class="main-light-grey-top"></div>
+	<div class="main-light-grey">
 	<p>
 	<ol style="padding-left:20px">
 	<li>From the species front page, select the "Gene Type" search.</li>
@@ -35,7 +35,7 @@
 	</ol>
 	</p>
 	</div>
-	<div class="main-baby-blue-bot"></div>
+	<div class="main-light-grey-bot"></div>
 	<h3>How do I retrieve all hits from a blast-search as a fasta?</h3>
 	<div class="light-grey-top"></div>
 	<div class="light-grey"></div>
