@@ -42,7 +42,7 @@
 	<div class="light-grey-bot"></div>
 	<h3>I've searched for my favourite protein, and yesterday it was there, but now I can't find it. Where is it?</h3>
 	<div class="main-light-grey-top"></div>
-	<div class="main-light-grey"></div>
+	<div class="main-light-grey">
 	<p style="padding-left:20px">There are two probable reasons for this:</p><br/>
 	<p>
 	<ol style="padding-left:20px">
@@ -52,6 +52,7 @@
 	</p><br/>
 	<p style="padding-left:20px">In both cases, we'd recommend searching for gene models with similar IDs or looking at the contig the gene model was previously found to be on, using the gene page maps, to check whether the gene is genuinely absent. If not, check again in 24 hours then email <a href="mailto:genedb-help@sanger.ac.uk">the GeneDB helpdesk</a> so the status of the gene can be investigated further.
 	</p>
+	</div>
 	<div class="main-light-grey-bot"></div>
 	<h3>Can I download the whole genome?</h3>
 	<div class="light-grey-top"></div>
