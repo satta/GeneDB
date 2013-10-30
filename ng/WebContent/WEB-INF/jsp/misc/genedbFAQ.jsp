@@ -23,7 +23,18 @@
 	<div class="main-light-grey-bot"></div>
 	<h3>Can I download all proteins from my favourite species?</h3>
 	<div class="baby-blue-top"></div>
-	<div class="baby-blue"></div>
+	<div class="baby-blue">
+	<p>
+	<ol style="padding-left:20px">
+	<li>From the species front page, select the "Gene Type" search.</li>
+	<li>Select "protein-coding" as Gene Type and click "Submit".</li>
+	<li>Choose the "History" option from the "Tools" menu.</li>
+	<li>Click the "Download" link for your search.</li>
+	<li>Set "Output Format" to "FASTA Sequences", choose the fields required for the fasta header and select "Protein sequence" as Sequence type.</li>
+	<li>Choose either "Normal Page" or "Email to" as output destination and click "Submit Query". It is recommended that larger downloads should be emailed rather than output to screen.</li>
+	</ol>
+	</p>
+	</div>
 	<div class="baby-blue-bot"></div>
 	<h3>How do I retrieve all hits from a blast-search as a fasta?</h3>
 	<div class="light-grey-top"></div>
