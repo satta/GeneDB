@@ -52,7 +52,7 @@
 	<li>There is a known bug in GeneDB in which gene models are not indexed for GeneDB's searches.</li>
 	</ol>
 	</p><br/>
-	<p style="padding-left:20px">In both cases, we'd recommend searching for gene models with similar IDs or looking at the contig the gene model was previously found to be on, using the gene page maps, to check whether the gene is genuinely absent. If not, check again in 24 hours, please email <a href="mailto:genedb-help@sanger.ac.uk">the GeneDB helpdesk</a> so the status of the gene can be investigated further.
+	<p style="padding-left:20px">In both cases, we'd recommend first checking the Annotation Statistics link on the organism home page. This lists all annotation changes in the last 120 days. If this fails, we'd recommend searching for gene models with similar IDs or looking at the contig the gene model was previously found to be on, using the gene page maps, to check whether the gene is genuinely absent. If not, check again in 24 hours and then please email <a href="mailto:genedb-help@sanger.ac.uk">the GeneDB helpdesk</a> so the status of the gene can be investigated further.
 	</p>
 	</div>
 	<div class="main-light-grey-bot"></div>
