@@ -37,9 +37,11 @@
 	</div>
 	<div class="main-light-grey-bot"></div>
 	<h3>How do I retrieve selected hits from a blast-search as a fasta file?</h3>
-	<div class="light-grey-top"></div>
-	<div class="light-grey"></div>
-	<div class="light-grey-bot"></div>
+	<div class="main-light-grey-top"></div>
+	<div class="main-light-grey">
+	
+	</div>
+	<div class="main-light-grey-bot"></div>
 	<h3>I've searched for my favourite protein, and yesterday it was there, but now I can't find it. Where is it?</h3>
 	<div class="main-light-grey-top"></div>
 	<div class="main-light-grey">
@@ -55,12 +57,19 @@
 	</div>
 	<div class="main-light-grey-bot"></div>
 	<h3>Can I download the whole genome?</h3>
-	<div class="light-grey-top"></div>
-	<div class="light-grey"></div>
-	<div class="light-grey-bot"></div>
+	<div class="main-light-grey-top"></div>
+	<div class="main-light-grey">
+        <p>
+	Whole genome download is not available directly from GeneDB. However, the front page for most organisms contains an ftp link from which the full genome can usually be downloaded.
+	</p>
+	</div>
+	<div class="main-light-grey-bot"></div>
 	<h3>How can I see/access RNAseq evidence for my favourite gene?</h3>
-	<div class="baby-blue-top"></div>
-	<div class="baby-blue"></div>
-	<div class="baby-blue-bot"></div>
+	<div class="main-light-grey-top"></div>
+	<div class="main-light-grey">
+	<p>GeneDB currently only has RNAseq data available for <i>Schistosoma mansoni</i>. However, all RNAseq data sequenced at the Wellcome Trust Sanger Institute should be available via the <a href="http://www.ebi.ac.uk/ena/">European Nucelotide Archive</a>. Please contact <a href="mailto:genedb-help@sanger.ac.uk">the GeneDB helpdesk</a> for further details.</p>
+	<p>Where RNAseq evidence is present for an organism, to access it from the gene page, click the link to view your region of interest in a separate Web Artemis window. From the View pulldown menu, the BAM option should list all available BAM files of RNAseq data.</p>
+	</div>
+	<div class="main-light-grey-bot"></div>
 	</div>
 </format:page>
