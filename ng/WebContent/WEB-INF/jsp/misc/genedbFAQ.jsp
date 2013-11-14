@@ -36,12 +36,6 @@
 	</p>
 	</div>
 	<div class="main-light-grey-bot"></div>
-	<h3>How do I retrieve selected hits from a blast-search as a fasta file?</h3>
-	<div class="main-light-grey-top"></div>
-	<div class="main-light-grey">
-	
-	</div>
-	<div class="main-light-grey-bot"></div>
 	<h3>I've searched for my favourite protein, and yesterday it was there, but now I can't find it. Where is it?</h3>
 	<div class="main-light-grey-top"></div>
 	<div class="main-light-grey">
