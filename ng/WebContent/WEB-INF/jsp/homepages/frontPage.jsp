@@ -59,7 +59,12 @@
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
-
+<h1>GeneDB Service Disruption</h1>
+<div class="baby-blue-top"></div>
+<div class="baby-blue">
+&raquo; Due to essential upgrades, GeneDB's web services will be unavailable for around an hour on November 28th 2013. This work is scheduled to begin at 8:30a.m. GMT. This means that much of GeneDB's functionality will also be unavailable.<br>
+</div>
+<div class="baby-blue-bot"></div>
 <h1>Previous GeneDB Website</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
