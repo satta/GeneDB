@@ -29,8 +29,6 @@ public class IdsToGeneDetailQuery extends LuceneQuery {
         return "Ids2BasketEntry";
     }
 	
-	
-
 	@Override
 	protected void extraValidation(Errors errors) {
 		// no validation....
