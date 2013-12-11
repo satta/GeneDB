@@ -10,16 +10,13 @@ import org.genedb.db.dao.SequenceDao;
 import org.genedb.querying.tmpquery.GeneDetail;
 import org.genedb.web.mvc.model.DTOFactory;
 import org.genedb.web.mvc.model.FeatureDTO;
-import org.gmod.schema.mapped.CvTerm;
 import org.gmod.schema.mapped.Feature;
-import org.gmod.schema.mapped.FeatureRelationship;
 import org.gmod.schema.mapped.FeatureCvTerm;
 import org.gmod.schema.mapped.FeatureLoc;
 import org.gmod.schema.mapped.Synonym;
 import org.gmod.schema.feature.Transcript;
 import org.gmod.schema.feature.AbstractGene;
 import org.gmod.schema.feature.Polypeptide;
-import org.gmod.schema.feature.ProductiveTranscript;
 import org.springframework.util.StringUtils;
 
 public class GeneDetailFieldValueExctractor {
