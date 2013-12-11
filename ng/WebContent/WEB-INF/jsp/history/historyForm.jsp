@@ -61,7 +61,8 @@
 			<tr>
 				<td><input type="checkbox" name="cust_field" value="EC_NUMBERS">
 				EC Numbers</td>
-				<td>&nbsp;</td>
+				<td><input type="checkbox" name="cust_field" value="GO_TERMS">
+                GO terms</td>
 				<td>&nbsp;</td>
 			</tr>
 		</table>

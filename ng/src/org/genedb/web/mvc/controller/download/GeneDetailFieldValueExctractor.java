@@ -2,15 +2,24 @@ package org.genedb.web.mvc.controller.download;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 import org.apache.log4j.Logger;
 import org.genedb.db.dao.SequenceDao;
 import org.genedb.querying.tmpquery.GeneDetail;
 import org.genedb.web.mvc.model.DTOFactory;
 import org.genedb.web.mvc.model.FeatureDTO;
+import org.gmod.schema.mapped.CvTerm;
 import org.gmod.schema.mapped.Feature;
+import org.gmod.schema.mapped.FeatureRelationship;
+import org.gmod.schema.mapped.FeatureCvTerm;
 import org.gmod.schema.mapped.FeatureLoc;
 import org.gmod.schema.mapped.Synonym;
+import org.gmod.schema.feature.Transcript;
+import org.gmod.schema.feature.AbstractGene;
+import org.gmod.schema.feature.Polypeptide;
+import org.gmod.schema.feature.ProductiveTranscript;
 import org.springframework.util.StringUtils;
 
 public class GeneDetailFieldValueExctractor {
@@ -109,6 +118,8 @@ public class GeneDetailFieldValueExctractor {
 			break;
 		case EC_NUMBERS:
 			break;
+        case GO_TERMS:
+            break;
 		case NUM_TM_DOMAINS:
 			break;
 		case SIG_P:
@@ -162,6 +173,8 @@ public class GeneDetailFieldValueExctractor {
 			break;
 		case EC_NUMBERS:
 			break;
+        case GO_TERMS:
+            break;
 		case NUM_TM_DOMAINS:
 			break;
 		case SIG_P:
@@ -260,6 +273,35 @@ public class GeneDetailFieldValueExctractor {
 //		return fieldValue;
 //	}
 	
+    
+    private Set<String> getGosForFeature(Feature feature) {
+        Set<String> gos = new HashSet<String>();
+        gos.addAll(populateFromFeatureCvTerms(feature, "biological_process"));
+        gos.addAll(populateFromFeatureCvTerms(feature, "molecular_function"));
+        gos.addAll(populateFromFeatureCvTerms(feature, "cellular_component"));
+        return gos;
+    }
+
+    private Collection<String> populateFromFeatureCvTerms(Feature feature, String cvNamePrefix) {
+        Set<String> ret = new HashSet<String>();
+        for (FeatureCvTerm fct : feature.getFeatureCvTermsFilteredByCvNameStartsWith(cvNamePrefix)) {
+           ret.add(fct.getCvTerm().getName()/* , fct.getCvTerm().getDbXRef().getAccession())*/);
+        }
+        return ret;
+    }
+    
+    private Collection<String> getGosForTranscript(Transcript tr) {
+        return getGosForFeature((Feature) (tr.getPolypeptide()));
+    }
+    
+    private Collection<String> getGosForGene(AbstractGene gene) {
+        Set<String> gos = new HashSet<String>();
+        for (Transcript tr : gene.getTranscripts()) {
+            gos.addAll(getGosForTranscript(tr));
+        }
+        return gos;
+    }
+    
 	/**
 	 * Gets the field value for any Feature. Used when the feature in question is not a transcript. 
 	 * @param feature
@@ -290,6 +332,19 @@ public class GeneDetailFieldValueExctractor {
 			case PRIMARY_NAME:
 				fieldValue = feature.getUniqueName();
 				break;
+            case GO_TERMS:
+                Collection<String> gos = null;
+                /* For genes and transcripts, collect their product GOs. */
+                if (feature.getType().getName().equals("gene")) {
+                    gos = getGosForGene((AbstractGene) feature);
+                } else if (feature.getType().getName().equals("mRNA")) {
+                    gos = getGosForTranscript((Transcript) feature);
+                } else
+                    gos = getGosForFeature(feature);
+                if (gos != null) {
+                    fieldValue = StringUtils.collectionToDelimitedString(gos, fieldInternalSeparator);
+                }
+                break;
 			case SYNONYMS:
 				Collection<Synonym> synonyms = feature.getSynonyms();
 				for (Synonym synonym : synonyms) {
