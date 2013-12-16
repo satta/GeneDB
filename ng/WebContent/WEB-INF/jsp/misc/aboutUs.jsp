@@ -16,8 +16,6 @@
 		<div class="main-light-grey-top"></div>
 		<div class="main-light-grey">
 
-
-
 			<p>
 				<br /> <b> Dr. Matt Berriman </b>
 			</p>
@@ -180,10 +178,9 @@
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
 			   Sascha has a Diplom (MSc equivalent) in bioinformatics from the University of 
-			   Hamburg, Germany. After
-			   five more years of working with the Genome Informatics group in Hamburg, he
-			   joined the Pathogen Genomics team at the Wellcome Trust Sanger Institute in
-			   December 2013.
+			   Hamburg, Germany. After five more years of working with the Genome Informatics 
+			   group in Hamburg, he joined the Pathogen Genomics team at the Wellcome Trust 
+			   Sanger Institute in December 2013.
 			</p>
 		</div>
 		<div class="main-light-grey-bot"></div>
