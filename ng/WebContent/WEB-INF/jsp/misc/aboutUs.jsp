@@ -6,12 +6,6 @@
 <format:page>
 	<br>
 
-
-
-	
-
-
-
 	<div id="col-1-1">
 
 
@@ -179,8 +173,18 @@
 			   Tim has a PhD in Chemistry. He did a postdoc at the University of Cambridge 
 			   before joining the Medical Research Council in 2000. From 2004 he has been 
 			   the lead developer for Artemis and ACT.
-			<p>   
-
+			</p>   
+			<p>
+				<br /> <b> Sascha Steinbiss </b>
+			</p>
+			<p>The Wellcome Trust Sanger Institute</p>
+			<p>
+			   Sascha has a Diplom (MSc equivalent) in bioinformatics from the University of 
+			   Hamburg, Germany. After
+			   five more years of working with the Genome Informatics group in Hamburg, he
+			   joined the Pathogen Genomics team at the Wellcome Trust Sanger Institute in
+			   December 2013.
+			</p>
 		</div>
 		<div class="main-light-grey-bot"></div>
 
