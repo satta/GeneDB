@@ -125,7 +125,7 @@
 				<br /> <b> Dr. Jacqueline McQuillan </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
-                           <p>Jacqueline McQuillan has PhD is Software Engineering and joined the 
+                           <p>Jacqueline McQuillan has a PhD in Software Engineering and joined the 
                               Pathogen Genomics group at the Wellcome Trust Sanger Institute as a 
                               postdoctoral fellow in 2008. In 2010, she took on the role of managing 
                               the Pathogen Informatics team whose main responsibilities are to develop 
