@@ -89,7 +89,7 @@
 </ul>
 </li>
 <!-- end sub menu -->
-
+<li><a href="<misc:url value="/Page/genedbFAQ"/>">Frequently Asked Questions</a></li>
 </ul>
 
 </div><!-- end navigation block -->
