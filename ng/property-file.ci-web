@@ -1,16 +1,26 @@
 finaldest.webapps=/nfs/pathdb/genedb/ci-web/webapps/ci-web
 webAppRootKey=genedb.ci-web.root
 
+
 #dbport=5432
 #dbhost=pathdbsrv1-dmz
 #dbuser=genedb_ro
 #dbname=snapshot
 #dbpassword=genedb_ro
-dbhost=pgsrv2
+
+# changed when I started here, seems outdated. ss34 20140103
+#dbhost=pgsrv2
+#dbport=5432
+#dbname=nightly
+#dbuser=genedb
+#dbpassword=genedb
+
+# updated ss34 20140103 
+dbhost=genedb-db
 dbport=5432
-dbname=nightly
-dbuser=genedb
-dbpassword=genedb
+dbname=snapshot
+dbuser=genedb_ro
+dbpassword=genedb_ro
 
 lucene.indexDirectory=/nfs/pathdb/genedb/ci-web/lucene/
 emboss.directory=/software/pathogen/external/applications/EMBOSS/
