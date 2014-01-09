@@ -19,23 +19,23 @@
 
 	<script>
 		$(function() {
-		    
+
 			// all spinners here will use the same defaults
 			$.fn.CallStatusSpinner.defaults = {
 					height : 11.5,
 	                width : 50,
 	                img : '<misc:url value="/includes/image/spinner.gif"/>'
 			};
-			
+
 			$('.spinner1').CallStatusSpinner();
 			$('.spinner2').CallStatusSpinner();
-			
+
 			$('#annotation_statistics').AnnotationModificationReporter({
 				organism : "com:${node.label}",
 				baseHREF : '<misc:url value="/gene/"/>',
 				spinner : ".spinner1"
-			}); 
-		    
+			});
+
 			$("#regions").ChromosomePicker({
 				organism : "com:${node.label}",
 				on_select : function(region) {
@@ -44,36 +44,36 @@
 						+ region;
 				},
 				spinner : ".spinner2"
-			});  
-		    
+			});
+
 			$('a#about').click (function(event) {
 		        $("#readableContent").dialog({ width: 700, height: 530 , title :  "About ${full} on GeneDB" });
 		    });
-			
+
 			// commented out until we have images sorted...
 		    /* var imgsrc = "<misc:url value="/"/>includes/image/homepage-${node.label}.jpg";
-            
+
             var tester=new Image()
             tester.onload=function() {
                 $('#imgcontainer').html("<img class='reflect' width='600' src='" +imgsrc +"' >");
                 $("#imgcontainer").fadeIn(2000);
                 $("#imgcontainer img.reflect").reflect({height : 0.25});
-                
+
             }
             tester.onerror=function() {
                 $.log("could not load img " + imgsrc);
             }
             tester.src=imgsrc;
              */
-			
+
 		});
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 	</script>
 
 
@@ -88,13 +88,13 @@
 		<div id="imgcontainer" style="display:none;" ></div>
 		<h1>The ${full} homepage on GeneDB</h1>
 	</center>
-	
-	
+
+
 
 	<div id="col-1-2">
 
 		<h2>
-			Annotation statistics <span class="spinner1">&nbsp;&nbsp;&nbsp;</span>
+			Annotation statistics <span id="activity_rss" style="vertical-align:bottom;">&nbsp;&nbsp;&nbsp;</span> <span class="spinner1">&nbsp;&nbsp;&nbsp;</span>
 		</h2>
 
 		<div class="light-grey-top"></div>
@@ -116,10 +116,10 @@
 		<div class="baby-blue-bot"></div>
 
 		<h2>Information</h2>
-        
+
 		<div class="light-grey-top"></div>
 		<div class="light-grey">
-                
+
 			<p class="block-para">
 				About <br /> &raquo; <a id="about">${full} on GeneDB </a> <br />
 
@@ -155,8 +155,8 @@
 
 		<div class="light-grey-top"></div>
 		<div class="light-grey">
-            
-            
+
+
             <p class="block-para">
                  &raquo; <a href="http://www.genedb.org/web-artemis/">
                     Web artemis</a> <br /> &raquo; <a
@@ -165,16 +165,16 @@
             </p>
 		</div>
 		<div class="light-grey-bot"></div>
-        
-        
-        
+
+
+
         <h2>Searches</h2>
         <div class="baby-blue-top"></div>
         <div class="baby-blue">
             <P class="block-para">
-                
+
                 <c:forEach items="${queries}" var="query">
-            
+
             &raquo; <a title="${query.queryDescription}"
                         href="<misc:url value="/Query/${query.realName}" />?taxonNodeName=${node.label}">${query.queryName}</a>
                     <br />
@@ -188,17 +188,17 @@
 
 	<div id="col-1-2">
 
-        
+
 
 		<h2>Links</h2>
 		<div class="light-grey-top"></div>
 		<div class="light-grey">
-		       
+
 			<div id="readableContentLinks">${links}</div>
 		</div>
 		<div class="light-grey-bot"></div>
-        
-        
+
+
 
 	</div>
 

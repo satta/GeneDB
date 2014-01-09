@@ -24,10 +24,10 @@
 <link rel="SHORTCUT ICON" href="<misc:url value="/includes/image/favicon.png"/>">
 
 <script type="text/javascript">
-    
+
     <%-- this is kept in the tag to inject the misc url --%>
     /*
-    Returns the base URL. 
+    Returns the base URL.
      */
     function getBaseURL() {
         return "<misc:url value="/"/>";
