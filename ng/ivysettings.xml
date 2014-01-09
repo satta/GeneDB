@@ -34,8 +34,8 @@
             <artifact
                 pattern="http://repository.springsource.com/ivy/bundles/milestone/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
         </url>
-		
-		
+
+
 		<chain name="spring">
 			<resolver ref="com.springsource.repository.bundles.release" />
 			<resolver ref="com.springsource.repository.bundles.external" />
@@ -43,6 +43,8 @@
 		</chain>
 		<ibiblio name="jboss" root="http://repository.jboss.org/"
 			m2compatible="true" />
+		<ibiblio name="maven2" root="http://mirrors.ibiblio.org/maven2/"
+				m2compatible="true" />
 		<ibiblio name="sonatype"
 			root="http://oss.sonatype.org/content/repositories/releases"
 			m2compatible="true" />
@@ -51,10 +53,11 @@
 			m2compatible="true" />
 		<chain name="main" dual="true">
 			<resolver ref="shared" />
-			<!-- let's not rely on maven central 
+			<!-- let's not rely on maven central
 				<resolver ref="public" /> -->
 			<resolver ref="spring" />
 			<resolver ref="jboss" />
+			<resolver ref="maven2" />
 			<resolver ref="sonatype" />
 			<resolver ref="sonatype2" />
 		</chain>
