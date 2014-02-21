@@ -2,7 +2,7 @@
 <html>
 <body>
 <h2><font face="Arial,Helvetica,Geneva"><i>Duplicate
-regions on chromosomes 4 and 8</i><br></h2>
+regions on chromosomes 4 and 8</i></font><br></h2>
 
 
 <h2>Figure S1. Comparative gene order and sequence identity between
@@ -443,7 +443,7 @@ non-synonymous vs. synonymous sites) and red (w &gt; 1).
 18. Tb927.4.5120/Tb927.8.7260	kinetoplast-associated protein<br>
 19. Tb927.4.5100/Tb927.8.7270	hypothetical transmembrane protein<br>
 20. Tb927.4.5050/Tb927.8.7380	dihydrolipoamide dehydrogenase<br>
-21. Tb927.4.5030/Tb927.8.7390	serine/threonine protein phosphatase PP1<br?
+21. Tb927.4.5030/Tb927.8.7390	serine/threonine protein phosphatase PP1<br>
 22. Tb927.4.5020/Tb927.8.7400	RNA polymerase IIA largest subunit<br>
 23. Tb927.4.5010/Tb927.8.7410	calreticulin<br>
 24. Tb927.4.5000/Tb927.8.7420	C2 calcium/lipid-binding region<br>
