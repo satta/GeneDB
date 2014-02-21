@@ -1,7 +1,5 @@
 package org.genedb.web.mvc.controller.download;
 
-import org.displaytag.pagination.PaginatedList;
-import org.displaytag.properties.SortOrderEnum;
 import org.displaytag.tags.TableTagParameters;
 import org.displaytag.util.ParamEncoder;
 import org.genedb.db.taxon.TaxonNodeList;
@@ -11,7 +9,6 @@ import org.genedb.querying.core.Query;
 import org.genedb.querying.core.QueryException;
 import org.genedb.querying.core.QueryFactory;
 import org.genedb.querying.core.NumericQueryVisibility;
-import org.genedb.querying.history.HistoryItem;
 import org.genedb.querying.history.HistoryManager;
 import org.genedb.querying.history.QueryHistoryItem;
 import org.genedb.querying.tmpquery.GeneSummary;
@@ -20,9 +17,7 @@ import org.genedb.querying.tmpquery.MotifQuery;
 import org.genedb.querying.tmpquery.OrganismLuceneQuery;
 import org.genedb.querying.tmpquery.QuickSearchQuery;
 import org.genedb.querying.tmpquery.SuggestQuery;
-import org.genedb.util.Pair;
 import org.genedb.web.mvc.controller.HistoryManagerFactory;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -52,8 +47,7 @@ public class QueryController extends AbstractGeneDBFormController{
 
     private static final Logger logger = Logger.getLogger(QueryController.class);
 
-    @SuppressWarnings("unchecked")
-	private QueryFactory queryFactory;
+    private QueryFactory<NumericQueryVisibility> queryFactory;
 
     private HistoryManagerFactory hmFactory;
     
@@ -67,8 +61,7 @@ public class QueryController extends AbstractGeneDBFormController{
         this.hmFactory = hmFactory;
     }
 
-    @SuppressWarnings("unchecked")
-	public void setQueryFactory(QueryFactory queryFactory) {
+    public void setQueryFactory(QueryFactory<NumericQueryVisibility> queryFactory) {
         this.queryFactory = queryFactory;
     }
 
@@ -271,7 +264,8 @@ public class QueryController extends AbstractGeneDBFormController{
     	if (queryName.equals("motif")) {
     		MotifQuery motifQuery = (MotifQuery) query;
     		logger.info("motif query, let's get motif results for " + bounds.page + " " + bounds.length);
-    		Map motifs = motifQuery.getMotifResults(bounds.page, bounds.length);
+    		@SuppressWarnings("rawtypes")
+			Map motifs = motifQuery.getMotifResults(bounds.page, bounds.length);
     		model.addAttribute("motifs", motifs);
     	}
     	
@@ -290,7 +284,9 @@ public class QueryController extends AbstractGeneDBFormController{
             
         } 
     	
-    	// no point in hanging onto this
+    	// if the search yielded any results, we should now have been redirected
+    	
+    	// remove unsuccessful search term, no point in hanging onto this
         hm.removeItem(key);
         logger.warn("No results found for query");
 		model.addAttribute("noResultFound", Boolean.TRUE);
@@ -315,7 +311,8 @@ public class QueryController extends AbstractGeneDBFormController{
 
     }
     
-    private List<GeneSummary> motifSummaries (MotifQuery query, List<String> ids) throws QueryException {
+    @SuppressWarnings("unused")
+	private List<GeneSummary> motifSummaries (MotifQuery query, List<String> ids) throws QueryException {
     	IdsToGeneSummaryQuery idsToGeneSummary = (IdsToGeneSummaryQuery) queryFactory.retrieveQuery("idsToGeneSummary", NumericQueryVisibility.PRIVATE);
     	idsToGeneSummary.setIds(ids);
     	List<GeneSummary> summaries = idsToGeneSummary.getResultsSummaries();
@@ -495,8 +492,8 @@ public class QueryController extends AbstractGeneDBFormController{
      * @param suppress
      * @param results
      */
-    @SuppressWarnings("unchecked")
-    protected void suppressResultItem(String suppress, List results){
+    @SuppressWarnings("rawtypes")
+	protected void suppressResultItem(String suppress, List results){
         if (StringUtils.hasLength(suppress)) {
             int index = results.indexOf(suppress);
             if (index != -1) {
