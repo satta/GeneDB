@@ -2,7 +2,6 @@ package org.genedb.querying.tmpquery;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -17,13 +16,13 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.spell.LuceneDictionary;
 import org.apache.lucene.search.spell.SpellChecker;
-import org.genedb.db.taxon.TaxonNode;
 import org.genedb.querying.core.QueryException;
 import org.genedb.web.mvc.model.PopulateLuceneDictionary;
 
 /*
  * Uses the lucene spellchecker to suggest alternative words. To be used as a fallback when there are no quick search results.
  */
+@SuppressWarnings("serial")
 public class SuggestQuery extends OrganismLuceneQuery {
 
 	private static final Logger logger = Logger.getLogger(SuggestQuery.class);
@@ -91,13 +90,8 @@ public class SuggestQuery extends OrganismLuceneQuery {
 		return "Did you mean";
 	}
 
-
-
-    /**
-     * Currently does not do any taxon-filtering.
-     */
-	public List<String> getResults() throws QueryException {
-
+	
+    public List<String> getResults() throws QueryException {
 		List<String> results = new ArrayList<String>();
 		logger.info("Searching for " + searchText);
 		

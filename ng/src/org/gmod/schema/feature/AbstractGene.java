@@ -2,12 +2,10 @@ package org.gmod.schema.feature;
 
 import org.genedb.db.analyzers.AllNamesAnalyzer;
 import org.genedb.db.loading.EmblLocation;
-
 import org.gmod.schema.mapped.Feature;
 import org.gmod.schema.mapped.FeatureLoc;
 import org.gmod.schema.mapped.FeatureRelationship;
 import org.gmod.schema.mapped.Organism;
-
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.search.annotations.Analyzer;
@@ -31,6 +29,7 @@ import javax.persistence.Transient;
  * @author rh11
  *
  */
+@SuppressWarnings("serial")
 @Entity
 public abstract class AbstractGene extends TopLevelFeature {
     private static final Logger logger = Logger.getLogger(AbstractGene.class);
