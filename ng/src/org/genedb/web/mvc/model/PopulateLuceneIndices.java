@@ -10,7 +10,6 @@ import org.gmod.schema.feature.ProductiveTranscript;
 import org.gmod.schema.feature.Transcript;
 import org.gmod.schema.mapped.Feature;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.lucene.index.IndexReader;
@@ -37,7 +36,6 @@ import uk.co.flamingpenguin.jewel.cli.CliFactory;
 import uk.co.flamingpenguin.jewel.cli.Option;
 
 import java.io.Console;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -121,8 +119,6 @@ public class PopulateLuceneIndices implements IndexUpdater {
     private String hibernateDialect = "org.hibernate.dialect.PostgreSQLDialect";
     private String hibernateDriverClass = "org.postgresql.Driver";
 
-
-
     public PopulateLuceneIndices() {
         // Default constructor
     }
@@ -204,7 +200,8 @@ public class PopulateLuceneIndices implements IndexUpdater {
 
         logger.info("Indexing AbstractGenes");
 
-        @SuppressWarnings("unchecked") List<Integer> allIds = idQuery.list();
+        @SuppressWarnings("unchecked")
+        List<Integer> allIds = idQuery.list();
 
         int batchCount = 0;
         int start = 0;
@@ -216,6 +213,8 @@ public class PopulateLuceneIndices implements IndexUpdater {
                 end = allIds.size();
             }
             
+            Transaction transaction = session.beginTransaction();
+
             List<Integer> thisBatch = allIds.subList(start, end);
 
             String ids = StringUtils.collectionToCommaDelimitedString(thisBatch);
@@ -228,7 +227,8 @@ public class PopulateLuceneIndices implements IndexUpdater {
             }
             //featureQuery.setMaxResults(BATCH_SIZE);
 
-            @SuppressWarnings("unchecked") List<AbstractGene> genes = featureQuery.list();
+            @SuppressWarnings("unchecked")
+            List<AbstractGene> genes = featureQuery.list();
 
             boolean failed = false;
             int i=0;
@@ -286,6 +286,7 @@ public class PopulateLuceneIndices implements IndexUpdater {
 
             start = end;
             end = start + batchSize;
+            transaction.commit();
         }
 
         logger.trace("Leaving batchIndexFeatures");
@@ -672,8 +673,6 @@ public class PopulateLuceneIndices implements IndexUpdater {
     }
 
     public static void main(String[] args) {
-
-        
     	PropertyConfigurator.configure("resources/classpath/log4j.index.properties");
     	
         Cli<PopulateLuceneIndicesArgs> cli = CliFactory.createCli(PopulateLuceneIndicesArgs.class);
