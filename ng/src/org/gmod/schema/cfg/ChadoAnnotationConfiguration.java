@@ -1,7 +1,6 @@
 package org.gmod.schema.cfg;
 
 import org.gmod.schema.mapped.Feature;
-
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.MappingException;
@@ -42,6 +41,7 @@ import javax.sql.DataSource;
  *
  * @author rh11
  */
+@SuppressWarnings("serial")
 public class ChadoAnnotationConfiguration extends AnnotationConfiguration {
     private static final Logger logger = Logger.getLogger(ChadoAnnotationConfiguration.class);
 

@@ -1,9 +1,7 @@
 package org.genedb.web.mvc.model;
 
 import org.genedb.db.analyzers.AllNamesAnalyzer;
-
 import org.gmod.schema.utils.CvTermUtils;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.lucene.analysis.Analyzer;
@@ -20,7 +18,6 @@ import org.apache.lucene.store.LockObtainFailedException;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -167,7 +164,8 @@ public class LuceneIndexBuilder {
         public void process(GeneInfo geneInfo) throws Exception;
         public void noResults() throws Exception;
     }
-    private class ProcessingException extends Exception {
+    @SuppressWarnings("serial")
+	private class ProcessingException extends Exception {
         public ProcessingException(String message, Throwable cause) {
             super(message, cause);
         }

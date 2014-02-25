@@ -1,6 +1,7 @@
 package org.gmod.schema.cfg;
 
 import org.gmod.schema.feature.Transcript;
+import org.gmod.schema.feature.Gap;
 
 import org.hibernate.cfg.Configuration;
 import org.springframework.beans.BeansException;
@@ -28,6 +29,7 @@ public class OrganismHeirachy implements ApplicationContextAware {
         }
         ChadoAnnotationConfiguration cac = (ChadoAnnotationConfiguration) cfg;
         ids = cac.getTypeIdsByClass(Transcript.class);
+        ids.addAll(cac.getTypeIdsByClass(Gap.class));
     }
 
     @Override

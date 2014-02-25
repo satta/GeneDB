@@ -6,27 +6,19 @@ import org.genedb.db.dao.GeneralDao;
 import org.genedb.db.dao.SequenceDao;
 import org.genedb.db.helpers.LocationBridge;
 import org.genedb.util.SequenceUtils;
-
-import org.gmod.schema.feature.AbstractGene;
-import org.gmod.schema.feature.Polypeptide;
+import org.gmod.schema.feature.Gap;
 import org.gmod.schema.feature.ProteinMatch;
 import org.gmod.schema.feature.Region;
-import org.gmod.schema.feature.Transcript;
 import org.gmod.schema.utils.CollectionUtils;
 import org.gmod.schema.utils.SimilarityI;
 import org.gmod.schema.utils.StrandedLocation;
-
 import org.apache.log4j.Logger;
-import org.apache.solr.analysis.ISOLatin1AccentFilterFactory;
-import org.apache.solr.analysis.LowerCaseFilterFactory;
-import org.apache.solr.analysis.WhitespaceTokenizerFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.search.annotations.Analyzer;
-import org.hibernate.search.annotations.AnalyzerDef;
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.FieldBridge;
@@ -34,8 +26,6 @@ import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 import org.hibernate.search.annotations.Store;
-import org.hibernate.search.annotations.TokenFilterDef;
-import org.hibernate.search.annotations.TokenizerDef;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -113,7 +103,9 @@ import javax.persistence.Transient;
 @Indexed
 public abstract class Feature implements java.io.Serializable, HasPubsAndDbXRefs {
 
-    @Autowired
+	private static final long serialVersionUID = -2327481898902900029L;
+
+	@Autowired
     protected transient CvDao cvDao;
 
     @Autowired
@@ -200,7 +192,7 @@ public abstract class Feature implements java.io.Serializable, HasPubsAndDbXRefs
     @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "feature")
     private Set<FeatureDbXRef> featureDbXRefs;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy = "feature")
+    @OneToMany(cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER, mappedBy = "feature")
     @Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.DELETE_ORPHAN})
     @OrderBy("locGroup ASC, rank ASC")
     private List<FeatureLoc> featureLocs;
@@ -844,12 +836,14 @@ public abstract class Feature implements java.io.Serializable, HasPubsAndDbXRefs
 
     protected String allNamesSupport(List<String> names) {
     	List<String> newNames = Lists.newArrayList();
-    	for (String name : names) {
-			if (name.contains("-")) {
-				newNames.add(name.replaceAll("-", ""));
-			}
-		}
-    	names.addAll(newNames);
+    	if (!(this instanceof Gap)) { // these should keep their dashes
+    		for (String name : names) {
+    			if (name.contains("-")) {
+    				newNames.add(name.replaceAll("-", ""));
+    			}
+    		}
+    		names.addAll(newNames);
+    	}
     	return StringUtils.collectionToDelimitedString(names, " ");
     }
 

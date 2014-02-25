@@ -14,7 +14,6 @@ import org.gmod.schema.mapped.FeatureRelationship;
 import org.gmod.schema.mapped.Organism;
 import org.gmod.schema.utils.PeptideProperties;
 import org.gmod.schema.utils.StrandedLocation;
-
 import org.apache.log4j.Logger;
 import org.biojava.bio.BioException;
 import org.biojava.bio.proteomics.IsoelectricPointCalc;
@@ -44,6 +43,7 @@ import java.util.TreeSet;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
+@SuppressWarnings("serial")
 @Entity
 @FeatureType(cv="sequence", term="polypeptide")
 @Indexed
