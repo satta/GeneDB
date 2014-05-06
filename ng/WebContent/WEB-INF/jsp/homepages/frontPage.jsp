@@ -92,7 +92,7 @@ Deadline for Applications: 20 June 2014<br>
 <div class="light-grey-top"></div>
 <div class="light-grey">
 <p class="block-para">
-&raquo;The results of the 2013 TriTrypDB user survey are ready (April 2014). Thanks to all participants for their useful input and suggestions. A detailed <a href="http://tritrypdb.org/tritrypdb/communityDownload.do?fname=2013_TriTryp_User_Survey_Results.pdf">summary</a> is available for your review. 
+&raquo;The results of the 2013 TriTrypDB user survey are ready (April 2014). Thanks to all participants for their useful input and suggestions. A detailed <a href="http://tritrypdb.org/tritrypdb/communityDownload.do?fname=2013_TriTryp_User_Survey_Results.pdf">summary</a> is available for your review.<br>
 &raquo;A new assembly of the <it>P. knowlesi</i> H genome is now publicly <a href="http://www.genedb.org/Homepage/Pknowlesi">available on GeneDB</a> (March 2014).<br>
 &raquo;<a href="http://tritrypdb.org/tritrypdb/">TriTrypDB 5.0</a> is now available with updated versions of the Kinetoplastid protozoan genomes. This new release includes snapshots of the GeneDB database (January 2013) for all the genomes of Trypanosomes and Leishmanias in GeneDB. <a href="http://tritrypdb.org/tritrypdb/showXmlDataContent.do?name=XmlQuestions.News#tryp05_13_news">More details</a>.<br>
 &raquo;Version 2 of <a href="http://www.genedb.org/Homepage/Pyoelii"><i>P. yoelii yoelii</i> 17X</a> is now available on GeneDB.<br>
