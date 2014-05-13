@@ -1,7 +1,7 @@
 finaldest.webapps=/nfs/pathdb/genedb/beta/webapps/ROOT
 webAppRootKey=genedb.beta.root
 
-dbhost=pgsrv2
+dbhost=path-dev-db
 dbport=5432
 dbname=nightly
 dbuser=genedb

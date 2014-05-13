@@ -9,7 +9,7 @@ webAppRootKey=genedb.ci-web.root
 #dbpassword=genedb_ro
 
 # changed when I started here, seems outdated. ss34 20140103
-#dbhost=pgsrv2
+#dbhost=path-dev-db
 #dbport=5432
 #dbname=nightly
 #dbuser=genedb

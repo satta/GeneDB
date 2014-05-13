@@ -44,7 +44,7 @@ class LoadGeneDbPhylogeny {
 
     LoadGeneDbPhylogeny() {
         db = Sql.newInstance(
-            'jdbc:postgresql://pgsrv1.internal.sanger.ac.uk/pathogens',
+            'jdbc:postgresql://path-live-db.internal.sanger.ac.uk/pathogens',
             'chado',
             'chado',
             'org.postgresql.Driver')

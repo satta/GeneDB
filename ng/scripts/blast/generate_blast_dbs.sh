@@ -25,10 +25,10 @@ export PGPASSWORD="genedb"
 GET_ORGANISMS_SQL="select distinct(o.common_name) from organism o, feature f where f.organism_id = o.organism_id and o.common_name != 'dummy'"
 logecho ${GET_ORGANISMS_SQL}
 
-ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h pgsrv2 -U genedb -c \"${GET_ORGANISMS_SQL}\" nightly\`"
+ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h path-dev-db -U genedb -c \"${GET_ORGANISMS_SQL}\" nightly\`"
 doeval $ORGANISMS_COMMAND
 
-CONNECTION_DETAILS="-d nightly -u genedb -p 5432 -i pgsrv2"
+CONNECTION_DETAILS="-d nightly -u genedb -p 5432 -i path-dev-db"
     
 
 for organism in $ORGANISMS

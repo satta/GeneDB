@@ -15,7 +15,7 @@ public class MultiChromSimpleLocationRemapper {
     MultiChromSimpleLocationRemapper(boolean transcriptNameHack) {
         this.transcriptNameHack = transcriptNameHack
         db = Sql.newInstance(
-            'jdbc:postgresql://pgsrv3:5432/bigtest',
+            'jdbc:postgresql://path-omixed-db:5432/bigtest',
             'pathdb',
             'LongJ!@n',
             'org.postgresql.Driver')

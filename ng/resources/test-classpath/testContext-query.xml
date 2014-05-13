@@ -57,7 +57,7 @@
 <!--
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
-        <property name="url"><value>jdbc:postgresql://pgsrv2:5432/pathdev</value></property>
+        <property name="url"><value>jdbc:postgresql://path-dev-db:5432/pathdev</value></property>
         <property name="username"><value>rn2@sanger.ac.uk</value></property>
         <property name="password"><value>password</value></property>
     </bean>

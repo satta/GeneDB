@@ -161,14 +161,14 @@ if [[ $COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP ]]; then
 	echo Backing up db
 	genedb-web-control ci-web stop
 	sleep 20
-	dropdb -h pgsrv2 nightly
-	createdb -h pgsrv2 -E SQL-ASCII nightly
-	pg_dump -Naudit -Naudit_backup -Ngraphs -h pgsrv1 pathogens | psql -h pgsrv2 nightly
+	dropdb -h path-dev-db nightly
+	createdb -h path-dev-db -E SQL-ASCII nightly
+	pg_dump -Naudit -Naudit_backup -Ngraphs -h path-live-db pathogens | psql -h path-dev-db nightly
 	
 	for sqlfile in $SOURCE_HOME/sql/cleanup/*.sql
 	do
 	    echo "Processing SQL cleanup file? " $sqlfile
-	    psql -h pgsrv2 nightly < $sqlfile
+	    psql -h path-dev-db nightly < $sqlfile
 	done
 	
 	cd $SOURCE_HOME
@@ -201,7 +201,7 @@ if [[ -z $ORGANISMS ]]; then
     fi
     
     logecho ${GET_ORGANISMS_SQL}
-    ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h pgsrv2 -c \"${GET_ORGANISMS_SQL}\" nightly\`"
+    ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h path-dev-db -c \"${GET_ORGANISMS_SQL}\" nightly\`"
     doeval $ORGANISMS_COMMAND
 fi
 
@@ -483,7 +483,7 @@ if [[ $COPY_NIGHTLY_TO_STAGING ]]; then
     dropdb -h genedb-db snapshot-old
     dropdb -h genedb-db staging
     createdb -h genedb-db staging
-    pg_dump -h pgsrv2 nightly | psql -h genedb-db staging
+    pg_dump -h path-dev-db nightly | psql -h genedb-db staging
     
     /nfs/pathdb/bin/push-staging-to-snapshot2 
  	/nfs/pathdb/bin/fix-snapshot 
