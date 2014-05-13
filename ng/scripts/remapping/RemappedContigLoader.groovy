@@ -17,7 +17,7 @@ public class RemappedContigLoader {
 
     RemappedContigLoader(def organismId) {
         db = Sql.newInstance(
-            'jdbc:postgresql://pgsrv1:5432/test_falciparum',
+            'jdbc:postgresql://path-live-db:5432/test_falciparum',
             'pathdb',
             'LongJ!@n',
             'org.postgresql.Driver')

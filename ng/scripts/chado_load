@@ -68,7 +68,7 @@ if [ ! -e "$GENEDB_HOME/$BIN_FOLDER/loaders/$loader.sh" ]; then
 fi
 source "$GENEDB_HOME/$BIN_FOLDER/loaders/$loader.sh"
 
-dbhost=pgsrv1.internal.sanger.ac.uk
+dbhost=path-live-db.internal.sanger.ac.uk
 dbport=5432
 dbname=pathogens
 dbuser="$LOGNAME@sanger.ac.uk"
@@ -113,7 +113,7 @@ cat <<OPTIONS
   -D database_connection_details
     In the format host:port/database, for example:
      -D pathdbsrv1b.internal.sanger.ac.uk:10120/bigtest
-     -D pgsrv2.internal.sanger.ac.uk:5432/pathdev
+     -D path-dev-db.internal.sanger.ac.uk:5432/pathdev
     The default, if this option is not given, is to use the main pathogens db.
   -U database_username
     The default is your Sanger email address.

@@ -1,6 +1,6 @@
 # a barebones property file for indexing...
 
-dbhost=pgsrv2
+dbhost=path-dev-db
 dbport=5432
 dbname=nightly
 dbuser=genedb

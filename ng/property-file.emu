@@ -1,4 +1,4 @@
-dbhost=pgsrv1
+dbhost=path-live-db
 dbport=5432
 dbname=emu
 dbuser=pathdb

@@ -61,7 +61,7 @@ END
 #User 'genedb' only has read access.
 
 my $dbname = 'pathogens';
-my $dbhost = 'pgsrv1';
+my $dbhost = 'path-live-db';
 my $dbport = '5432';
 my $dbuser = 'genedb';
 my $dbpass = 'genedb';

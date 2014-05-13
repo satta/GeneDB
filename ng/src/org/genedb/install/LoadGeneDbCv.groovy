@@ -37,7 +37,7 @@ class LoadGeneDbCv {
 
     LoadGeneDbCv() {
         db = Sql.newInstance(
-            'jdbc:postgresql://pgsrv2:5432/pathdev',
+            'jdbc:postgresql://path-dev-db:5432/pathdev',
             'rn2@sanger.ac.uk',
             'xxxxxxx',
             'org.postgresql.Driver')
