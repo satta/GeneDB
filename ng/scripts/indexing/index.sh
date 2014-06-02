@@ -162,7 +162,7 @@ if [[ $COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP ]]; then
 	genedb-web-control ci-web stop
 	sleep 20
 	dropdb -h path-dev-db nightly
-	createdb -h path-dev-db -E SQL-ASCII nightly
+	createdb -h path-dev-db nightly
 	pg_dump -Naudit -Naudit_backup -Ngraphs -h path-live-db pathogens | psql -h path-dev-db nightly
 	
 	for sqlfile in $SOURCE_HOME/sql/cleanup/*.sql
