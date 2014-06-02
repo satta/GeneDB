@@ -495,6 +495,6 @@ fi
 if [[ $RESTART_GENEDB ]]; then
 	echo "Stage 7"
 	echo Restarting...
-	ssh pcs-genedb1 /nfs/pathdb/bin/copy_and_restart_genedb
+	# ssh pcs-genedb1 /nfs/pathdb/bin/copy_and_restart_genedb
 	
 fi
