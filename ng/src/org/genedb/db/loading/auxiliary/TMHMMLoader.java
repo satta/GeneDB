@@ -184,7 +184,7 @@ class TMHMMFile {
             if (line.startsWith("#")) {
                 continue;
             }
-            String[] fields = line.split("\t");
+            String[] fields = line.split("\\s+");
             String key = fields[0];
             TMHMMRegion.Type type = TMHMMRegion.Type.decode(fields[2]);
             String startString = fields[3];
