@@ -53,8 +53,7 @@
 	<h3>Can I download the whole genome?</h3>
 	<div class="main-light-grey-top"></div>
 	<div class="main-light-grey">
-        <p>
-	Whole genome download is not available directly from GeneDB. However, the front page for most organisms contains an ftp link from which the full genome can usually be downloaded.
+    <p>	Whole genome download is not available directly from GeneDB. However, the front page for most organisms contains an ftp link from which the full genome can usually be downloaded.
 	</p>
 	</div>
 	<div class="main-light-grey-bot"></div>
@@ -63,6 +62,20 @@
 	<div class="main-light-grey">
 	<p>GeneDB currently only has RNAseq data available for <i>Schistosoma mansoni</i>. However, all RNAseq data sequenced at the Wellcome Trust Sanger Institute should be available via the <a href="http://www.ebi.ac.uk/ena/">European Nucelotide Archive</a>. Please contact <a href="mailto:genedb-help@sanger.ac.uk">the GeneDB helpdesk</a> for further details.</p>
 	<p>Where RNAseq evidence is present for an organism, to access it from the gene page, click the link to view your region of interest in a separate Web Artemis window. From the View pulldown menu, the BAM option should list all available BAM files of RNAseq data.</p>
+	</div>
+	<div class="main-light-grey-bot"></div>
+	<h3>What happened to the previous version of the GeneDB website?</h3>
+	<div class="main-light-grey-top"></div>
+	<div class="main-light-grey">
+	<p>The old GeneDB website was switched off on May 14th 2013. Content from the fission yeast <i>Schizosaccharomyces pombe</i> can now be found in <a href="http://www.pombase.org/">Pombase</a>. Content from the pathogenic fungus <i>Candida dubliniensis</i> can now be found in the <a href="http://www.candidagenome.org/">Candida Genome Database</a>. All other content is now found on this site.
+	</p>
+	</div>
+	<div class="main-light-grey-bot"></div>
+	<h3>How do I cite GeneDB?</h3>
+	<div class="main-light-grey-top"></div>
+	<div class="main-light-grey">
+	<p>Please cite the current <a href="http://nar.oxfordjournals.org/content/40/D1/D98">GeneDB publication</a>. <br>
+	</p>
 	</div>
 	<div class="main-light-grey-bot"></div>
 	</div>
