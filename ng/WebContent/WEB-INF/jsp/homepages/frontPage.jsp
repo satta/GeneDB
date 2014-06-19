@@ -56,6 +56,37 @@
 </div>
 <div class="main-light-grey-bot"></div>
 
+<div id="col-3-1">
+<h1>Sequence searches</h1>
+<div class="light-grey-top"></div>
+<div class="light-grey">
+<p class="block-para">Blast <br />
+
+&raquo; Single organism <span class="dataset-table"><db:homepageselect title="Select an organism" top="Root" baseUrl="/blast/submitblast/GeneDB_" leafOnly="true" alwaysLink="true"/></span> <br />
+
+&raquo; <a href="<misc:url value="/blast/submitblast/GeneDB_proteins/omni" />">Multi-organism (proteins)</a><br />
+&raquo; <a href="<misc:url value="/blast/submitblast/GeneDB_transcripts/omni" />">Multi-organism (transcripts and contigs/chromosomes)</a><br />
+
+ </p>
+
+
+</div>
+<div class="light-grey-bot"></div>
+</div>
+
+<div id="col-3-2">
+<h1>Go to our&hellip;</h1>
+<div class="light-grey-top"></div>
+<div class="light-grey">
+&raquo; <a href="<misc:url value="/Query" />">Query page</a><br />
+&raquo; <a href="<misc:url value="/web-artemis/"/>">Web Artemis</a><br />
+&raquo; <a href="<misc:url value="/cgi-bin/amigo/go.cgi"/>">AmiGO</a><br />
+&raquo; <a href="<misc:url value="/Page/jbrowse"/>">JBrowse</a><br />
+&raquo; <a href="http://lists.sanger.ac.uk/mailman/listinfo/genedb-info">Mailing list</a>
+</div>
+<div class="light-grey-bot"></div>
+</div>
+
 </div><!-- end main content column -left -->
 
 <div id="col-1-2">
@@ -71,23 +102,6 @@ Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.<br>
 </div>
 <div class="baby-blue-bot"></div>
 
-<h1>Previous GeneDB Website</h1>
-<div class="baby-blue-top"></div>
-<div class="baby-blue">
-&raquo; The old GeneDB website was switched off on May 14th 2013.<br>
-&raquo; Content from the fission yeast <i>Schizosaccharomyces pombe</i> can now be found in <a href="http://www.pombase.org/">Pombase</a>.<br>
-&raquo; Content from the pathogenic fungus <i>Candida dubliniensis</i> can now be found in the <a href="http://www.candidagenome.org/">Candida Genome Database</a>.<br>
-&raquo; All other content is now found on this site.<br>
-</div>
-<div class="baby-blue-bot"></div>
-
-<h1>Publications</h1>
-<div class="baby-blue-top"></div>
-<div class="baby-blue">
-<p>
-&raquo; A <a href="http://nar.oxfordjournals.org/content/early/2011/11/23/nar.gkr1032.abstract">GeneDB publication</a> is available to access online! <br>
-</div>
-<div class="baby-blue-bot"></div>
 <h1>News</h1>
 <div class="light-grey-top"></div>
 <div class="light-grey">
@@ -107,43 +121,6 @@ are now available for GeneDB : <br />
 </div>
 <div class="baby-blue-bot"></div>
 
-<h1>Sequence searches</h1>
-<div class="light-grey-top"></div>
-<div class="light-grey">
-<p class="block-para">Blast <br />
-
-&raquo; Single organism <span class="dataset-table"><db:homepageselect title="Select an organism" top="Root" baseUrl="/blast/submitblast/GeneDB_" leafOnly="true" alwaysLink="true"/></span> <br />
-
-&raquo; <a href="<misc:url value="/blast/submitblast/GeneDB_proteins/omni" />">Multi-organism (proteins)</a><br />
-&raquo; <a href="<misc:url value="/blast/submitblast/GeneDB_transcripts/omni" />">Multi-organism (transcripts and contigs/chromosomes)</a><br />
-
- </p>
-
-
-</div>
-<div class="light-grey-bot"></div>
-
-
-<h1>New mailing list</h1>
-<div class="baby-blue-top"></div>
-<div class="baby-blue">
-
-<p>There's a mailing list for announcing new releases of the GeneDB
-website, service interruptions etc. To subscribe please see <br>
-<a href="http://lists.sanger.ac.uk/mailman/listinfo/genedb-info">http://lists.sanger.ac.uk/mailman/listinfo/genedb-info</a></p>
-</div>
-<div class="baby-blue-bot"></div>
-
-<h1>Go to our</h1>
-<div class="light-grey-top"></div>
-<div class="light-grey">
-&raquo; <a href="<misc:url value="/Query" />">Query page</a><br />
-&raquo; <a href="<misc:url value="/web-artemis/"/>">Web Artemis</a><br />
-&raquo; <a href="<misc:url value="/cgi-bin/amigo/go.cgi"/>">AmiGO</a><br />
-&raquo; <a href="<misc:url value="/Page/jbrowse"/>">JBrowse</a><br />
-</div>
-<div class="light-grey-bot"></div>
-
 <h1>Information</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
@@ -161,14 +138,12 @@ website, service interruptions etc. To subscribe please see <br>
 Software<br />
 &raquo; <a href="http://www.sanger.ac.uk/Software/ACT/">ACT</a><br />
 &raquo; <a href="http://www.sanger.ac.uk/Software/Artemis/">Artemis</a><br />
-
 </p>
 <br />
 <p>
-Contributor<br />
+Contributors<br />
 &raquo; <a href="<misc:url value="/Page/acknowledgements" />">Acknowledgements</a><br />
 </p>
-
 
 </div>
 <div class="baby-blue-bot"></div>
