@@ -119,10 +119,10 @@ public class SequenceDistributorController {
             }
             program = "wublastx";
         }
-        
+
         String unsplitSequence = sequence;
-        
-        sequence = splitSequenceIntoLines(sequence);
+
+        //   sequence = splitSequenceIntoLines(sequence);
 
         SequenceDestination sd = SequenceDestination.valueOf(destination);
         
