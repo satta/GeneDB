@@ -97,8 +97,8 @@
 <p>
 &raquo;<a href="http://www.wellcome.ac.uk/Education-resources/Courses-and-conferences/Advanced-Courses-and-Scientific-Conferences/Workshops/WTVM050772.htm">Working with Parasite Database Resources Workshop</a><br>
 19&ndash;24 October 2014<br>
-Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.<br>
-<span style="color:red;">Deadline for Applications: 20 June 2014</span><br>
+Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.
+</p>
 </div>
 <div class="baby-blue-bot"></div>
 
