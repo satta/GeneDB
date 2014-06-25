@@ -76,7 +76,7 @@
 				<b> Dr. Fatima Silva-Franco</b>
 			</p>
 			<p>University of Liverpool</p>
-			<p>Fatima Silva has a PhD in Molecular Biology and a MRes in Bioinformatics. She joined the Functional and Comparative Genomics group at the University of Liverpool in 2013. She is curating Leishmania and Trypanosoma genomes.</p>
+			<p>Fatima Silva has a PhD in Molecular Biology and a MRes in Bioinformatics. She joined the Functional and Comparative Genomics group at the University of Liverpool in 2013. She is curating <i>Leishmania</i> and <i>Trypanosoma</i> genomes.</p>
 			<p>
 				<br /> <i> Plasmodium </i> species:
 			</p>
@@ -85,11 +85,11 @@
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
-				Ulrike is curating and reannotating the <i> Plasmodium
-					falciparum </i> genome database at WTSI, and has been involved in the
+				Ulrike is curating and reannotating the <i>Plasmodium
+					falciparum</i> genome database at WTSI, and has been involved in the
 				analysis of a diverse collection of eukaryotic pathogens, including
-				<i> Toxoplasma gondii </i> , <i> Plasmodium knowlesi </i> , and <i>
-					Plasmodium chabaudi </i> .
+				<i> Toxoplasma gondii </i>, <i> Plasmodium knowlesi </i>, and <i>
+					Plasmodium chabaudi</i>.
 			</p>
 			<p>
 				<br />
@@ -102,16 +102,16 @@
 		<h3>Primary Contacts</h3>
 		<div class="main-light-grey-top"></div>
 		<div class="main-light-grey">
-		<p><br /> <i> Schistosoma mansoni </i>:</p>
+		<p><br /> <i> Schistosoma mansoni</i>:</p>
 		<p><b>Dr. Anna Protasio</b></p>
 		<p>The Wellcome Trust Sanger Institute</p>
-		<p><br /> <i> Echinococcus granulosus </i>, <i> Echinococcus multilocularis </i> and <i>Hymenolepis microstoma</i>:</p>
+		<p><br /> <i> Echinococcus granulosus</i>, <i> Echinococcus multilocularis </i> and <i>Hymenolepis microstoma</i>:</p>
 		<p><b>Dr. Magdalena Zarowiecki</b></p>
 		<p>The Wellcome Trust Sanger Institute</p>
 		<p><br /> <i> Eimeria </i> species:</p>
 		<p><b>Dr. Adam Reid</b></p>
 		<p>The Wellcome Trust Sanger Institute</p>
-		
+
 		</div>
 		<div class="main-light-grey-bot"></div>
 			<br />
@@ -125,20 +125,20 @@
 				<br /> <b> Dr. Jacqueline McQuillan </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
-                           <p>Jacqueline McQuillan has a PhD in Software Engineering and joined the 
-                              Pathogen Genomics group at the Wellcome Trust Sanger Institute as a 
-                              postdoctoral fellow in 2008. In 2010, she took on the role of managing 
-                              the Pathogen Informatics team whose main responsibilities are to develop 
-                              sequence analysis pipelines and provide informatics support to 
+                           <p>Jacqueline McQuillan has a PhD in Software Engineering and joined the
+                              Pathogen Genomics group at the Wellcome Trust Sanger Institute as a
+                              postdoctoral fellow in 2008. In 2010, she took on the role of managing
+                              the Pathogen Informatics team whose main responsibilities are to develop
+                              sequence analysis pipelines and provide informatics support to
 			      the Pathogen Genomics group.</p>
 
 			<p>
 				<br /> <b> Dr. Andrew Page </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
-			<p>Andrew has a PhD in Computer Science in the area of distributed computing. 
-			   He joined the Sequencing Informatics team at the Wellcome Trust Sanger Institute 
-			   in 2009 as a Senior Software Developer and moved to the Pathogen Informatics 
+			<p>Andrew has a PhD in Computer Science in the area of distributed computing.
+			   He joined the Sequencing Informatics team at the Wellcome Trust Sanger Institute
+			   in 2009 as a Senior Software Developer and moved to the Pathogen Informatics
 			   team in June 2011 as a Principal Software Developer.
 			<p>
 			<p>
@@ -164,22 +164,13 @@
 				Institute in April 2009 where she works in the Pathogen Genomics
 				Informatics team.</p>
 			<p>
-				<br /> <b> Dr. Tim Carver </b>
-			</p>
-			<p>The Wellcome Trust Sanger Institute</p>
-			<p>
-			   Tim has a PhD in Chemistry. He did a postdoc at the University of Cambridge 
-			   before joining the Medical Research Council in 2000. From 2004 he has been 
-			   the lead developer for Artemis and ACT.
-			</p>   
-			<p>
 				<br /> <b> Sascha Steinbiss </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
-			   Sascha has a Diplom (MSc equivalent) in bioinformatics from the University of 
-			   Hamburg, Germany. After five more years of working with the Genome Informatics 
-			   group in Hamburg, he joined the Pathogen Genomics team at the Wellcome Trust 
+			   Sascha has a Diplom (MSc equivalent) in bioinformatics from the University of
+			   Hamburg, Germany. After five more years of working with the Genome Informatics
+			   group in Hamburg, he joined the Pathogen Genomics team at the Wellcome Trust
 			   Sanger Institute in December 2013.
 			</p>
 		</div>
@@ -193,34 +184,33 @@
 		<div class="main-light-grey-top"></div>
 		<div class="main-light-grey">
 
-
 			<p>
 				<br /> <b> Dr. Christiane Hertz-Fowler </b>
 			</p>
 			<p>University of Liverpool</p>
 			<p>
-				<b> Dr. Christopher Peacock </b>
+				<br /> <b> Dr. Christopher Peacock </b>
 			</p>
 			<p>University of Western Australia</p>
 			<p>
-				<b> Dr. Valerie Wood </b>
+				<br /> <b> Dr. Valerie Wood </b>
 			</p>
 			<p>University of Cambridge</p>
 			<p>
-				<b> Dr. Gary Dillon </b>
+				<br /> <b> Dr. Gary Dillon </b>
 			</p>
 			<p>
-				<b> Dr. Adrian Tivey </b>
+				<br /> <b> Dr. Adrian Tivey </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
-				<b> Larry Oke </b>
+				<br /> <b> Larry Oke </b>
 			</p>
 			<p>
-				<b> Dr. Robin Houston </b>
+				<br /> <b> Dr. Robin Houston </b>
 			</p>
 			<p>
-				<b> Raeece Naeem </b>
+				<br /> <b> Raeece Naeem </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>Raeece is a computer science engineering graduate from India,
@@ -230,44 +220,53 @@
 				the computational bioscience research center at KAUST Saudi Arabia
 				in March 2011.</p>
 			<p>
-				<b> Kim Rutherford </b>
+				<br /> <b> Kim Rutherford </b>
 			</p>
 			<p>University of Cambridge</p>
 			<p>
-				<b> Chinmay Patel </b>
+				<br /> <b> Chinmay Patel </b>
 			</p>
-			<p><b>Dr. Matt Rogers</b> <p>
+			<p><br /> <b>Dr. Matt Rogers</b> <p>
 			<p>University of Pittsburgh</p>
-			<p>Matt obtained his Ph.D. in Botany from the University of British Columbia 
-			in 2006 in Prof. Patrick Keeling's lab. He then relocated to the UK where 
-			he joined Dr. Mark van der Giezen as a Wellcome Trust post-doctoral fellow at 
-			Queen Mary, University of London and the University of Exeter. His work at the 
-			WTSI was focused on functional annotation of Leishmania genomes and assembly 
-			and annotation of the Leishmania mexicana genome. He is also interested in 
-			evolutionary protistology, gene family evolution, lateral gene transfer, 
+			<p>Matt obtained his Ph.D. in Botany from the University of British Columbia
+			in 2006 in Prof. Patrick Keeling's lab. He then relocated to the UK where
+			he joined Dr. Mark van der Giezen as a Wellcome Trust post-doctoral fellow at
+			Queen Mary, University of London and the University of Exeter. His work at the
+			WTSI was focused on functional annotation of <i>Leishmania</i> genomes and assembly
+			and annotation of the <i>Leishmania mexicana</i> genome. He is also interested in
+			evolutionary protistology, gene family evolution, lateral gene transfer,
 			and strong coffee. <p>
-			<p><b>Dr. Tina Eyre</b><p>
+			<p><br /> <b>Dr. Tina Eyre</b><p>
 			<p>The Wellcome Trust Sanger Institute<p>
 
-			<p><b>Dr. Giles Velarde </b><p>
+			<p><br /> <b>Dr. Giles Velarde </b><p>
 			<p>University of Cambridge, University of York, The Wellcome Trust Sanger Institute<p>
-			<p>Giles trained originally as a biochemist at Manchester University, but over the 
-			course of his Ph.D. at UMIST, moved into bioinformatics and software engineering. 
-			Following his doctoral studies, he worked at the Sequence Analysis Group at 
-			Manchester Bioinformatics, followed by six years as part of the Bioanalytical 
-			Sciences Group at the Manchester Interdisciplinary Biocentre. As part of the 
-			WTSI Pathogen Genomics informatics team, he focused on the development of 
-			new tools for GeneDB and was the main developer of the CRAWL web-services for GeneDB.<p>
-			<p><b>Dr. Flora Logan-Klumpler</b></p>
+			<p>Giles trained originally as a biochemist at Manchester University, but over the
+			course of his Ph.D. at UMIST, moved into bioinformatics and software engineering.
+			Following his doctoral studies, he worked at the Sequence Analysis Group at
+			Manchester Bioinformatics, followed by six years as part of the Bioanalytical
+			Sciences Group at the Manchester Interdisciplinary Biocentre. As part of the
+			WTSI Pathogen Genomics informatics team, he focused on the development of
+			new tools for GeneDB and was the main developer of the CRAWL web services for GeneDB.<p>
+			<p><br /> <b>Dr. Flora Logan-Klumpler</b></p>
 			<p>University of Cambridge, The Wellcome Trust Sanger Institute</p>
-			<p>.Flora completed her Ph.D. in trypanosome vitamin C biosynthesis in Prof. John Kelly's group at the London School of Hygiene and Tropical Medicine in 2008. She then moved to the University of Georgia, Athens to work on Trypanosoma cruzi fatty acid metabolism, and T. cruzi specific ontology development in the Tarleton Research Group. She is now working on the curation and functional annotation of the Trypanosoma brucei genome and the development of a new phenotype curation tool utilising new and existing ontologies at WTSI. She is also involved in the Trypanocyc community annotation project.</p>
-		<p><b> Dr. Craig Porter </b></p>
+			<p>Flora completed her Ph.D. in trypanosome vitamin C biosynthesis in Prof. John Kelly's group at the London School of Hygiene and Tropical Medicine in 2008. She then moved to the University of Georgia, Athens to work on <i>Trypanosoma cruzi</i> fatty acid metabolism, and <i>T. cruzi</i> specific ontology development in the Tarleton Research Group. She is now working on the curation and functional annotation of the <i>Trypanosoma brucei</i> genome and the development of a new phenotype curation tool utilising new and existing ontologies at WTSI. She is also involved in the Trypanocyc community annotation project.</p>
+		<p><br /> <b> Dr. Craig Porter </b></p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
-			   Craig has a PhD in Chemistry and an MSc in Information Technology. 
-			   After several postdocs at UCL and the EBI, he joined the Pathogen 
+			   Craig has a PhD in Chemistry and an MSc in Information Technology.
+			   After several postdocs at UCL and the EBI, he joined the Pathogen
 			   Informatics group in November 2010 where he works as a Senior Bioinformatician.
+			</p>
+				<p>
+				<br /> <b> Dr. Tim Carver </b>
+			</p>
+			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
+			   Tim has a PhD in Chemistry. He did a postdoc at the University of Cambridge
+			   before joining the Medical Research Council in 2000. From 2004 he has been
+			   the lead developer for Artemis and ACT.
+			</p>
 		</div>
 		<div class="main-light-grey-bot"></div>
 
