@@ -1,18 +1,11 @@
 package org.genedb.querying.tmpquery;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.genedb.querying.core.QueryClass;
-import org.genedb.querying.core.QueryException;
 import org.genedb.querying.core.QueryParam;
-
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
-import org.hibernate.Session;
-import org.springframework.orm.hibernate3.SessionFactoryUtils;
 
+@SuppressWarnings("serial")
 @QueryClass(
         title="Transcripts by their type",
         shortDesc="Get a list of transcripts by type",
