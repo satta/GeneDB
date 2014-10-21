@@ -117,7 +117,7 @@ Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
 <p>
-are now available for GeneDB : <br />
+are now available for GeneDB: <br />
 &raquo; <a href="http://www.genedb.org/services">Web services</a>
 </p>
 </div>
