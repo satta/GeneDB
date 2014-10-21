@@ -91,6 +91,7 @@
 
 <div id="col-1-2">
 
+<!--
 <h1>Events</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
@@ -101,6 +102,7 @@ Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.
 </p>
 </div>
 <div class="baby-blue-bot"></div>
+-->
 
 <h1>News</h1>
 <div class="light-grey-top"></div>
