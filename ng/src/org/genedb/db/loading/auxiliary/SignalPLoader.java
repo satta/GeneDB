@@ -61,9 +61,9 @@ public class SignalPLoader extends Loader {
         analysis.setProgramVersion(analysisProgramVersion);
         sequenceDao.persist(analysis);
 
-        if(analysisProgramVersion >= 4.0)
+        if(analysisProgramVersion.equals("3.0"))
         {
-          SignalPFileV4 file = new SignalPFileV4(inputStream);
+          SignalPFile file = new SignalPFile(inputStream);
           int n=1;
           for (SignalPHit hit: file.hits()) {
               logger.info(String.format("[%d/%d] Processing prediction for '%s'", n++, file.hits().size(), hit.getKey()));
@@ -78,7 +78,7 @@ public class SignalPLoader extends Loader {
         }
         else
         {
-          SignalPFile file = new SignalPFile(inputStream);
+          SignalPFileV4 file = new SignalPFileV4(inputStream);
           int n=1;
           for (SignalPHit hit: file.hits()) {
               logger.info(String.format("[%d/%d] Processing prediction for '%s'", n++, file.hits().size(), hit.getKey()));
