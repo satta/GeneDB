@@ -61,7 +61,7 @@ public class SignalPLoader extends Loader {
         analysis.setProgramVersion(analysisProgramVersion);
         sequenceDao.persist(analysis);
 
-        SignalPFile file = new SignalPFile(inputStream);
+        SignalPFileV4 file = new SignalPFileV4(inputStream);
 
         int n=1;
         for (SignalPHit hit: file.hits()) {
@@ -111,6 +111,62 @@ public class SignalPLoader extends Loader {
         if (hit.getPlasmoAP_score()!=null){
             
             sequenceDao.persist(new FeatureProp(polypeptide, plasmoAPScoreTerm, hit.getPlasmoAP_score(), 0));            
+        }
+    }
+}
+
+class SignalPFileV4 {
+    private static final Logger logger = Logger.getLogger(SignalPFileV4.class);
+    private List<SignalPHit> hits = new ArrayList<SignalPHit>();
+
+    public SignalPFileV4(InputStream inputStream) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        String line;
+        while (null != (line = reader.readLine())) {
+            if (line.startsWith("#") || line.equals("")) {
+            }
+            else
+            {
+              logger.trace(line);
+              parseSummary(line);
+            }
+        }
+    }
+
+    public Collection<SignalPHit> hits() {
+        return hits;
+    }
+    
+    private static final Pattern SUMMARY_PATTERN = Pattern.compile(
+            "(.*)\\s+(\\d\\.\\d{3})\\s+(\\d+)\\s+(\\d\\.\\d{3})\\s+\\d+\\s+(\\d\\.\\d{3})\\s+\\d+\\s+\\d\\.\\d{3}\\s+\\d\\.\\d{3}\\s+(Y|N)\\s+\\d\\.\\d{3}\\s+(.*)"
+            );
+            
+            
+    private void parseSummary(CharSequence summary) {
+        
+        Matcher matcher = SUMMARY_PATTERN.matcher(summary);
+        if (matcher.matches()) {
+            String key  = matcher.group(1);
+            String type = "";
+            if(matcher.group(6).equals("Y"))
+            {
+              type = "Signal peptide";
+            }
+            else
+            {
+              return;
+            }
+
+            String peptideProbability = matcher.group(5);
+            String anchorProbability  = matcher.group(4);
+            String cleavageSiteProbability = matcher.group(2);
+            int cleavageSiteAfter = Integer.parseInt(matcher.group(3));
+
+            hits.add(new SignalPHit(key, type, peptideProbability, anchorProbability, cleavageSiteProbability,  null,
+                    cleavageSiteAfter));
+        }
+        else {
+            logger.error("Failed to parse summary:\n" + summary);
         }
     }
 }
