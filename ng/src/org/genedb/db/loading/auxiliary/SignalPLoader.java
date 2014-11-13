@@ -61,19 +61,37 @@ public class SignalPLoader extends Loader {
         analysis.setProgramVersion(analysisProgramVersion);
         sequenceDao.persist(analysis);
 
-        SignalPFileV4 file = new SignalPFileV4(inputStream);
-
-        int n=1;
-        for (SignalPHit hit: file.hits()) {
-            logger.info(String.format("[%d/%d] Processing prediction for '%s'", n++, file.hits().size(), hit.getKey()));
-
-            loadHit(hit);
-
-            if (n % 50 == 1) {
-                logger.info("Clearing session");
-                session.clear();
-            }
+        if(analysisProgramVersion >= 4.0)
+        {
+          SignalPFileV4 file = new SignalPFileV4(inputStream);
+          int n=1;
+          for (SignalPHit hit: file.hits()) {
+              logger.info(String.format("[%d/%d] Processing prediction for '%s'", n++, file.hits().size(), hit.getKey()));
+          
+              loadHit(hit);
+          
+              if (n % 50 == 1) {
+                  logger.info("Clearing session");
+                  session.clear();
+              }
+          }
         }
+        else
+        {
+          SignalPFile file = new SignalPFile(inputStream);
+          int n=1;
+          for (SignalPHit hit: file.hits()) {
+              logger.info(String.format("[%d/%d] Processing prediction for '%s'", n++, file.hits().size(), hit.getKey()));
+
+              loadHit(hit);
+
+              if (n % 50 == 1) {
+                  logger.info("Clearing session");
+                  session.clear();
+              }
+          }
+        }
+
     }
 
     private CvTerm predictionTerm, peptideProbabilityTerm, anchorProbabilityTerm, plasmoAPScoreTerm;
