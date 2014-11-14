@@ -158,9 +158,8 @@ class SignalPFileV4 {
     
     // append optional ap score to the end of the results
     private static final Pattern SUMMARY_PATTERN = Pattern.compile(
-            "(.*)\\s+(\\d\\.\\d{3})\\s+\\d+\\s+(\\d\\.\\d{3})\\s+(\\d+)\\s+(\\d\\.\\d{3})\\s+\\d+\\s+\\d\\.\\d{3}\\s+\\d\\.\\d{3}\\s+(Y|N)\\s+\\d\\.\\d{3}\\s+(.*)"
-            );
-            
+        "([^\\s\\t]+)[\\s\\t]+(\\d\\.\\d{3})[\\s\\t]+\\d+[\\s\\t]+(\\d\\.\\d{3})[\\s\\t]+(\\d+)[\\s\\t]+(\\d\\.\\d{3})[\\s\\t]+\\d+[\\s\\t]+\\d\\.\\d{3}[\\s\\t]+\\d\\.\\d{3}[\\s\\t]+(Y|N)[\\s\\t]+\\d\\.\\d{3}[\\s\\t]+(.*)"
+        );
             
     private void parseSummary(CharSequence summary) {
         
