@@ -155,8 +155,10 @@ class SignalPFileV4 {
         return hits;
     }
     
+    
+    // append optional ap score to the end of the results
     private static final Pattern SUMMARY_PATTERN = Pattern.compile(
-            "(.*)\\s+(\\d\\.\\d{3})\\s+(\\d+)\\s+(\\d\\.\\d{3})\\s+\\d+\\s+(\\d\\.\\d{3})\\s+\\d+\\s+\\d\\.\\d{3}\\s+\\d\\.\\d{3}\\s+(Y|N)\\s+\\d\\.\\d{3}\\s+(.*)"
+            "(.*)\\s+(\\d\\.\\d{3})\\s+\\d+\\s+(\\d\\.\\d{3})\\s+(\\d+)\\s+(\\d\\.\\d{3})\\s+\\d+\\s+\\d\\.\\d{3}\\s+\\d\\.\\d{3}\\s+(Y|N)\\s+\\d\\.\\d{3}\\s+(.*)"
             );
             
             
@@ -176,9 +178,9 @@ class SignalPFileV4 {
             }
 
             String peptideProbability = matcher.group(5);
-            String anchorProbability  = matcher.group(4);
+            String anchorProbability  = matcher.group(3);
             String cleavageSiteProbability = matcher.group(2);
-            int cleavageSiteAfter = Integer.parseInt(matcher.group(3));
+            int cleavageSiteAfter = Integer.parseInt(matcher.group(4));
 
             hits.add(new SignalPHit(key, type, peptideProbability, anchorProbability, cleavageSiteProbability,  null,
                     cleavageSiteAfter));
