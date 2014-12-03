@@ -215,7 +215,7 @@ public class QueryController extends AbstractGeneDBFormController{
         
         
         int start = bounds.page * bounds.length;
-        int end = start + bounds.length;
+        int end = start + bounds.length -1 ;
         
         //logger.info("Query page " + bounds.page + ", length " + bounds.length);
         logger.info(String.format("Page: %s, Length: %s, Start-End: %s-%s", bounds.page, bounds.length, start, end));
