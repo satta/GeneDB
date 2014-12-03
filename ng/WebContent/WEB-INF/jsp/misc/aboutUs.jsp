@@ -164,14 +164,16 @@
 				Institute in April 2009 where she works in the Pathogen Genomics
 				Informatics team.</p>
 			<p>
-				<br /> <b> Sascha Steinbiss </b>
+				<br /> <b>  Dr. Sascha Steinbiss </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
-			   Sascha has a Diplom (MSc equivalent) in bioinformatics from the University of
-			   Hamburg, Germany. After five more years of working with the Genome Informatics
-			   group in Hamburg, he joined the Pathogen Genomics team at the Wellcome Trust
-			   Sanger Institute in December 2013.
+			   Sascha has a PhD in bioinformatics from the University of
+			   Hamburg, Germany. After working with the Genome Informatics
+			   group in Hamburg on sequence analysis and annotation processing
+			   in the context of transposon prediction, he joined the Parasite
+			   Genomics team at the Wellcome Trust Sanger Institute in
+			   December 2013.
 			</p>
 		</div>
 		<div class="main-light-grey-bot"></div>
@@ -250,7 +252,16 @@
 			new tools for GeneDB and was the main developer of the CRAWL web services for GeneDB.<p>
 			<p><br /> <b>Dr. Flora Logan-Klumpler</b></p>
 			<p>University of Cambridge, The Wellcome Trust Sanger Institute</p>
-			<p>Flora completed her Ph.D. in trypanosome vitamin C biosynthesis in Prof. John Kelly's group at the London School of Hygiene and Tropical Medicine in 2008. She then moved to the University of Georgia, Athens to work on <i>Trypanosoma cruzi</i> fatty acid metabolism, and <i>T. cruzi</i> specific ontology development in the Tarleton Research Group. She is now working on the curation and functional annotation of the <i>Trypanosoma brucei</i> genome and the development of a new phenotype curation tool utilising new and existing ontologies at WTSI. She is also involved in the Trypanocyc community annotation project.</p>
+			<p>Flora completed her Ph.D. in trypanosome vitamin C biosynthesis
+			in Prof. John Kelly's group at the London School of Hygiene and
+			Tropical Medicine in 2008. She then moved to the University of
+			Georgia, Athens to work on <i>Trypanosoma cruzi</i> fatty acid
+			metabolism, and <i>T. cruzi</i> specific ontology development in
+			the Tarleton Research Group. She is now working on the curation and
+			functional annotation of the <i>Trypanosoma brucei</i> genome and
+			the development of a new phenotype curation tool utilising new and
+			existing ontologies at WTSI. She is also involved in the Trypanocyc
+			community annotation project.</p>
 		<p><br /> <b> Dr. Craig Porter </b></p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>
