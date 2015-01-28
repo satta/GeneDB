@@ -224,22 +224,24 @@ def promoteContigToTopLevel (Feature bin, Feature feature, Cvterm topLevelType, 
 				VALUES ( ${feature.feature_id}, ${topLevelType.cvterm_id}, 'true')
 		""")
 	}
-
 }
 
 def relocateFeatureToContig(Feature bin, Feature contig, Feature feature, Sql sql) {
 
-	Integer featureloc_id = sql.firstRow("""
-		SELECT fl.featureloc_id, f.feature_id, f.uniqueName
+	def flrow = sql.firstRow("""
+		SELECT fl.featureloc_id, f.feature_id, f.uniqueName, fl.is_fmin_partial, fl.is_fmax_partial
 		FROM feature f
 			JOIN featureloc fl ON f.feature_id = fl.feature_id AND fl.srcfeature_id = ${bin.feature_id}
 		WHERE f.uniquename = ${feature.uniquename}
-	""").featureloc_id
+	""")
+
+	Integer featureloc_id = flrow.featureloc_id
+	def is_fmin_partial = flrow.is_fmin_partial
+	def is_fmax_partial = flrow.is_fmax_partial
 
 	if (featureloc_id == null) {
 		throw new RuntimeException("The featureloc is null for ${feature.uniquename} on ${bin.uniquename} ")
 	}
-
 
 	sql.execute("""
 		DELETE FROM featureloc where featureloc_id = ${featureloc_id}
@@ -248,14 +250,16 @@ def relocateFeatureToContig(Feature bin, Feature contig, Feature feature, Sql sq
 	def newFmin = feature.fmin - contig.fmin
 	def newFmax = feature.fmax - contig.fmin
 
-	println "         ${feature.fmin}, ${feature.fmax} -> ${newFmin}, ${newFmax} (${feature.phase} - ${feature.strand})"
+	println "         ${feature.fmin}, ${feature.fmax}, ${is_fmin_partial}, ${is_fmax_partial} -> ${newFmin}, ${newFmax} (${feature.phase} - ${feature.strand})"
 
 	sql.execute("""
-		INSERT INTO featureloc (srcfeature_id, feature_id, fmin, fmax, phase, strand) VALUES
-			(${contig.feature_id}, ${feature.feature_id}, ${newFmin}, ${newFmax}, ${feature.phase}, ${feature.strand})
+		INSERT INTO featureloc (srcfeature_id, feature_id, fmin,
+			                    is_fmin_partial, fmax, is_fmax_partial,
+			                    phase, strand) VALUES
+			(${contig.feature_id}, ${feature.feature_id}, ${newFmin},
+				 ${is_fmin_partial}, ${newFmax}, ${is_fmax_partial},
+				 ${feature.phase}, ${feature.strand})
 	""")
-
-
 }
 
 
