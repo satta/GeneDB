@@ -153,8 +153,9 @@
 				Institute. Martin then moved across the Wellcome Trust Genome Campus
 				to the WTSI Pathogen Genomics informatics team, where he currently
 				has a role providing informatics support to the wider Pathogen
-				Genomics group.</p>
-				<br /> <b> Dr. Nishadi De Silva </b> <i>currently on maternity leave</i>
+				Genomics group.
+			</p>
+				<br /> <b> Dr. Nishadi De Silva </b>
 			</p>
 			<p>The Wellcome Trust Sanger Institute</p>
 			<p>Nishadi completed her PhD in Computer Science at the
