@@ -50,10 +50,10 @@ public class QueryController extends AbstractGeneDBFormController{
     private QueryFactory<NumericQueryVisibility> queryFactory;
 
     private HistoryManagerFactory hmFactory;
-    
+
     @Autowired
     private ApplicationContext applicationContext;
-    
+
     public static final int DEFAULT_LENGTH = 30;
 
 
@@ -76,27 +76,28 @@ public class QueryController extends AbstractGeneDBFormController{
     public String chooseFormHandling(
             @PathVariable(value="queryName") String queryName,
             @RequestParam(value="suppress", required=false) String suppress,
+            @RequestParam(value="redirect", required=false, defaultValue = "true") boolean redirect,
             HttpServletRequest request,
             HttpSession session,
             Model model) throws QueryException {
-    	
+
     	logger.info(queryName);
-    	
+
     	model.addAttribute("actionName" , request.getContextPath() + "/Query/" + queryName);
-    	
-    	
+
+
     	Map<String, String[]> parameters = request.getParameterMap();
     	for (Map.Entry<String, String[]> entry : parameters.entrySet()) {
     		for (String value : entry.getValue()) {
     			logger.info(entry.getKey() + " : " + value);
     		}
     	}
-    	
+
     	logger.debug("The number of parameters is '" + request.getParameterMap().keySet().size() + "'");
-    	
-    	// FIXME determine if this check for parameter count is the best way to decide whether or not to perform the query 
+
+    	// FIXME determine if this check for parameter count is the best way to decide whether or not to perform the query
         if (request.getParameterMap().size() > 1) {
-            return processForm(queryName, suppress, request, session, model);
+            return processForm(queryName, suppress, redirect, request, session, model);
         } else {
             return displayForm(queryName, request, session, model);
         }
@@ -108,29 +109,29 @@ public class QueryController extends AbstractGeneDBFormController{
             ServletRequest request,
             HttpSession session,
             Model model) throws QueryException {
-    	
+
     	logger.info("DISPLAYING FORM");
-    	
+
         Query query = findQueryType(queryName, session);
         if (query==null){
         	logger.warn("No query, redirecting to the list");
             return "redirect:/QueryList";
         }
-        
+
         //Initialise model data somehow
         model.addAttribute("query", query);
         populateModelData(model, query);
 
         String taxonNodeName = findTaxonName(query);
-        
+
         if (taxonNodeName == null || taxonNodeName.length() == 0) {
         	if (request.getParameter("taxonNodeName") != null) {
-        		taxonNodeName = request.getParameter("taxonNodeName"); 
+        		taxonNodeName = request.getParameter("taxonNodeName");
         	}
         }
-        
+
         logger.info("TaxonNodeName is "+taxonNodeName);
-        
+
         model.addAttribute("taxonNodeName", taxonNodeName);
         return "search/"+queryName;
     }
@@ -140,35 +141,36 @@ public class QueryController extends AbstractGeneDBFormController{
 	public String processForm(
             String queryName,
             String suppress,
+            boolean redirect,
             HttpServletRequest request,
             HttpSession session,
             Model model) throws QueryException {
 
     	logger.info("PROCESSING FORM");
-    	
+
     	HistoryManager hm = hmFactory.getHistoryManager(session);
-    	
+
         String key = generateKey(session.getId(), (Map<String, String[]>) request.getParameterMap());
         logger.info("Query key: " + key);
-        
+
         PagedQuery query = null;
         QueryHistoryItem item = hm.getQueryHistoryItem(key);
-        
+
         if (item == null) {
         	logger.info("Could not find existing query for this session, creating ...");
-        	
+
         	query = findQueryType(queryName, session);
             if (query==null){
                 logger.error(String.format("Unable to find query of name '%s'", queryName));
                 return "redirect:/Query";
             }
-            
+
         } else {
         	query = item.getQuery();
         }
-        
+
         logger.info("Using query " + query.getQueryName());
-        
+
         // Initialise query form
         Errors errors = initialiseQueryForm(query, request);
         if (errors.hasErrors()) {
@@ -179,7 +181,7 @@ public class QueryController extends AbstractGeneDBFormController{
             }
             return "search/"+queryName;
         }
-        
+
         /*
          * Bodge to make sure organism lucene queries have a taxon.
          * */
@@ -190,7 +192,7 @@ public class QueryController extends AbstractGeneDBFormController{
                 oq.setTaxons(new TaxonNodeList(tnm.getTaxonNodeByString("Root", false)));
             }
         }
-        
+
         // Validate initialised form
         query.validate(query, errors);
         if (errors.hasErrors()) {
@@ -199,62 +201,62 @@ public class QueryController extends AbstractGeneDBFormController{
             return "search/"+queryName;
         }
         logger.debug("Validator found no errors");
-        
-        // Initialise model data 
+
+        // Initialise model data
         populateModelData(model, query);
-        
+
         logger.info(String.format("Adding %s with key %s to history manager", query, key));
         item = hm.addQueryHistoryItem(key, query);
-        
-        
-        
+
+
+
         model.addAttribute("query", query);
-        
-        
+
+
         Bounds bounds = getQueryBounds(request);
-        
-        
+
+
         int start = bounds.page * bounds.length;
         int end = start + bounds.length -1 ;
-        
+
         //logger.info("Query page " + bounds.page + ", length " + bounds.length);
         logger.info(String.format("Page: %s, Length: %s, Start-End: %s-%s", bounds.page, bounds.length, start, end));
-        
+
         List<String> ids = query.getResults(start, end);
-        
+
         model.addAttribute("bounds",bounds);
-        
+
         logger.info("Size :: ");
-        
+
         logger.info(ids.size());
-        
+
 //        for (String id : ids) {
 //    		logger.info(id);
 //    	}
-        
+
         List<GeneSummary> results = summaries(ids);
-        
+
         logger.info(results.size());
-        
-        
+
+
 //        QueryHistoryItem qhi = hm.getQueryHistoryItem(key);
 //        logger.info(String.format("Fished history item? %s", qhi));
-//        
+//
 //        List<String> uniqueNames = qhi.getIds();
 //        logger.info(qhi.getIds().size());
 //        logger.info(qhi.getIds());
-        
+
         // Suppress item in results
         // suppressResultItem(suppress, results);
-        
+
         String taxonName = findTaxonName(query);
         logger.info("TaxonNodeName is " + taxonName);
         model.addAttribute("taxonNodeName", taxonName);
-        
+
         int totalResultsSize = query.getTotalResultsSize();
         logger.info("Total result size " + totalResultsSize);
     	model.addAttribute("resultsSize", totalResultsSize);
-        
+
     	if (queryName.equals("quickSearch")) {
         	QuickSearchQuery quickSearchQuery = (QuickSearchQuery) query;
         	logger.info("Fetching quick search taxons");
@@ -268,49 +270,49 @@ public class QueryController extends AbstractGeneDBFormController{
 			Map motifs = motifQuery.getMotifResults(bounds.page, bounds.length);
     		model.addAttribute("motifs", motifs);
     	}
-    	
-    	if (results.size() == 1) {
-    		
+
+    	if (results.size() == 1 && redirect) {
+
     		GeneSummary geneSummary = results.get(0);
     		return "redirect:/gene/" + geneSummary.getDisplayId();
-    		
+
     	} else if (results.size() > 0) {
-        	
+
         	model.addAttribute("results", results);
             model.addAttribute("queryName", queryName);
             model.addAttribute("actionName" , request.getContextPath() + "/Query/" + queryName);
-            
+
             return "search/"+ queryName;
-            
-        } 
-    	
+
+        }
+
     	// if the search yielded any results, we should now have been redirected
-    	
+
     	// remove unsuccessful search term, no point in hanging onto this
         hm.removeItem(key);
         logger.warn("No results found for query");
 		model.addAttribute("noResultFound", Boolean.TRUE);
-		
+
     	if (queryName.equals("quickSearch")) {
-        	
+
         	QuickSearchQuery quickSearchQuery = (QuickSearchQuery) query;
         	logger.info("Running suggest query as no result found");
         	SuggestQuery squery = (SuggestQuery) queryFactory.retrieveQuery("suggest", NumericQueryVisibility.PRIVATE);
         	squery.setSearchText(quickSearchQuery.getSearchText());
         	squery.setTaxons(quickSearchQuery.getTaxons());
         	squery.setMax(30);
-        	
+
 			List<String> sResults = squery.getResults();
 			model.addAttribute("suggestions", sResults);
-			
+
         }
-    	
-        
+
+
 		return "search/" + queryName;
-        
+
 
     }
-    
+
     @SuppressWarnings("unused")
 	private List<GeneSummary> motifSummaries (MotifQuery query, List<String> ids) throws QueryException {
     	IdsToGeneSummaryQuery idsToGeneSummary = (IdsToGeneSummaryQuery) queryFactory.retrieveQuery("idsToGeneSummary", NumericQueryVisibility.PRIVATE);
@@ -321,7 +323,7 @@ public class QueryController extends AbstractGeneDBFormController{
     	}
     	return summaries;
     }
-    
+
     private List<GeneSummary> summaries (List<String> ids) throws QueryException {
     	IdsToGeneSummaryQuery idsToGeneSummary = (IdsToGeneSummaryQuery) queryFactory.retrieveQuery("idsToGeneSummary", NumericQueryVisibility.PRIVATE);
     	idsToGeneSummary.setIds(ids);
@@ -331,7 +333,7 @@ public class QueryController extends AbstractGeneDBFormController{
     	}
     	return summaries;
     }
-    
+
     public class Bounds {
     	private int page;
     	private int length;
@@ -342,7 +344,7 @@ public class QueryController extends AbstractGeneDBFormController{
     	public int getPage(){return page;}
     	public int getLength(){return length;}
     }
-    
+
     private Bounds getQueryBounds(HttpServletRequest request) {
         String startString = request.getParameter((new ParamEncoder("row").encodeParameterName(TableTagParameters.PARAMETER_PAGE)));
         // Use 1-based index for start and end
@@ -351,28 +353,28 @@ public class QueryController extends AbstractGeneDBFormController{
             //start = (Integer.parseInt(startString) - 1) * DEFAULT_LENGTH + 1;
         	page = Integer.parseInt(startString) - 1 ;
         }
-        
+
         return new Bounds(page,DEFAULT_LENGTH);
     }
-    
+
     /*private final String displayResults (
             HttpServletRequest request,
             Model model,
             HistoryItem item,
             Bounds bounds,
             List<GeneSummary> results) throws QueryException {
-    	
+
         String pName = new ParamEncoder("row").encodeParameterName(TableTagParameters.PARAMETER_PAGE);
         logger.debug("pName is '"+pName+"'");
         String startString = request.getParameter((new ParamEncoder("row").encodeParameterName(TableTagParameters.PARAMETER_PAGE)));
         logger.debug("The start string is '"+startString+"'");
-        
+
         // Use 1-based index for start and end
         int start = 1;
         if (startString != null) {
             start = (Integer.parseInt(startString) - 1) * DEFAULT_LENGTH + 1;
         }
-        
+
 //        MyPaginatedList summaries = new MyPaginatedList<GeneSummary>();
 //        summaries.fullListSize = results.size();
 //        summaries.list = results;
@@ -381,85 +383,85 @@ public class QueryController extends AbstractGeneDBFormController{
 //        summaries.searchId = "xxx";
 //        summaries.sortDirection = SortOrderEnum.ASCENDING;
 //        summaries.sortCriterion = "systematicId";
-        
+
         //logger.info(summaries.list);
-        
+
         model.addAttribute("results", results);
         model.addAttribute("resultsSize", item.getQuery().getResultsSize());
-        
+
         int end = start + DEFAULT_LENGTH;
-        
+
         int resultSize = item.getQuery().getResultsSize();
-        
+
         logger.debug("The number of results retrieved is '"+resultSize+"'");
         logger.debug("The end marker, before adjustment, is '"+end+"'");
 
         if (end > resultSize + 1) {
             end = resultSize + 1;
         }
-        
+
         model.addAttribute("firstResultIndex", start);
-        
+
         Query query = item.getQuery();
-        
-        	
+
+
     	String queryName = queryFactory.getRealName(query);
-    	
+
     	model.addAttribute("queryName", queryName);
-    	
+
         populateModelData(model, query);
-        
+
         model.addAttribute("query", query);
-        
-        
+
+
         if (queryName.equals("quickSearch")) {
-        	
+
         	QuickSearchQuery quickSearchQuery = (QuickSearchQuery) query;
         	//model.addAttribute("query", quickSearchQuery);
         	logger.info("taxonGroup : " + quickSearchQuery.getQuickSearchQueryResults(bounds.page, bounds.length).getTaxonGroup());
         	model.addAttribute("taxonGroup", quickSearchQuery.getQuickSearchQueryResults(bounds.page, bounds.length).getTaxonGroup());
-        	
+
         	if (resultSize == 0) {
             	SuggestQuery squery = (SuggestQuery) queryFactory.retrieveQuery("suggest", NumericQueryVisibility.PRIVATE);
             	squery.setSearchText(quickSearchQuery.getSearchText());
             	squery.setTaxons(quickSearchQuery.getTaxons());
             	squery.setMax(30);
-            	
+
 				List sResults = squery.getResults();
 				model.addAttribute("suggestions", sResults);
         	}
-        	
-        } 
 
-        
+        }
+
+
         model.addAttribute("actionName" , request.getContextPath() + "/Query/" + queryName);
-        
+
         return "search/"+ queryName;
         //return "list/results2";
     }
     */
-    
+
     private String generateKey(String sessionId, Map<String, String[]> parameters) {
-    	
+
     	int hashcode = 0;
-    	
+
     	for (Entry<String, String[]> entry : parameters.entrySet()) {
-    		
+
     		// ignore display tag pagination parameters
     		if (entry.getKey().equals("d-16544-p")) {
     			continue;
     		}
-    		
+
     		hashcode += entry.getKey().hashCode();
     		for (String value : entry.getValue()) {
     			hashcode += value.hashCode();
     		}
     	}
-    	
-    	String key = "query:"+ sessionId + ":"+ hashcode; 
+
+    	String key = "query:"+ sessionId + ":"+ hashcode;
     	return key;
     }
-    
+
     private void populateModelData(Model model, Query query) {
         Map<String, Object> modelData = query.prepareModelData();
         for (Map.Entry<String, Object> entry : modelData.entrySet()) {
@@ -474,10 +476,10 @@ public class QueryController extends AbstractGeneDBFormController{
         	logger.error("Unable to identify which query to use");
         	return null;
         }
-        
+
         /*
-         * Queries that the QueryController can handle must be public. PUBLIC_BUT_NO_FORMS is a special case 
-         * where links on gene pages (or elsewhere) are pointing here, rather than forms themeselves. 
+         * Queries that the QueryController can handle must be public. PUBLIC_BUT_NO_FORMS is a special case
+         * where links on gene pages (or elsewhere) are pointing here, rather than forms themeselves.
          */
         PagedQuery query = (PagedQuery) queryFactory.retrieveQuery(queryName, NumericQueryVisibility.PUBLIC_BUT_NO_FORMS);
         if (query == null) {
@@ -503,9 +505,9 @@ public class QueryController extends AbstractGeneDBFormController{
             }
         }
     }
-    
+
 //    class MyPaginatedList<T> implements PaginatedList {
-//    	
+//
 //    	private int fullListSize;
 //    	private List<T> list;
 //    	private int objectsPerPage;
@@ -513,7 +515,7 @@ public class QueryController extends AbstractGeneDBFormController{
 //    	private String searchId;
 //    	private String sortCriterion;
 //    	private SortOrderEnum sortDirection;
-//    	
+//
 //		@Override
 //		public int getFullListSize() {
 //			return fullListSize;
@@ -548,7 +550,7 @@ public class QueryController extends AbstractGeneDBFormController{
 //		public SortOrderEnum getSortDirection() {
 //			return sortDirection;
 //		}
-//    	
+//
 //    }
-    
+
 }
