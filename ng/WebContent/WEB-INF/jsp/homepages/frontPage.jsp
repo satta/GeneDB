@@ -9,6 +9,11 @@
 <br>
 
 <misc:url value="/Homepage/" var="base2" />
+<div id="col-2-1" style="background: #FFFF99">
+<p><strong>Notice: Thursday 10 September - Friday 11 September 2015</strong></p>
+<p>Due to essential maintenance, there may be some service interruption during this period.  If you have any questions please <a id="contact" href="mailto:genedb-help@sanger.ac.uk">email us</a></p>
+</div>
+
 <div id="col-1-1">
 <h1>Datasets</h1>
 <div class="main-light-grey-top"></div>
