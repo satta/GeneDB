@@ -9,7 +9,7 @@
 <br>
 
 <misc:url value="/Homepage/" var="base2" />
-<div id="col-2-1" style="background: #FFFF99">
+<div id="col-2-1" style="background: #FFFF99; padding-top: 10px; padding-left: 10px; padding-bottom: 10px">
 <p><strong>Notice: Thursday 10 September - Friday 11 September 2015</strong></p>
 <p>Due to essential maintenance, there may be some service interruption during this period.  If you have any questions please <a id="contact" href="mailto:genedb-help@sanger.ac.uk">email us</a></p>
 </div>
