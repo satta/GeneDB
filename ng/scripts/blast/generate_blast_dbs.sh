@@ -39,7 +39,7 @@ do
 		
      	logecho "Dumping ${organism} : "
      	
-     	DUMP_PROTEINS="chado_dump_proteins -s -o ${organism} ${CONNECTION_DETAILS} > ${BLAST_DB_PATH}GeneDB_${organism}_Proteins"
+     	DUMP_PROTEINS="chado_dump_proteins -r -o ${organism} ${CONNECTION_DETAILS} > ${BLAST_DB_PATH}GeneDB_${organism}_Proteins"
      	doeval $DUMP_PROTEINS
      	
      	DUMP_TRANSCRIPTS="chado_dump_transcripts -o ${organism} ${CONNECTION_DETAILS} > ${BLAST_DB_PATH}GeneDB_${organism}_Genes"
