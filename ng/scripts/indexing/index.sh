@@ -170,9 +170,17 @@ if [[ $COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP ]]; then
 	logecho Backing up db
 	genedb-web-control ci-web stop
 	sleep 20
+	logecho Drop nightly
 	dropdb -h path-dev-db nightly
+	logecho Create nightly
 	createdb -h path-dev-db nightly
-	pg_dump -Naudit -Naudit_backup -Ngraphs -h path-live-db pathogens | psql -h path-dev-db nightly
+	logecho Copy pathogens into nightly
+	pg_dump -Naudit -Naudit_backup -Ngraphs -h path-live-db pathogens | psql -h path-dev-db nightly > psql.pathogens_to_nightly.log
+	exitCode=$?
+	if [ "$exitCode" -ne 0 ]; then
+	  logecho "Problem loading pathogens into nightly, here is the log (exitCode: $exitCode)"
+	  cat psql.pathogens_to_nightly.log
+	fi
 	
 	for sqlfile in $SOURCE_HOME/sql/cleanup/*.sql
 	do
@@ -209,7 +217,7 @@ if [[ -z $ORGANISMS ]]; then
         ALL_ORGANISMS=1;
     fi
     
-    logecho "${GET_ORGANISMS_SQL}"
+    logecho "Get Organisms: ${GET_ORGANISMS_SQL}"
     ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h path-dev-db -c \"${GET_ORGANISMS_SQL}\" nightly\`"
     doeval $ORGANISMS_COMMAND
 fi
@@ -504,15 +512,30 @@ if [[ $COPY_NIGHTLY_TO_STAGING ]]; then
     logecho Creating staging
     createdb -h genedb-db -p 5434 staging
     logecho "Copying nightly to staging"
-    pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging
+    pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging > psql.nightly_to_staging.log
+    exitCode=$?
+    if [ "$exitCode" -ne 0 ]; then
+      logecho "Problem loading nightly into staging, here is the log (exitCode: $exitCode)"
+      cat psql.nightly_to_staging.log
+    fi
     
     bt5_debug "before push-staging-to-snapshot2"
-    /nfs/pathdb/bin/push-staging-to-snapshot2 
+    /nfs/pathdb/bin/push-staging-to-snapshot2 > push-staging-to-snapshot2.log
+    exitCode=$?
     bt5_debug "after push-staging-to-snapshot2"
+    if [ "$exitCode" -ne 0 ]; then
+      logecho "Problem running push-staging-to-snapshot2 (exitCode: $exitCode)"
+      cat push-staging-to-snapshot2.log
+    fi
 
     bt5_debug "before fix-snapshot"
-    /nfs/pathdb/bin/fix-snapshot 
+    /nfs/pathdb/bin/fix-snapshot > fix-snapshot.log
+    exitCode=$?
     bt5_debug "after fix-snapshot"
+    if [ "$exitCode" -ne 0 ]; then
+      logecho "Problem running fix-snapshot (exitCode: $exitCode)"
+      cat fix-snapshot.log
+    fi
 fi
 
 #
