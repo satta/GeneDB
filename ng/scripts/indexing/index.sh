@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 usage() {
 cat <<OPTIONS
 Usage: index.sh -t TMPDIR -p /path/to/psql-driver.jar [-o OUTDIR1,OUTDIR2] [-r org1,org2 | -s 2010-08-10] -c [-0] [-1] [-2] [-3] [-4] [-5] [-6] [-7]
@@ -67,12 +69,12 @@ OPTIONS
 }
 
 logecho() {
-    echo [`date '+%F %T'`] $1	
+  echo "[$(date "+%F %T")] $@"	
 }
 
 doeval() {
 	command=$1
-	logecho $command
+	logecho "$command"
 	eval $command
 	exitCode=$?    
 	if [ $exitCode -ne 0 ];then
@@ -85,6 +87,13 @@ doeval() {
 	    echo "`free -tm`"
 	    exit ${exitCode}
 	fi
+}
+
+bt5_debug() {
+  logecho "#######################################"
+  logecho "bt5_debug: pathdb processes ($@)";
+  ps -u pathdb -f --forest;
+  logecho "#######################################"
 }
 
 VERSION=0.1
@@ -135,18 +144,18 @@ fi
 
 
 SCRIPT_DIRECTORY=`dirname $(readlink -f $0)`
-echo SCRIPT_DIRECTORY $SCRIPT_DIRECTORY
+logecho SCRIPT_DIRECTORY $SCRIPT_DIRECTORY
 
 SOURCE_HOME=`dirname $(readlink -f "${SCRIPT_DIRECTORY}/../")`
 cd $SOURCE_HOME
-echo Executing indexing at $SOURCE_HOME 
+logecho Executing indexing at $SOURCE_HOME 
 
 CONFIG_FILE=$SOURCE_HOME/property-file.$CONFIG
 
-echo Using config file $CONFIG_FILE
+logecho Using config file $CONFIG_FILE
 
 if [ ! -f $CONFIG_FILE ]; then
-	echo The file "$CONFIG_FILE" does not exist. 
+	logecho The file "$CONFIG_FILE" does not exist. 
 	exit 1
 fi
 
@@ -158,7 +167,7 @@ IFS=$'\n'
 
 if [[ $COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP ]]; then
 
-	echo Backing up db
+	logecho Backing up db
 	genedb-web-control ci-web stop
 	sleep 20
 	dropdb -h path-dev-db nightly
@@ -200,7 +209,7 @@ if [[ -z $ORGANISMS ]]; then
         ALL_ORGANISMS=1;
     fi
     
-    logecho ${GET_ORGANISMS_SQL}
+    logecho "${GET_ORGANISMS_SQL}"
     ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h path-dev-db -c \"${GET_ORGANISMS_SQL}\" nightly\`"
     doeval $ORGANISMS_COMMAND
 fi
@@ -260,8 +269,11 @@ if [[ $DO_INDEXING ]]; then
 	
 	mkdir -p $TMPDIR/Lucene/scripts
 	GENERATE_LUCENE="groovy -cp $POSTGRES_DRIVER $SOURCE_HOME/scripts/indexing/GenerateBatchJobs.groovy Lucene $CONFIG $SOURCE_HOME $TMPDIR $ORGANISMS_JOINED "
+
+	bt5_debug "before GENERATE_LUCENE"
 	doeval $GENERATE_LUCENE
-	
+	bt5_debug "after GENERATE_LUCENE"
+
 	exitCode=$?    
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}"
@@ -292,8 +304,11 @@ if [[ $DO_INDEXING ]]; then
 	
 	
 	MERGE_LUCENE="ant -f build-apps.xml -Dconfig=$CONFIG -Dmerge.lucene.destination=$TMPDIR/Lucene/merged -Dmerge.lucene.origin=$TMPDIR/Lucene/output runMergeLuceneIndices"
+
+	bt5_debug "before MERGE_LUCENE"
 	doeval $MERGE_LUCENE
-	
+	bt5_debug "after MERGE_LUCENE"
+
 	exitCode=$?    
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}"
@@ -306,8 +321,11 @@ if [[ $DO_INDEXING ]]; then
 	#
 	
 	MAKE_DICTIONARY_LUCENE="ant -f build-apps.xml -Dconfig=$CONFIG -Ddir=$TMPDIR/Lucene/merged _LuceneDictionary"
+
+	bt5_debug "before MAKE_DICTIONARY_LUCENE"
 	doeval $MAKE_DICTIONARY_LUCENE
-	
+	bt5_debug "after MAKE_DICTIONARY_LUCENE"
+
 	exitCode=$?    
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}"
@@ -478,23 +496,30 @@ fi
 #
 
 if [[ $COPY_NIGHTLY_TO_STAGING ]]; then
-    echo "Stage 6"
-    echo Copying db to staging
+    logecho "Stage 6: Messing with databases"
+    logecho Dropping snapshot-old
     dropdb -h genedb-db -p 5434 snapshot-old
+    logecho Dropping staging
     dropdb -h genedb-db -p 5434 staging
+    logecho Creating staging
     createdb -h genedb-db -p 5434 staging
+    logecho "Copying nightly to staging"
     pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging
     
+    bt5_debug "before push-staging-to-snapshot2"
     /nfs/pathdb/bin/push-staging-to-snapshot2 
- 	/nfs/pathdb/bin/fix-snapshot 
+    bt5_debug "after push-staging-to-snapshot2"
+
+    bt5_debug "before fix-snapshot"
+    /nfs/pathdb/bin/fix-snapshot 
+    bt5_debug "after fix-snapshot"
 fi
 
 #
 # Restart genedb
 #
 if [[ $RESTART_GENEDB ]]; then
-	echo "Stage 7"
-	echo Restarting...
+	logecho "Stage 7"
+	logecho "Copying indexes and Restarting..."
 	ssh pcs-genedb1 /nfs/pathdb/bin/copy_and_restart_genedb
-	
 fi
