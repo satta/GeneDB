@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 usage() {
 cat <<OPTIONS
 Usage: index.sh -t TMPDIR -p /path/to/psql-driver.jar [-o OUTDIR1,OUTDIR2] [-r org1,org2 | -s 2010-08-10] -c [-0] [-1] [-2] [-3] [-4] [-5] [-6] [-7]
@@ -189,11 +187,18 @@ if [[ $COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP ]]; then
 	done
 	
 	cd $SOURCE_HOME
-	echo "Backed up db"
+	logecho "Backed up db"
 	
 	CLEANUP_BINS="groovy -cp $POSTGRES_DRIVER $SOURCE_HOME/scripts/indexing/CleanupBins.groovy $CONFIG commit "
-	doeval $CLEANUP_BINS
-	
+	logecho "Cleaning up bins"
+	bt5_debug "before CLEANUP_BINS"
+	doeval $CLEANUP_BINS > cleanup_bins.log
+	exitCode=$?
+	bt5_debug "after CLEANUP_BINS"
+	if [ "$exitCode" -ne 0 ]; then
+	  logecho "Problem cleaning up bins (exitCode: $exitCode)"
+	  cat cleanup_bins.log
+	fi
 fi
 
 
