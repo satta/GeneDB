@@ -58,7 +58,7 @@
             $.get("<misc:url value="/Basket/"/>" + uniqueName + "?historyType=" + historyType, {}, callback);
         }
 
-        function addToBasket(geneid) {
+        function addToBasket(geneID) {
             callBasket(geneID, "BASKET", function(content) {
                 $("#basketbutton").attr('src', "<misc:url value="/includes/image/button-added-to-basket.gif" />").unbind('click').css({
                     'cursor' : 'default'
