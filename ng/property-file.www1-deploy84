@@ -2,7 +2,7 @@ finaldest.webapps=/nfs/pathdb/genedb/www1/webapps/ROOT
 webAppRootKey=genedb.www.root
 
 dbhost=genedb-db
-dbport=5434
+dbport=5432
 dbname=snapshot
 dbuser=genedb_ro
 dbpassword=genedb_ro
