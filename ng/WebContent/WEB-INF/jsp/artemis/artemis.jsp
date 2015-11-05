@@ -1,11 +1,11 @@
 <% response.setContentType("application/x-java-jnlp-file"); %><?xml version="1.0" encoding="UTF-8"?>
 <jnlp
         spec="1.0+"
-        codebase="http://www.sanger.ac.uk/resources/software/artemis/java/">
+        codebase="http://www.genedb.org/artemis/">
          <information>
            <title>Artemis</title>
            <vendor>Sanger Institute</vendor>
-           <homepage href="http://www.sanger.ac.uk/resources/software/artemis/java/"/>
+           <homepage href="https://www.sanger.ac.uk/science/tools/artemis"/>
            <description>Artemis</description>
            <description kind="short">DNA sequence viewer and annotation tool.
            </description>
