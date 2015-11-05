@@ -1,11 +1,11 @@
 <% response.setContentType("application/x-java-jnlp-file"); %><?xml version="1.0" encoding="UTF-8"?>
 <jnlp
         spec="1.0+"
-        codebase="http://www.sanger.ac.uk/resources/software/artemis/java/">
+        codebase="http://www.genedb.org/artemis/">
          <information>
            <title>Artemis</title>
            <vendor>Sanger Institute</vendor>
-           <homepage href="http://www.sanger.ac.uk/resources/software/artemis/java/"/>
+           <homepage href="https://www.sanger.ac.uk/science/tools/artemis"/>
            <description>Artemis</description>
            <description kind="short">DNA sequence viewer and annotation tool.
            </description>
@@ -16,7 +16,7 @@
          </security>
          <resources>
            <j2se version="1.5+" initial-heap-size="32m" max-heap-size="512m"/>
-             <jar href="sartemis_dev.jar"/>
+             <jar href="sartemis.jar"/>
            <property name="com.apple.mrj.application.apple.menu.about.name" value="Artemis" />
            <property name="artemis.environment" value="UNIX" />
            <property name="j2ssh" value="" />
