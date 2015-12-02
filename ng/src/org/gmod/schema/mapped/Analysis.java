@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,9 +21,8 @@ import javax.persistence.Table;
 public class Analysis implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "analysis_analysis_id_seq")
-    @Id
-    @GeneratedValue(generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "analysis_analysis_id_seq", allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "analysis_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int analysisId;
 

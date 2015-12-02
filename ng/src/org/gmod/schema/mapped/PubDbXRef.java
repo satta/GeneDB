@@ -20,9 +20,8 @@ import javax.persistence.Table;
 public class PubDbXRef implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "pub_dbxref_pub_dbxref_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "pub_dbxref_pub_dbxref_id_seq", allocationSize = 1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "pub_dbxref_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int pubDbXRefId;
 

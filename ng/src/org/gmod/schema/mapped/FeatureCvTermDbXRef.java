@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class FeatureCvTermDbXRef implements Serializable {
 
     // Fields
-    @SequenceGenerator(name="generator", sequenceName="feature_cvterm_dbxref_feature_cvterm_dbxref_id_seq")
+    @SequenceGenerator(name="generator", sequenceName="feature_cvterm_dbxref_feature_cvterm_dbxref_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="feature_cvterm_dbxref_id", unique=false, nullable=false, insertable=true, updatable=true)
      private int featureCvTermDbXRefId;

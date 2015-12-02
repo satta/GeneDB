@@ -2,7 +2,6 @@ package org.gmod.schema.mapped;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
-
 import org.hibernate.annotations.AccessType;
 
 import java.io.Serializable;
@@ -25,9 +24,8 @@ import javax.persistence.Table;
 public class Synonym implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "synonym_synonym_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "synonym_synonym_id_seq", allocationSize = 1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "synonym_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int synonymId;
 

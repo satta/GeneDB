@@ -25,9 +25,8 @@ import javax.persistence.Table;
 public class FeatureRelationshipProp implements Serializable, PropertyI {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "feature_relationshipprop_feature_relationshipprop_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "feature_relationshipprop_feature_relationshipprop_id_seq" , allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "feature_relationshipprop_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int featureRelationshipPropId;
 

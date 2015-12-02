@@ -19,9 +19,8 @@ import javax.persistence.Table;
 public class CvTermProp implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "cvtermprop_cvtermprop_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "cvtermprop_cvtermprop_id_seq", allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "cvtermprop_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int cvTermPropId;
 

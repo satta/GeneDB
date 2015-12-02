@@ -19,9 +19,8 @@ import javax.persistence.Table;
 public class OrganismDbXRef implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "organism_dbxref_organism_dbxref_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "organism_dbxref_organism_dbxref_id_seq", allocationSize = 1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "organism_dbxref_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int organismDbXRefId;
 

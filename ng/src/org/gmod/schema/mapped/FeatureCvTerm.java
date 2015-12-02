@@ -55,7 +55,7 @@ public class FeatureCvTerm implements Serializable, Rankable, PropertyI, HasPubs
     @Autowired
     private transient CvDao cvDao;
 
-    @SequenceGenerator(name = "generator", sequenceName = "feature_cvterm_feature_cvterm_id_seq")
+    @SequenceGenerator(name = "generator", sequenceName = "feature_cvterm_feature_cvterm_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name = "feature_cvterm_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int featureCvTermId;

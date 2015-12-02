@@ -19,9 +19,8 @@ import javax.persistence.Table;
 public class PubAuthor implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "pubauthor_pubauthor_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "pubauthor_pubauthor_id_seq", allocationSize = 1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "pubauthor_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int pubAuthorId;
 

@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class DbXRefProp implements Serializable, PropertyI {
 
     // Fields
-    @SequenceGenerator(name="generator", sequenceName="dbxrefprop_dbxrefprop_id_seq")
+    @SequenceGenerator(name="generator", sequenceName="dbxrefprop_dbxrefprop_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="dbxrefprop_id", unique=false, nullable=false, insertable=true, updatable=true)
     private int dbXRefPropId;

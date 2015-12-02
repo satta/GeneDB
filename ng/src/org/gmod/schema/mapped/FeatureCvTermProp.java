@@ -42,9 +42,8 @@ public class FeatureCvTermProp implements Serializable, PropertyI, Rankable {
     /**
      * Database unique primary key
      */
-    @SequenceGenerator(name = "generator", sequenceName = "feature_cvtermprop_feature_cvtermprop_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "feature_cvtermprop_feature_cvtermprop_id_seq", allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "feature_cvtermprop_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int featureCvTermPropId;
 

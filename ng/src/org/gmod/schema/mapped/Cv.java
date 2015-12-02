@@ -1,6 +1,6 @@
 package org.gmod.schema.mapped;
 
-
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
@@ -15,13 +15,17 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GeneratedValue;
+
 
 @Entity
 @Table(name="cv")
 public class Cv implements Serializable {
 
     // Fields
-    @Id
+    @SequenceGenerator(name = "generator", sequenceName = "cv_cv_id_seq",  allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name="cv_id", unique=false, nullable=false, insertable=true, updatable=true)
     private int cvId;
 

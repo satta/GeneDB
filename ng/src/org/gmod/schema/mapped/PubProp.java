@@ -21,9 +21,8 @@ import javax.persistence.Table;
 public class PubProp implements Serializable, PropertyI {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "pubprop_pubprop_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "pubprop_pubprop_id_seq", allocationSize = 1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "pubprop_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int pubPropId;
 

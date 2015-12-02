@@ -45,9 +45,8 @@ public class Organism implements Serializable {
     private Collection<PhylonodeOrganism> phylonodeOrganisms;
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "organism_organism_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "organism_organism_id_seq", allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "organism_id", unique = false, nullable = false, insertable = true, updatable = true)
     @DocumentId
     private int organismId;
