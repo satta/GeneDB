@@ -1,5 +1,6 @@
 package org.gmod.schema.mapped;
 
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
 
@@ -19,8 +20,8 @@ public class AnalysisFeature implements Serializable {
 
     // Fields
 
-    @SequenceGenerator(name="generator",sequenceName="analysisfeature_analysisfeature_id_seq" )
-    @Id @GeneratedValue(generator="generator")
+    @SequenceGenerator(name="generator",sequenceName="analysisfeature_analysisfeature_id_seq", allocationSize=1 )
+    @Id @GeneratedValue(strategy = SEQUENCE, generator="generator")
     @Column(name="analysisfeature_id", unique=false, nullable=false, insertable=true, updatable=true)
      private int analysisFeatureId;
 

@@ -1,7 +1,5 @@
 package org.gmod.schema.mapped;
 
-
-
 import static javax.persistence.GenerationType.SEQUENCE;
 
 import java.io.Serializable;
@@ -21,7 +19,7 @@ import javax.persistence.Table;
 public class CvTermRelationship implements Serializable {
 
     // Fields
-    @SequenceGenerator(name="generator", sequenceName="cvterm_relationship_cvterm_relationship_id_seq")
+    @SequenceGenerator(name="generator", sequenceName="cvterm_relationship_cvterm_relationship_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="cvterm_relationship_id", unique=false, nullable=false, insertable=true, updatable=true)
      private int cvTermRelationshipId;

@@ -4,6 +4,8 @@ package org.gmod.schema.mapped;
 
 import org.gmod.schema.utils.propinterface.PropertyI;
 
+import static javax.persistence.GenerationType.SEQUENCE; //Added explicit sequence generation behaviour 2.12.2015
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,8 +24,8 @@ import javax.persistence.UniqueConstraint;
 public class PhylonodeProp implements java.io.Serializable, PropertyI {
 
     // Fields
-
-    @Id
+	@SequenceGenerator(name = "generator", sequenceName = "phylonodeprop_phylonodeprop_id_seq",  allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "phylonodeprop_id", unique = true, nullable = false, insertable = true, updatable = true)
     private int phylonodePropId;
 

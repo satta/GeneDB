@@ -1,7 +1,6 @@
 package org.gmod.schema.mapped;
 
-
-
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import org.gmod.schema.utils.propinterface.PropertyI;
 
@@ -23,8 +22,8 @@ public class AnalysisProp implements Serializable, PropertyI {
 
     // Fields
 
-    @SequenceGenerator(name="generator",sequenceName="analysisprop_analysisprop_id_seq" )
-    @Id @GeneratedValue(generator="generator")
+    @SequenceGenerator(name="generator",sequenceName="analysisprop_analysisprop_id_seq", allocationSize=1 )
+    @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="analysisprop_id", unique=false, nullable=false, insertable=true, updatable=true)
      private int analysisPropId;
 

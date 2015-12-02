@@ -35,9 +35,8 @@ public class FeatureLoc implements Serializable {
 
     // Fields
 
-    @SequenceGenerator(name = "generator", sequenceName = "featureloc_featureloc_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "featureloc_featureloc_id_seq", allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "featureloc_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int featureLocId;
 

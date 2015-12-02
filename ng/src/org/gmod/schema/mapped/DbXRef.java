@@ -1,8 +1,6 @@
 package org.gmod.schema.mapped;
 
-
 import static javax.persistence.GenerationType.SEQUENCE;
-
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -26,7 +24,7 @@ import javax.persistence.Transient;
 public class DbXRef implements Serializable {
 
     // Fields
-    @SequenceGenerator(name="generator", sequenceName="dbxref_dbxref_id_seq")
+    @SequenceGenerator(name="generator", sequenceName="dbxref_dbxref_id_seq", allocationSize = 1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="dbxref_id", unique=false, nullable=false, insertable=true, updatable=true)
      private int dbXRefId;

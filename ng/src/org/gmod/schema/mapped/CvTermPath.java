@@ -19,9 +19,8 @@ import javax.persistence.Table;
 public class CvTermPath implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "cvtermpath_cvtermpath_id_seq")
-    @Id
-    @GeneratedValue(strategy = SEQUENCE, generator = "generator")
+    @SequenceGenerator(name = "generator", sequenceName = "cvtermpath_cvtermpath_id_seq",  allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "cvtermpath_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int cvTermPathId;
 

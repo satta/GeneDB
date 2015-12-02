@@ -2,7 +2,6 @@ package org.gmod.schema.mapped;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -21,7 +20,7 @@ import javax.persistence.Table;
 public class CvTermDbXRef implements Serializable {
 
     // Fields
-    @SequenceGenerator(name="generator", sequenceName="cvterm_dbxref_cvterm_dbxref_id_seq")
+    @SequenceGenerator(name="generator", sequenceName="cvterm_dbxref_cvterm_dbxref_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="cvterm_dbxref_id", unique=false, nullable=false, insertable=true, updatable=true)
     private int cvTermDbXRefId;

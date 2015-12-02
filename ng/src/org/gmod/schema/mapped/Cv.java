@@ -1,6 +1,6 @@
 package org.gmod.schema.mapped;
 
-
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
@@ -21,7 +21,8 @@ import javax.persistence.Table;
 public class Cv implements Serializable {
 
     // Fields
-    @Id
+    @SequenceGenerator(name = "generator", sequenceName = "cv_cv_id_seq",  allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name="cv_id", unique=false, nullable=false, insertable=true, updatable=true)
     private int cvId;
 

@@ -1,5 +1,7 @@
 package org.gmod.schema.mapped;
 
+import static javax.persistence.GenerationType.SEQUENCE; //added explicit sequence generation behaviour 2.12.2015
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,8 +19,8 @@ import javax.persistence.UniqueConstraint;
 public class PhylonodeOrganism implements java.io.Serializable {
 
     // Fields
-
-    @Id
+	@SequenceGenerator(name = "generator", sequenceName = "phylonode_organism_phylonode_organism_id_seq",  allocationSize=1)
+    @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "phylonode_organism_id", unique = true, nullable = false, insertable = true, updatable = true)
     private int phylonodeOrganismId;
 

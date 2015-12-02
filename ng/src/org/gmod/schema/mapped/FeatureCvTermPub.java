@@ -24,7 +24,7 @@ public class FeatureCvTermPub implements Serializable {
     private static final Logger logger = Logger.getLogger(FeatureCvTermPub.class);
 
     // Fields
-    @SequenceGenerator(name="generator", sequenceName="feature_cvterm_pub_feature_cvterm_pub_id_seq")
+    @SequenceGenerator(name="generator", sequenceName="feature_cvterm_pub_feature_cvterm_pub_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy=SEQUENCE, generator="generator")
     @Column(name="feature_cvterm_pub_id", unique=false, nullable=false, insertable=true, updatable=true)
     private int featureCvTermPubId;
