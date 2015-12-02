@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GeneratedValue;
 
 import static javax.persistence.GenerationType.SEQUENCE; //Added explicit sequence generation behaviour 2.12.2015
 
