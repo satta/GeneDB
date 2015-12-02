@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class FeaturePub implements Serializable {
 
     // Fields
-    @SequenceGenerator(name = "generator", sequenceName = "feature_pub_feature_pub_id_seq", allcationSize=1)
+    @SequenceGenerator(name = "generator", sequenceName = "feature_pub_feature_pub_id_seq", allocationSize=1)
     @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "feature_pub_id", unique = false, nullable = false, insertable = true, updatable = true)
     private int featurePubId;
