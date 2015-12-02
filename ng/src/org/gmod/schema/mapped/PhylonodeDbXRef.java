@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.GeneratedValue;
-import javax.persistence.SequenceGenerator
+import javax.persistence.SequenceGenerator;
 
 
 /**
