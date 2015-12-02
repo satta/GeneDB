@@ -22,8 +22,6 @@ import javax.persistence.UniqueConstraint;
 public class PhylonodeDbXRef implements java.io.Serializable {
 
     // Fields
-phylonode_dbxref_phylonode_dbxref_id_seq
-
 	@SequenceGenerator(name = "generator", sequenceName = "phylonode_dbxref_phylonode_dbxref_id_seq",  allocationSize=1)
     @Id @GeneratedValue(strategy = SEQUENCE, generator = "generator")
     @Column(name = "phylonode_dbxref_id", unique = true, nullable = false, insertable = true, updatable = true)
