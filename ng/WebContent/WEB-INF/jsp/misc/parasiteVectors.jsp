@@ -32,9 +32,8 @@ ul {
 The Sanger Institute has undertaken the sequencing of selected vectors to provide an
 framework for investigating vector biology.</p>
 
-<p>The data for <a href="http://old.genedb.org/genedb/glossina/"><i>G. morsitans</i></a>
- and <a href="http://old.genedb.org/genedb/llongipalpis/"><i>L. longipalpis</i></a> are available
-in the classic GeneDB website.</p>
+<p>The data for <a href="https://www.vectorbase.org/organisms/glossina-morsitans"><i>G. morsitans</i></a> are available via <a href="https://www.vectorbase.org/">VectorBase</a>.</p>
+<p>Similarly, the EST data for <a href="ftp://ftp.sanger.ac.uk/pub/project/pathogens/Lutzomyia/"><i>L. longipalpis</i></a> are available for download by FTP.</p>
 
 
 </div>

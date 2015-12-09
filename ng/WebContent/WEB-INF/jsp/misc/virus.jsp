@@ -54,10 +54,8 @@ biological properties of viral pathogenesis, persistence and host susceptibility
 to infection.</p>
 
 <p>The groups' main page is available at
-<a href="http://www.sanger.ac.uk/Teams/Team146/">http://www.sanger.ac.uk/Teams/Team146/</a>.
+<a href="http://www.sanger.ac.uk/science/groups/kellam-group">http://www.sanger.ac.uk/science/groups/kellam-group</a>.
 </p>
-
-<p>In the future their data will be available via this page.</p>
 
 </div>
 </format:page>
