@@ -82,6 +82,15 @@ public class AnnotationChangesRssController {
     return getRssForOrganismAndTime(orgName, nDays, Calendar.DAY_OF_MONTH);
   }
 
+    @SuppressWarnings("unchecked")
+  @RequestMapping(method = RequestMethod.GET , value="/{orgName}/since/{nDays}/days/from/{startDate}")
+  public ModelAndView getRssForOrganismAndDays(
+          @PathVariable(value="orgName") String orgName,
+          @PathVariable(value="nDays") int nDays,
+          @PathVariable(value="startDate") String startDate,) throws IOException, URISyntaxException {
+    return getRssForOrganismAndTime(orgName, nDays, Calendar.DAY_OF_MONTH, );
+  }
+
   @SuppressWarnings("unchecked")
   @RequestMapping(method = RequestMethod.GET , value="/{orgName}/since/{nMonths}/months")
   public ModelAndView getRssForOrganismAndMonths(
@@ -90,7 +99,7 @@ public class AnnotationChangesRssController {
     return getRssForOrganismAndTime(orgName, nMonths, Calendar.MONTH);
   }
 
-  private ModelAndView getRssForOrganismAndTime(String orgName, int since, int unit) throws IOException, URISyntaxException {
+  private ModelAndView getRssForOrganismAndTime(String orgName, int since, int unit, Date startDate) throws IOException, URISyntaxException {
     ServletRequestAttributes sra = (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
     HttpServletRequest req = sra.getRequest();
     List<AnnotationChangesRssContent> items = new ArrayList<AnnotationChangesRssContent>();
