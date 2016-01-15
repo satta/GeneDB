@@ -109,6 +109,7 @@ Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.
 <div class="light-grey">
 <p class="block-para">
 &raquo; The results of the 2013 TriTrypDB user survey are ready (April 2014). Thanks to all participants for their useful input and suggestions. A detailed <a href="http://tritrypdb.org/tritrypdb/communityDownload.do?fname=2013_TriTryp_User_Survey_Results.pdf">summary</a> is available for your review.<br>
+&raquo; We would like some feedback from the community on gene family nomenclature in <i>Plasmodium</i> genomes! Please take a look at our <a href="http://www.genedb.org/artemis/Gene_family_nomenclature_proposal.pdf">gene family nomenclature proposal</a> and <a href="mailto:genedb-help@sanger.ac.uk">let us know</a> if you have any comments.<br>
 </p>
 </div>
 <div class="light-grey-bot"></div>
