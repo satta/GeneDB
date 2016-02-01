@@ -143,7 +143,7 @@ for (org in orgs) {
 		}
 	}
 	
-	def processExecLine = "source /etc/bashrc; bsub -G team81 -q ${queueName} -R 'select[mem>4000] rusage[mem=4000]' -M 4000 -o ${outFileName} -e ${errFileName} ${scriptName}"
+	def processExecLine = "source /etc/bashrc; bsub -q ${queueName} -R 'select[mem>4000] rusage[mem=4000]' -M 4000 -o ${outFileName} -e ${errFileName} ${scriptName}"
 	println processExecLine 
 
     Process p = ["ssh", "farm3-login", processExecLine].execute()
