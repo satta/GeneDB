@@ -541,6 +541,9 @@ if [[ $COPY_NIGHTLY_TO_STAGING ]]; then
       logecho "Problem running fix-snapshot (exitCode: $exitCode)"
       cat fix-snapshot.log
     fi
+
+    # Also run new release code, pushing to a staging on a managed cluster
+    /nfs/users/nfs_p/pathdb/switch_dbs.sh
 fi
 
 #
