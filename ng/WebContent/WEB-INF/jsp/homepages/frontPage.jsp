@@ -92,16 +92,17 @@
 <div id="col-1-2">
 
 
-<!-- <h1>Events</h1>
+<h1>Events</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
 <p>
-&raquo;<a href="http://www.wellcome.ac.uk/Education-resources/Courses-and-conferences/Advanced-Courses-and-Scientific-Conferences/Workshops/WTVM050772.htm">Working with Parasite Database Resources Workshop</a><br>
-18&ndash;23 October 2015<br>
-Wellcome Trust Genome Campus, Hinxton, Cambridge, U.K.
+&raquo;<a href="https://registration.hinxton.wellcome.ac.uk/events/item.aspx?e=609">Working with Parasite Database Resources Workshop</a><br>
+16&ndash;21 October 2016<br>
+Institute of Hygiene, Montevideo, Uruguay<br>
+Application deadline: <b>17 June 2016</b>
 </p>
 </div>
-<div class="baby-blue-bot"></div> -->
+<div class="baby-blue-bot"></div>
 
 
 <h1>News</h1>
