@@ -4,12 +4,12 @@ usage() {
 cat <<OPTIONS
 Usage: index.sh -t TMPDIR -p /path/to/psql-driver.jar [-o OUTDIR1,OUTDIR2] [-r org1,org2 | -s 2010-08-10] -c [-0] [-1] [-2] [-3] [-4] [-5] [-6] [-7]
 
-You can choose to specify a list of organisms (-r) or a date (-s), if you specify neither then all organisms will be used. There are several actions in the workflow that you can call: 
+You can choose to specify a list of organisms (-r) or a date (-s), if you specify neither then all organisms will be used. There are several actions in the workflow that you can call:
 
  0. Copy the the pathogens db to nightly, and run SQL cleanup scripts.
  1. lucene indexing
- 2. moving merged lucenes to the config location 
- 3. berkley dto caching  
+ 2. moving merged lucenes to the config location
+ 3. berkley dto caching
  4. merge the berkley caches (on its own because this can be problematic)
  5. move the berkley cache to the config location
  6. Copy the nightly db to staging
@@ -22,7 +22,7 @@ Options:
     The path to a temp folder.
 
  -p POSTGRES_DRIVER		/path/to/psql-driver.jar
-    The path to the jdbc postgres driver jar. 
+    The path to the jdbc postgres driver jar.
 
  -r ORGANISMS 			org1,org2,org3
     A comma-separated list of organisms. Do not run with -s flag. Not specifying either of -r or -s will default to all organisms being indexed.
@@ -34,47 +34,47 @@ Options:
     A comma-separated list of output folders.
 
  -c CONFIG
-    The name of the genedb config (e.g. beta, nightly, etc.) 
+    The name of the genedb config (e.g. beta, nightly, etc.)
 
  -0 COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP
     Clone the pathogen database to the nightly database, and run the cleanup scripts on it. Stage 0.
 
  -1 DO_INDEXING
- 	Run the lucene indexing operations. Off by default. Stage 1. 
+ 	Run the lucene indexing operations. Off by default. Stage 1.
 
  -2 DO_MOVE_OF_INDEX_TO_CONFIG_LOCATION
     Move the merged indices to the location specified by the config file. If not specified, the berkley caching will run ontop of old indices.  Off by default. Stage 2.
 
  -3 DO_BERKLEY_CACHE
- 	Run the berkley cache (DTO) indexing operations. Off by default. Stage 3. 
-    
+ 	Run the berkley cache (DTO) indexing operations. Off by default. Stage 3.
+
  -4 DO_MERGE_BERKLEY_CACHE
     Merge the berkley caches. Stage 4.
-    
+
  -5 DO_MOVE_OF_CACHE_TO_CONFIG_LOCATION
     Move the merged cache to the location specified by the config file. Off by default. Stage 5.
-    
+
  -6 COPY_NIGHTLY_TO_STAGING
     Copies the contents of the nightly database to the staging database. Stage 6.
- 
+
  -7 RESTART_GENEDB
- 	The final automated step. Restarts genedb www1 and www2 servers whilst copying the caches and indices.  
-     
- 
-    
- 
+ 	The final automated step. Restarts genedb www1 and www2 servers whilst copying the caches and indices.
+
+
+
+
 OPTIONS
 }
 
 logecho() {
-  echo "[$(date "+%F %T")] $@"	
+  echo "[$(date "+%F %T")] $@"
 }
 
 doeval() {
 	command=$1
 	logecho "$command"
 	eval $command
-	exitCode=$?    
+	exitCode=$?
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}. Exiting."
 	    echo "processes :"
@@ -102,8 +102,8 @@ if [ `uname -n` != ${HST} ]; then
     exit 1
 fi
 
-while getopts "s:r:o:t:p:c:01234567v" o ; do  
-    case $o in  
+while getopts "s:r:o:t:p:c:01234567v" o ; do
+    case $o in
         s ) SINCE=$OPTARG;;
         r ) ORGANISMS=$(echo $OPTARG | tr "," "\n" );;
         o ) OUTDIRS=$(echo $OPTARG | tr "," "\n" );;
@@ -118,7 +118,7 @@ while getopts "s:r:o:t:p:c:01234567v" o ; do
         6 ) COPY_NIGHTLY_TO_STAGING=1;;
         7 ) RESTART_GENEDB=1;;
         c ) CONFIG=$OPTARG;;
-        v ) echo $VERSION  
+        v ) echo $VERSION
             exit 0;;
         ?) usage
                 exit;;
@@ -146,14 +146,14 @@ logecho SCRIPT_DIRECTORY $SCRIPT_DIRECTORY
 
 SOURCE_HOME=`dirname $(readlink -f "${SCRIPT_DIRECTORY}/../")`
 cd $SOURCE_HOME
-logecho Executing indexing at $SOURCE_HOME 
+logecho Executing indexing at $SOURCE_HOME
 
 CONFIG_FILE=$SOURCE_HOME/property-file.$CONFIG
 
 logecho Using config file $CONFIG_FILE
 
 if [ ! -f $CONFIG_FILE ]; then
-	logecho The file "$CONFIG_FILE" does not exist. 
+	logecho The file "$CONFIG_FILE" does not exist.
 	exit 1
 fi
 
@@ -179,16 +179,16 @@ if [[ $COPY_PATHOGEN_TO_NIGHTLY_AND_CLEANUP ]]; then
 	  logecho "Problem loading pathogens into nightly, here is the log (exitCode: $exitCode)"
 	  cat psql.pathogens_to_nightly.log
 	fi
-	
+
 	for sqlfile in $SOURCE_HOME/sql/cleanup/*.sql
 	do
 	    echo "Processing SQL cleanup file? " $sqlfile
 	    psql -h path-dev-db nightly < $sqlfile
 	done
-	
+
 	cd $SOURCE_HOME
 	logecho "Backed up db"
-	
+
 	CLEANUP_BINS="groovy -cp $POSTGRES_DRIVER $SOURCE_HOME/scripts/indexing/CleanupBins.groovy $CONFIG commit "
 	logecho "Cleaning up bins"
 	bt5_debug "before CLEANUP_BINS"
@@ -210,9 +210,9 @@ ALL_ORGANISMS=0;
 
 # if no organisms (-r) have been supplied
 if [[ -z $ORGANISMS ]]; then
-    
+
     GET_ORGANISMS_SQL=""
-    
+
     # if a since (-s) has been supplied
     if [[ $SINCE ]]; then
         GET_ORGANISMS_SQL="select common_name from organism where organism_id in (select distinct(organism_id) from feature where timelastmodified >= '${SINCE}');"
@@ -221,7 +221,7 @@ if [[ -z $ORGANISMS ]]; then
         GET_ORGANISMS_SQL="SELECT DISTINCT(organism.common_name) FROM organismprop JOIN cvterm ON organismprop.type_id = cvterm.cvterm_id AND cvterm.name = 'genedb_public' JOIN organism ON organism.organism_id = organismprop.organism_id and organism.common_name != 'dummy' JOIN feature ON organism.organism_id = feature.organism_id WHERE value = 'yes' "
         ALL_ORGANISMS=1;
     fi
-    
+
     logecho "Get Organisms: ${GET_ORGANISMS_SQL}"
     ORGANISMS_COMMAND="ORGANISMS=\`psql -t -h path-dev-db -c \"${GET_ORGANISMS_SQL}\" nightly\`"
     doeval $ORGANISMS_COMMAND
@@ -234,52 +234,52 @@ fi
 #
 if [[ $DO_INDEXING ]] || [[ $DO_BERKLEY_CACHE ]]
 then
-	
+
 	ORGANISMS_JOINED=""
-	
+
 	if [[ ALL_ORGANISMS -eq 0 ]]; then
 	    logecho "Joining organism list"
 	    for organism in $ORGANISMS
 	    do
 		    #regex / / to trim white spaces
-	    	organism=${organism/ /} 
+	    	organism=${organism/ /}
 	    	if [[ $organism != 'dummy' ]]; then
 		        ORGANISMS_JOINED="$ORGANISMS_JOINED:$organism"
 	        fi
 	    done
 	    ORGANISMS_JOINED="${ORGANISMS_JOINED:1}"
-	    
+
 	fi
-	
+
 	logecho "Groovy Orgs List: $ORGANISMS_JOINED"
-	
+
 fi
 
 
 if [[ $DO_INDEXING ]]; then
-	
+
 	logecho "Stage 1"
-	
+
 	#
-	# Clean up tmp directories for the organisms to be indexed. 
+	# Clean up tmp directories for the organisms to be indexed.
 	#
-	
+
 	for organism in $ORGANISMS
 	do
 		#regex / / to trim white spaces
         organism=${organism/ /}
-        
+
 		logecho "Cleaning up lucene: " $organism;
 	    rm -fvr $TMPDIR/Lucene/output/$organism
 	    rm -fvr $TMPDIR/Lucene/scripts/${organism}.script*
 	done
-	
-	
-		
+
+
+
 	#
 	# Generate lucene indicces and check for any errors.
 	#
-	
+
 	mkdir -p $TMPDIR/Lucene/scripts
 	GENERATE_LUCENE="groovy -cp $POSTGRES_DRIVER $SOURCE_HOME/scripts/indexing/GenerateBatchJobs.groovy Lucene $CONFIG $SOURCE_HOME $TMPDIR $ORGANISMS_JOINED "
 
@@ -287,13 +287,13 @@ if [[ $DO_INDEXING ]]; then
 	doeval $GENERATE_LUCENE
 	bt5_debug "after GENERATE_LUCENE"
 
-	exitCode=$?    
+	exitCode=$?
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}"
 	    exit ${exitCode}
 	fi
 
-	
+
 	LUCENE_ERRORS=`cat $TMPDIR/Lucene/scripts/*.err`
 	LEN_LUCENE_ERRORS=${#LUCENE_ERRORS}
 	if [[ $LUCENE_ERRORS > 0 ]]; then
@@ -302,50 +302,50 @@ if [[ $DO_INDEXING ]]; then
 	else
 	    logecho "Found no errors in Lucene"
 	fi
-	
-	
-	
+
+
+
 	#
 	# Merge the lucene indices and copy them into place.
 	#
-	
+
 	cd $SOURCE_HOME
 	rm -fr $TMPDIR/Lucene/merged
-	
+
 	# gv1 - tested on laptop:
 	# ant -f build-apps.xml -Dconfig=gv1-osx -Dmerge.lucene.destination=/Users/gv1/Desktop/lucene/merged/ -Dmerge.lucene.origin=/Users/gv1/Desktop/lucene/organisms/ runMergeLuceneIndices
-	
-	
+
+
 	MERGE_LUCENE="ant -f build-apps.xml -Dconfig=$CONFIG -Dmerge.lucene.destination=$TMPDIR/Lucene/merged -Dmerge.lucene.origin=$TMPDIR/Lucene/output runMergeLuceneIndices"
 
 	bt5_debug "before MERGE_LUCENE"
 	doeval $MERGE_LUCENE
 	bt5_debug "after MERGE_LUCENE"
 
-	exitCode=$?    
+	exitCode=$?
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}"
 	    exit ${exitCode}
 	fi
 
-	
+
 	#
-	# Generate the lucene dictionary on the final merged indices. To do this only once, it should be done before the lucene merged folder is copied. 
+	# Generate the lucene dictionary on the final merged indices. To do this only once, it should be done before the lucene merged folder is copied.
 	#
-	
+
 	MAKE_DICTIONARY_LUCENE="ant -f build-apps.xml -Dconfig=$CONFIG -Ddir=$TMPDIR/Lucene/merged _LuceneDictionary"
 
 	bt5_debug "before MAKE_DICTIONARY_LUCENE"
 	doeval $MAKE_DICTIONARY_LUCENE
 	bt5_debug "after MAKE_DICTIONARY_LUCENE"
 
-	exitCode=$?    
+	exitCode=$?
 	if [ $exitCode -ne 0 ];then
 	    logecho "The script returned a status code of ${exitCode}"
 	    exit ${exitCode}
 	fi
 
-	
+
     if [[ ! -z $OUTDIRS ]]; then
 		for OUTDIR in $OUTDIRS
 		do
@@ -355,33 +355,33 @@ if [[ $DO_INDEXING ]]; then
 		    cp -vr  $TMPDIR/Lucene/merged/*  $OUTDIR/lucene
 		done
     fi
-	
-	
+
+
 fi
 
 
 if [[ $DO_MOVE_OF_INDEX_TO_CONFIG_LOCATION ]]; then
-	
+
 	logecho "Stage 2"
-	
+
     #
-    # Determine location of the indices as specified in the config file. 
+    # Determine location of the indices as specified in the config file.
     #
-	
+
     LUCENE_LINE=`grep lucene.indexDirectory $CONFIG_FILE`
     LUCENE_INDEX_DIRECTORY=${LUCENE_LINE#lucene.indexDirectory=}
-    
+
     #
-    # Move the indices to the specified location.  
+    # Move the indices to the specified location.
     #
-    
+
     logecho Wiping $LUCENE_INDEX_DIRECTORY
     rm -frv $LUCENE_INDEX_DIRECTORY
-    
+
     logecho Copying merged indices from "$TMPDIR/Lucene/merged/" to $LUCENE_INDEX_DIRECTORY
     mkdir -p $LUCENE_INDEX_DIRECTORY
     cp -vr  $TMPDIR/Lucene/merged/*  $LUCENE_INDEX_DIRECTORY
-    
+
 fi
 
 if [[ $DO_BERKLEY_CACHE ]] || [[ $DO_MERGE_BERKLEY_CACHE ]]
@@ -391,35 +391,35 @@ then
 fi
 
 if [[ $DO_BERKLEY_CACHE	]];then
-	
+
 	logecho "Stage 3"
-	
+
 	#
-	# Clean up tmp directories for the organisms to be indexed. 
+	# Clean up tmp directories for the organisms to be indexed.
 	#
-	
+
 	for organism in $ORGANISMS
 	do
 		#regex / / to trim white spaces
         organism=${organism/ /}
-        
+
         logecho "Cleaning up DTO: " $organism
-        
+
 	    rm -fvr $TMPDIR/DTO/output/$organism
 	    rm -fvr $TMPDIR/DTO/scripts/${organism}.script*
-        
+
 	done
-	
-	
+
+
 	#
 	# Generate DTO caches and check for errors.
 	#
-	
+
 	mkdir -p $TMPDIR/DTO/scripts
 	GENERATE_DTO="groovy -cp $POSTGRES_DRIVER $SOURCE_HOME/scripts/indexing/GenerateBatchJobs.groovy DTO $CONFIG $SOURCE_HOME $TMPDIR $ORGANISMS_JOINED "
 	doeval $GENERATE_DTO
-	
-	
+
+
 	DTO_ERRORS=`cat $TMPDIR/DTO/scripts/*.err`
 	LEN_DTO_ERRORS=${#DTO_ERRORS}
 	if [[ $LEN_DTO_ERRORS > 0 ]]; then
@@ -428,39 +428,39 @@ if [[ $DO_BERKLEY_CACHE	]];then
 	else
 	    logecho "Found no errors in DTO"
 	fi
-	
+
 
 fi
 
-if [[ $DO_MERGE_BERKLEY_CACHE ]];then	
-	
+if [[ $DO_MERGE_BERKLEY_CACHE ]];then
+
 	logecho "Stage 4"
-	
+
 	#
-	# Merge the DTO caches into place. Sshing into a BIG MEM machine to do this. 
+	# Merge the DTO caches into place. Sshing into a BIG MEM machine to do this.
 	#
-	
+
 	rm -fr $TMPDIR/DTO/merged
-	
+
 	# gv1 - tested on laptop:
-	# ant -f build-apps.xml -Dconfig=gv1-osx-cachetest -Dmerge.indices.destination=/Users/gv1/Desktop/dto/merged/ -Dmerge.indices.origin=/Users/gv1/Desktop/dto/output/ runMergeIndices 
-	
+	# ant -f build-apps.xml -Dconfig=gv1-osx-cachetest -Dmerge.indices.destination=/Users/gv1/Desktop/dto/merged/ -Dmerge.indices.origin=/Users/gv1/Desktop/dto/output/ runMergeIndices
+
 	MERGE_DTO="ant -f $SOURCE_HOME/build-apps.xml -Dconfig=$CONFIG -Dmerge.indices.destination=$TMPDIR/DTO/merged -Dmerge.indices.origin=$TMPDIR/DTO/output runMergeIndices"
 	#groovy MergeCacheIndices.groovy SOURCE_HOME SCRIPT_DIR TO FROM
 	#MERGE_DTO="groovy $SOURCE_HOME/scripts/indexing/MergeBerkleyIndicesJobManager.groovy $SOURCE_HOME $TMPDIR/DTO/scripts $TMPDIR/DTO/merged $TMPDIR/DTO/output"
-	
+
 	logecho $MERGE_DTO
 	ssh pcs4m "$MERGE_DTO"
 	#doeval $MERGE_DTO
-	
-	
-	
+
+
+
 	logecho Sleeping for 60 seconds to give NFS time to catch up with whats been happening...
 	sleep 60
 	logecho Awake!
-	
-	
-	
+
+
+
 	if [[ ! -z $OUTDIRS ]]; then
 		for OUTDIR in $OUTDIRS
 		do
@@ -470,77 +470,77 @@ if [[ $DO_MERGE_BERKLEY_CACHE ]];then
 		    cp -vr $TMPDIR/DTO/merged/* $OUTDIR/cache;
 		done
 	fi
-	
 
-	
+
+
 fi
 
 
 
 
 if [[ $DO_MOVE_OF_CACHE_TO_CONFIG_LOCATION ]]; then
-    
+
     logecho "Stage 5"
-    
+
     #
-    # Determine location of the indices as specified in the config file. 
+    # Determine location of the indices as specified in the config file.
     #
-    
+
     CACHE_LINE=`grep cacheDirectory $CONFIG_FILE`
     CACHE_INDEX_DIRECTORY=${CACHE_LINE#cacheDirectory=}
-    
+
     #
-    # Move the indices to the specified location.  
+    # Move the indices to the specified location.
     #
-    
+
     logecho Wiping $CACHE_INDEX_DIRECTORY
     rm -frv $CACHE_INDEX_DIRECTORY
-    
+
     logecho Copying merged caches from "$TMPDIR/DTO/merged/" to $CACHE_INDEX_DIRECTORY
     mkdir -p $CACHE_INDEX_DIRECTORY
     cp -vr  $TMPDIR/DTO/merged/*  $CACHE_INDEX_DIRECTORY
-    
-    
+
+
 fi
 
 
 #
-# Copy the database accross from nightly. 
+# Copy the database accross from nightly.
 #
 
 if [[ $COPY_NIGHTLY_TO_STAGING ]]; then
     logecho "Stage 6: Messing with databases"
-    logecho Dropping snapshot-old
-    dropdb -h genedb-db -p 5434 snapshot-old
-    logecho Dropping staging
-    dropdb -h genedb-db -p 5434 staging
-    logecho Creating staging
-    createdb -h genedb-db -p 5434 staging
-    logecho "Copying nightly to staging"
-    pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging > psql.nightly_to_staging.log
-    exitCode=$?
-    if [ "$exitCode" -ne 0 ]; then
-      logecho "Problem loading nightly into staging, here is the log (exitCode: $exitCode)"
-      cat psql.nightly_to_staging.log
-    fi
-    
-    bt5_debug "before push-staging-to-snapshot2"
-    /nfs/pathdb/bin/push-staging-to-snapshot2 > push-staging-to-snapshot2.log
-    exitCode=$?
-    bt5_debug "after push-staging-to-snapshot2"
-    if [ "$exitCode" -ne 0 ]; then
-      logecho "Problem running push-staging-to-snapshot2 (exitCode: $exitCode)"
-      cat push-staging-to-snapshot2.log
-    fi
-
-    bt5_debug "before fix-snapshot"
-    /nfs/pathdb/bin/fix-snapshot > fix-snapshot.log
-    exitCode=$?
-    bt5_debug "after fix-snapshot"
-    if [ "$exitCode" -ne 0 ]; then
-      logecho "Problem running fix-snapshot (exitCode: $exitCode)"
-      cat fix-snapshot.log
-    fi
+#    logecho Dropping snapshot-old
+#    dropdb -h genedb-db -p 5434 snapshot-old
+#    logecho Dropping staging
+#    dropdb -h genedb-db -p 5434 staging
+#    logecho Creating staging
+#    createdb -h genedb-db -p 5434 staging
+#    logecho "Copying nightly to staging"
+#    pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging > psql.nightly_to_staging.log
+#    exitCode=$?
+#    if [ "$exitCode" -ne 0 ]; then
+#      logecho "Problem loading nightly into staging, here is the log (exitCode: $exitCode)"
+#      cat psql.nightly_to_staging.log
+#    fi
+#
+#    bt5_debug "before push-staging-to-snapshot2"
+#    /nfs/pathdb/bin/push-staging-to-snapshot2 > push-staging-to-snapshot2.log
+#    exitCode=$?
+#    bt5_debug "after push-staging-to-snapshot2"
+#    if [ "$exitCode" -ne 0 ]; then
+#      logecho "Problem running push-staging-to-snapshot2 (exitCode: $exitCode)"
+#      cat push-staging-to-snapshot2.log
+#    fi
+#
+#    bt5_debug "before fix-snapshot"
+#    /nfs/pathdb/bin/fix-snapshot > fix-snapshot.log
+#    exitCode=$?
+#    bt5_debug "after fix-snapshot"
+#    if [ "$exitCode" -ne 0 ]; then
+#      logecho "Problem running fix-snapshot (exitCode: $exitCode)"
+#      cat fix-snapshot.log
+#    fi
 
     # Also run new release code, pushing to a staging on a managed cluster
     /nfs/users/nfs_p/pathdb/switch_dbs.sh
