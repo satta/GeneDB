@@ -510,37 +510,37 @@ fi
 
 if [[ $COPY_NIGHTLY_TO_STAGING ]]; then
     logecho "Stage 6: Messing with databases"
-    logecho Dropping snapshot-old
-    dropdb -h genedb-db -p 5434 snapshot-old
-    logecho Dropping staging
-    dropdb -h genedb-db -p 5434 staging
-    logecho Creating staging
-    createdb -h genedb-db -p 5434 staging
-    logecho "Copying nightly to staging"
-    pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging > psql.nightly_to_staging.log
-    exitCode=$?
-    if [ "$exitCode" -ne 0 ]; then
-      logecho "Problem loading nightly into staging, here is the log (exitCode: $exitCode)"
-      cat psql.nightly_to_staging.log
-    fi
-    
-    bt5_debug "before push-staging-to-snapshot2"
-    /nfs/pathdb/bin/push-staging-to-snapshot2 > push-staging-to-snapshot2.log
-    exitCode=$?
-    bt5_debug "after push-staging-to-snapshot2"
-    if [ "$exitCode" -ne 0 ]; then
-      logecho "Problem running push-staging-to-snapshot2 (exitCode: $exitCode)"
-      cat push-staging-to-snapshot2.log
-    fi
-
-    bt5_debug "before fix-snapshot"
-    /nfs/pathdb/bin/fix-snapshot > fix-snapshot.log
-    exitCode=$?
-    bt5_debug "after fix-snapshot"
-    if [ "$exitCode" -ne 0 ]; then
-      logecho "Problem running fix-snapshot (exitCode: $exitCode)"
-      cat fix-snapshot.log
-    fi
+#    logecho Dropping snapshot-old
+#    dropdb -h genedb-db -p 5434 snapshot-old
+#    logecho Dropping staging
+#    dropdb -h genedb-db -p 5434 staging
+#    logecho Creating staging
+#    createdb -h genedb-db -p 5434 staging
+#    logecho "Copying nightly to staging"
+#    pg_dump -h path-dev-db nightly | psql -h genedb-db -p 5434 staging > psql.nightly_to_staging.log
+#    exitCode=$?
+#    if [ "$exitCode" -ne 0 ]; then
+#      logecho "Problem loading nightly into staging, here is the log (exitCode: $exitCode)"
+#      cat psql.nightly_to_staging.log
+#    fi
+#    
+#    bt5_debug "before push-staging-to-snapshot2"
+#    /nfs/pathdb/bin/push-staging-to-snapshot2 > push-staging-to-snapshot2.log
+#    exitCode=$?
+#    bt5_debug "after push-staging-to-snapshot2"
+#    if [ "$exitCode" -ne 0 ]; then
+#      logecho "Problem running push-staging-to-snapshot2 (exitCode: $exitCode)"
+#      cat push-staging-to-snapshot2.log
+#    fi
+#
+#    bt5_debug "before fix-snapshot"
+#    /nfs/pathdb/bin/fix-snapshot > fix-snapshot.log
+#    exitCode=$?
+#    bt5_debug "after fix-snapshot"
+#    if [ "$exitCode" -ne 0 ]; then
+#      logecho "Problem running fix-snapshot (exitCode: $exitCode)"
+#      cat fix-snapshot.log
+#    fi
 
     # Also run new release code, pushing to a staging on a managed cluster
     /nfs/users/nfs_p/pathdb/switch_dbs.sh
