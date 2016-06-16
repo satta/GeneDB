@@ -282,7 +282,7 @@ class FeatureTable extends EmblFile.Section {
         public boolean isPseudo() {
             return hasQualifier("pseudo");
         }
-        
+
         /**
          * Is this feature obsolete?
          *
@@ -396,7 +396,7 @@ class FeatureTable extends EmblFile.Section {
 
     private static final String symbolPattern = "[\\w'*-+]*[A-Za-z][\\w'*-+]*";
     static final Pattern qualifierPattern = Pattern.compile("/(" + symbolPattern + ")(?:=(.*))?");
-    static final Pattern quotedStringPattern = Pattern.compile("\"((?:[^\"]|\"\")*)\"");
+    static final Pattern quotedStringPattern = Pattern.compile("\"([^\"]*)\"");
 
     private String currentQualifier = null;
     private StringBuilder currentString = null;
@@ -412,7 +412,7 @@ class FeatureTable extends EmblFile.Section {
                 // This is the last line of the string
                 if (! data.endsWith("\"")) {
                     throw new SyntaxError("Failed to parse string data: unbalanced quotes");
-                    
+
                 }
                 currentString.append(data.substring(0, data.length() - 1).replaceAll("\"\"", "\""));
                 currentFeature.qualifiers.add(new Qualifier(currentQualifier, currentString.toString(), true));
