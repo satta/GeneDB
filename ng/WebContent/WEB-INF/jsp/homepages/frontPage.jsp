@@ -92,6 +92,7 @@
 <div id="col-1-2">
 
 
+<!--
 <h1>Events</h1>
 <div class="baby-blue-top"></div>
 <div class="baby-blue">
@@ -112,7 +113,8 @@ Application deadline: <b>17 June 2016</b>
 &raquo; The results of the 2013 TriTrypDB user survey are ready (April 2014). Thanks to all participants for their useful input and suggestions. A detailed <a href="http://tritrypdb.org/tritrypdb/communityDownload.do?fname=2013_TriTryp_User_Survey_Results.pdf">summary</a> is available for your review.<br>
 </p>
 </div>
-<div class="light-grey-bot"></div>
+<div class="light-grey-bot"></div> 
+-->
 
 <h1>Web services</h1>
 <div class="baby-blue-top"></div>
